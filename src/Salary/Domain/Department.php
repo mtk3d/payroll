@@ -4,12 +4,9 @@ declare(strict_types=1);
 
 namespace Payroll\Salary\Domain;
 
+use Payroll\Shared\DepartmentId;
+
 class Department
 {
-    public function __construct(private $id, private BonusRule $bonusRule) {}
-
-    public function bonusRule(): BonusRule
-    {
-        return $this->bonusRule;
-    }
+    public function __construct(private DepartmentId $id, readonly BonusRule $bonusRule) {}
 }

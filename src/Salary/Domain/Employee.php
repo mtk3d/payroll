@@ -6,20 +6,25 @@ namespace Payroll\Salary\Domain;
 
 use Carbon\Carbon;
 use Money\Money;
+use Payroll\Salary\Domain\Bonus\BonusCriteria;
 use Payroll\Shared\EmployeeId;
 
 class Employee
 {
-    readonly Money $fullSalary;
-
     public function __construct(
         private EmployeeId $employeeId,
         private Carbon $employmentDate,
         private Money $baseSalary,
         private Department $department
-    ) {
-        $bonusRule = $this->department->bonusRule();
-        $bonusCriteria = new BonusCriteria($this->employmentDate, $this->baseSalary);
-        $this->fullSalary = $bonusRule->calculate($bonusCriteria);
+    ) {}
+
+    public function bonusRule(): BonusRule
+    {
+        return $this->department->bonusRule;
+    }
+
+    public function bonusCriteria(): BonusCriteria
+    {
+        return new BonusCriteria($this->employmentDate, $this->baseSalary);
     }
 }

@@ -2,25 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Payroll\Salary\Domain\BonusRule;
+namespace Payroll\Salary\Domain\Bonus;
 
 use Carbon\Carbon;
-use Carbon\CarbonPeriod;
 use Money\Money;
-use Payroll\Salary\Domain\BonusCriteria;
-use Payroll\Salary\Domain\BonusRule;
+use Payroll\Salary\Domain\BonusCalculator;
 
-class PermanentBonus implements BonusRule
+class PermanentBonus implements BonusCalculator
 {
     private Money $amount;
 
-    public function __construct(Money $amount)
+    public function __construct(int $value)
     {
-        if ($amount->isNegative()) {
+        if (0 > $value) {
             throw new \InvalidArgumentException('PermanentBonus value cannot be lower than zero');
         }
 
-        $this->amount = $amount;
+        $this->amount = Money::USD($value);
     }
 
     public function calculate(BonusCriteria $criteria): Money

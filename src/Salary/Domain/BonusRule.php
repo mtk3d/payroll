@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Payroll\Salary\Domain;
 
-use Money\Money;
+use Payroll\Salary\Domain\Bonus\BonusType;
 
-interface BonusRule
+class BonusRule
 {
-    public function calculate(BonusCriteria $criteria): Money;
+    public function __construct(readonly BonusType $bonusType, readonly int $value) {}
 }

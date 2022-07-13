@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Payroll\Salary\Domain;
+namespace Payroll\Salary\Domain\Bonus;
 
 use Carbon\Carbon;
 use Money\Money;
