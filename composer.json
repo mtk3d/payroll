@@ -2,6 +2,11 @@
     "name": "mateuszcholewka/payroll",
     "autoload": {
         "psr-4": {
+            "Test\\": "test/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "Payroll\\": "src/"
         }
     },
@@ -14,5 +19,9 @@
     "require-dev": {
         "phpunit/phpunit": "^9.5",
         "vimeo/psalm": "^4.24"
+    },
+    "require": {
+        "moneyphp/money": "^4.0",
+        "ramsey/uuid": "^4.3"
     }
 }
