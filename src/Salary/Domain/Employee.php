@@ -12,7 +12,7 @@ use Payroll\Shared\EmployeeId;
 class Employee
 {
     public function __construct(
-        private EmployeeId $employeeId,
+        readonly EmployeeId $employeeId,
         private Carbon $employmentDate,
         private Money $baseSalary,
         private Department $department

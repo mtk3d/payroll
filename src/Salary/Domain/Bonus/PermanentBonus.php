@@ -6,7 +6,6 @@ namespace Payroll\Salary\Domain\Bonus;
 
 use Carbon\Carbon;
 use Money\Money;
-use Payroll\Salary\Domain\BonusCalculator;
 
 class PermanentBonus implements BonusCalculator
 {

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Payroll\Salary\Domain\Bonus;
 
 use Money\Money;
-use Payroll\Salary\Domain\BonusCalculator;
 
 class PercentageBonus implements BonusCalculator
 {
