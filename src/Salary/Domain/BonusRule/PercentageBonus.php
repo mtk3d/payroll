@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Payroll\Salary\Domain\BonusRule;
 
 use Money\Money;
+use Payroll\Salary\Domain\BonusCriteria;
 use Payroll\Salary\Domain\BonusRule;
 
 class PercentageBonus implements BonusRule
@@ -20,10 +21,11 @@ class PercentageBonus implements BonusRule
         $this->percent = $percent;
     }
 
-    public function calculate(Money $basePrice): Money
+    public function calculate(BonusCriteria $criteria): Money
     {
-        $bonus = $basePrice->multiply($this->multiplier());
-        return $basePrice->add($bonus);
+        $baseSalary = $criteria->baseSalary;
+        $bonus = $baseSalary->multiply($this->multiplier());
+        return $baseSalary->add($bonus);
     }
 
     private function multiplier(): string

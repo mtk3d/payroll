@@ -8,5 +8,5 @@ use Money\Money;
 
 interface BonusRule
 {
-    public function calculate(Money $basePrice): Money;
+    public function calculate(BonusCriteria $criteria): Money;
 }
