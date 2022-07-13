@@ -6,5 +6,5 @@ namespace Payroll\Salary\Domain;
 
 interface DepartmentRepository
 {
-
+    public function save(Department $department): void;
 }
