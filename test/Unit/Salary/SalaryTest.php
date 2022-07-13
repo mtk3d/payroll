@@ -39,7 +39,7 @@ class SalaryTest extends TestCase
      */
     public function testCalculateSalaries(
         string $timeModifier,
-        int $baseSalaryValue,
+        int $baseSalary,
         BonusType $bonusType,
         int $value,
         int $result
@@ -49,7 +49,7 @@ class SalaryTest extends TestCase
 
         // Given
         $department = aDepartment($bonusType, $value);
-        $employee = aEmployee($this->now->modify($timeModifier), $baseSalaryValue, $department);
+        $employee = aEmployee($this->now->modify($timeModifier), $baseSalary, $department);
         $this->repository->save($employee);
 
         // When
