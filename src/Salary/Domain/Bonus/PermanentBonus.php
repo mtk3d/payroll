@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Payroll\Salary\Domain\Bonus;
 
-use Carbon\Carbon;
 use Money\Money;
+use Payroll\Shared\Clock;
 
 class PermanentBonus implements BonusCalculator
 {
     private Money $amount;
 
-    public function __construct(int $value)
+    public function __construct(private Clock $clock, int $value)
     {
         if (0 > $value) {
             throw new \InvalidArgumentException('PermanentBonus value cannot be lower than zero');
@@ -22,7 +22,7 @@ class PermanentBonus implements BonusCalculator
 
     public function calculate(BonusCriteria $criteria): Money
     {
-        $seniorityYears = $criteria->employmentDate->diffInYears(Carbon::now());
+        $seniorityYears = $criteria->employmentDate->diff($this->clock->now())->y;
         $bonus = $this->amount->multiply($seniorityYears);
         return $criteria->baseSalary->add($bonus);
     }

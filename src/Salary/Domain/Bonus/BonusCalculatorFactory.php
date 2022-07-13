@@ -5,11 +5,14 @@ declare(strict_types=1);
 namespace Payroll\Salary\Domain\Bonus;
 
 use Payroll\Salary\Domain\BonusRule;
+use Payroll\Shared\Clock;
 
 class BonusCalculatorFactory
 {
     /** @var array<string, BonusCalculator> */
     private array $cache;
+
+    public function __construct(private Clock $clock) {}
 
     public function create(BonusRule $bonusRule): BonusCalculator
     {
@@ -22,7 +25,7 @@ class BonusCalculatorFactory
                 $calculator = new PercentageBonus($bonusRule->value);
                 break;
             case BonusType::PERMANENT:
-                $calculator = new PermanentBonus($bonusRule->value);
+                $calculator = new PermanentBonus($this->clock, $bonusRule->value);
                 break;
         }
 
@@ -45,7 +48,6 @@ class BonusCalculatorFactory
     private function cache(BonusRule $bonusRule, BonusCalculator $calculator): void
     {
         $key = $this->key($bonusRule);
-
         $this->cache[$key] = $calculator;
     }
 

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Payroll\Salary\Domain;
 
-use Carbon\Carbon;
+use DateTimeImmutable;
 use Money\Money;
 use Payroll\Salary\Domain\Bonus\BonusCriteria;
 use Payroll\Shared\EmployeeId;
@@ -13,7 +13,7 @@ class Employee
 {
     public function __construct(
         readonly EmployeeId $employeeId,
-        private Carbon $employmentDate,
+        private DateTimeImmutable $employmentDate,
         private Money $baseSalary,
         private Department $department
     ) {}
