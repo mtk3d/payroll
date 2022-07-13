@@ -7,7 +7,7 @@ namespace Payroll\Salary\Domain\Bonus;
 use Money\Money;
 use Payroll\Shared\Clock;
 
-class PermanentBonus implements BonusCalculator
+class PermanentBonusCalculator implements BonusCalculator
 {
     private Money $amount;
 

@@ -22,10 +22,10 @@ class BonusCalculatorFactory
 
         switch ($bonusRule->bonusType) {
             case BonusType::PERCENTAGE:
-                $calculator = new PercentageBonus($bonusRule->value);
+                $calculator = new PercentageBonusCalculator($bonusRule->value);
                 break;
             case BonusType::PERMANENT:
-                $calculator = new PermanentBonus($this->clock, $bonusRule->value);
+                $calculator = new PermanentBonusCalculator($this->clock, $bonusRule->value);
                 break;
         }
 

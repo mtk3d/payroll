@@ -6,7 +6,7 @@ namespace Payroll\Salary\Domain\Bonus;
 
 use Money\Money;
 
-class PercentageBonus implements BonusCalculator
+class PercentageBonusCalculator implements BonusCalculator
 {
     private float $multiplier;
 
