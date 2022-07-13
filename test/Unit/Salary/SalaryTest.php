@@ -41,14 +41,14 @@ class SalaryTest extends TestCase
         string $timeModifier,
         int $baseSalary,
         BonusType $bonusType,
-        int $value,
-        int $result
+        int $bonusValue,
+        int $salaryResult
     ): void {
         // Setup
         $handler = new CalculateSalariesHandler($this->bus, $this->repository, $this->calculatorFactory);
 
         // Given
-        $department = aDepartment($bonusType, $value);
+        $department = aDepartment($bonusType, $bonusValue);
         $employee = aEmployee($this->now->modify($timeModifier), $baseSalary, $department);
         $this->repository->save($employee);
 
@@ -62,7 +62,7 @@ class SalaryTest extends TestCase
             $dispatchedEvent->eventId(),
             $employee->employeeId,
             $reportId,
-            Money::USD($result)
+            Money::USD($salaryResult)
         );
         self::assertEquals($expected, $dispatchedEvent);
     }
