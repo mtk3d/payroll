@@ -6,5 +6,5 @@ namespace Payroll\Shared;
 
 interface DomainEvent
 {
-
+    public function eventId(): UUID;
 }

@@ -14,6 +14,7 @@ use Payroll\Salary\Domain\SalaryCalculated;
 use Payroll\Salary\Infrastructure\Repository\InMemoryEmployeeRepository;
 use Payroll\Shared\Clock;
 use Payroll\Shared\InMemoryDomainEventBus;
+use Payroll\Shared\ReportId;
 use PHPUnit\Framework\TestCase;
 
 class SalaryTest extends TestCase
@@ -62,8 +63,16 @@ class SalaryTest extends TestCase
         $repository = new InMemoryEmployeeRepository([$employee]);
 
         $handler = new CalculateSalariesHandler($this->bus, $repository, $this->calculatorFactory);
-        $handler->handle(new CalculateSalaries());
+        $reportId = ReportId::newOne();
+        $handler->handle(new CalculateSalaries($reportId));
 
-        self::assertEquals(new SalaryCalculated($employee->employeeId, Money::USD(200000)), $this->bus->latestEvent());
+        $dispatchedEvent = $this->bus->latestEvent();
+        $expected = new SalaryCalculated(
+            $dispatchedEvent->eventId(),
+            $employee->employeeId,
+            $reportId,
+            Money::USD(200000)
+        );
+        self::assertEquals($expected, $dispatchedEvent);
     }
 }
