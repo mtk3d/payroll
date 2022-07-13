@@ -1,0 +1,15 @@
+{
+    "name": "mateuszcholewka/payroll",
+    "autoload": {
+        "psr-4": {
+            "Payroll\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mateusz Cholewka",
+            "email": "mateusz@cholewka.com.pl"
+        }
+    ],
+    "require": {}
+}
