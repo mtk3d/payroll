@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Payroll\Salary\Domain\Bonus;
 
+use InvalidArgumentException;
 use Money\Money;
 use Payroll\Shared\Clock;
 
@@ -14,7 +15,7 @@ class PermanentBonusCalculator implements BonusCalculator
     public function __construct(private Clock $clock, int $value)
     {
         if (0 > $value) {
-            throw new \InvalidArgumentException('PermanentBonus value cannot be lower than zero');
+            throw new InvalidArgumentException('PermanentBonus value cannot be lower than zero');
         }
 
         $this->amount = Money::USD($value);

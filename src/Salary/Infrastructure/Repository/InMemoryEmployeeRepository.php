@@ -9,11 +9,8 @@ use Payroll\Salary\Domain\EmployeeRepository;
 
 class InMemoryEmployeeRepository implements EmployeeRepository
 {
-    /**
-     * @param Employee[] $employees
-     */
-    public function __construct(private array $employees)
-    {}
+    /** @var Employee[] $employees */
+    private array $employees;
 
     /**
      * @return Employee[]
@@ -21,5 +18,10 @@ class InMemoryEmployeeRepository implements EmployeeRepository
     public function all(): array
     {
         return $this->employees;
+    }
+
+    public function save(Employee $employee): void
+    {
+        $this->employees[$employee->employeeId->toString()] = $employee;
     }
 }

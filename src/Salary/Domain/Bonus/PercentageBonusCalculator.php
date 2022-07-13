@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Payroll\Salary\Domain\Bonus;
 
+use InvalidArgumentException;
 use Money\Money;
 
 class PercentageBonusCalculator implements BonusCalculator
@@ -15,7 +16,7 @@ class PercentageBonusCalculator implements BonusCalculator
         $this->multiplier = $value / 10000;
 
         if (0 > $this->multiplier) {
-            throw new \InvalidArgumentException('PercentageBonus cannot be lower than zero');
+            throw new InvalidArgumentException('PercentageBonus cannot be lower than zero');
         }
     }
 

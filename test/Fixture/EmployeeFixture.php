@@ -10,14 +10,14 @@ use Payroll\Salary\Domain\Employee;
 use Payroll\Shared\DepartmentId;
 use Payroll\Shared\EmployeeId;
 
-function aEmployee(?DateTimeImmutable $employmentDate = null, ?Money $baseSalary = null, ?Department $department = null): Employee
+function aEmployee(?DateTimeImmutable $employmentDate = null, ?int $baseSalary = null, ?Department $department = null): Employee
 {
     if (is_null($employmentDate)) {
         $employmentDate = new DateTimeImmutable("2005-03-14");
     }
 
     if (is_null($baseSalary)) {
-        $baseSalary = Money::USD(110000);
+        $baseSalary = 110000;
     }
 
     if (is_null($department)) {
@@ -26,7 +26,7 @@ function aEmployee(?DateTimeImmutable $employmentDate = null, ?Money $baseSalary
 
     $employeeId = EmployeeId::newOne();
 
-    return new Employee($employeeId, $employmentDate, $baseSalary, $department);
+    return new Employee($employeeId, $employmentDate, Money::USD($baseSalary), $department);
 }
 
 function aDepartment(?BonusType $bonusType = null, ?int $value = null): Department

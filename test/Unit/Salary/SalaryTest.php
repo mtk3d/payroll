@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Test\Unit\Salary;
 
 use DateTimeImmutable;
+use InvalidArgumentException;
 use Money\Money;
 use Payroll\Salary\Application\CalculateSalariesHandler;
 use Payroll\Salary\Application\Command\CalculateSalaries;
@@ -20,59 +21,82 @@ use PHPUnit\Framework\TestCase;
 class SalaryTest extends TestCase
 {
     private DateTimeImmutable $now;
-    private Clock $clock;
+    private BonusCalculatorFactory $calculatorFactory;
+    private InMemoryDomainEventBus $bus;
 
     public function setUp(): void
     {
         $this->now = new DateTimeImmutable("2005-03-14");
-        $this->clock = self::createMock(Clock::class);
-        $this->clock->method('now')->willReturn($this->now);
-        $this->calculatorFactory = new BonusCalculatorFactory($this->clock);
+        $clock = self::createMock(Clock::class);
+        $clock->method('now')->willReturn($this->now);
+        $this->calculatorFactory = new BonusCalculatorFactory($clock);
         $this->bus = new InMemoryDomainEventBus();
+        $this->repository = new InMemoryEmployeeRepository();
     }
 
-    public function testPercentageBonus(): void
-    {
-        $employmentDate = $this->now->modify("-5 years");
-        $baseSalary = Money::USD(110000);
-        $department = aDepartment(BonusType::PERCENTAGE, 1000);
-        $employee = aEmployee($employmentDate, $baseSalary, $department);
-        $calculator = $this->calculatorFactory->create($department->bonusRule);
+    /**
+     * @dataProvider salariesCalculations
+     */
+    public function testCalculateSalaries(
+        string $timeModifier,
+        int $baseSalaryValue,
+        BonusType $bonusType,
+        int $value,
+        int $result
+    ): void {
+        // Setup
+        $handler = new CalculateSalariesHandler($this->bus, $this->repository, $this->calculatorFactory);
 
-        self::assertEquals(Money::USD(121000), $calculator->calculate($employee->bonusCriteria()));
-    }
+        // Given
+        $department = aDepartment($bonusType, $value);
+        $employee = aEmployee($this->now->modify($timeModifier), $baseSalaryValue, $department);
+        $this->repository->save($employee);
 
-    public function testPermanentBonus(): void
-    {
-        $employmentDate = $this->now->modify("-10 years");
-        $baseSalary = Money::USD(100000);
-        $department = aDepartment(BonusType::PERMANENT, 10000);
-        $employee = aEmployee($employmentDate, $baseSalary, $department);
-        $calculator = $this->calculatorFactory->create($department->bonusRule);
-
-        self::assertEquals(Money::USD(200000), $calculator->calculate($employee->bonusCriteria()));
-    }
-
-    public function testCalculateSalaries(): void
-    {
-        $employmentDate = $this->now->modify("-10 years");
-        $baseSalary = Money::USD(100000);
-        $department = aDepartment(BonusType::PERMANENT, 10000);
-        $employee = aEmployee($employmentDate, $baseSalary, $department);
-
-        $repository = new InMemoryEmployeeRepository([$employee]);
-
-        $handler = new CalculateSalariesHandler($this->bus, $repository, $this->calculatorFactory);
+        // When
         $reportId = ReportId::newOne();
         $handler->handle(new CalculateSalaries($reportId));
 
+        // Then
         $dispatchedEvent = $this->bus->latestEvent();
         $expected = new SalaryCalculated(
             $dispatchedEvent->eventId(),
             $employee->employeeId,
             $reportId,
-            Money::USD(200000)
+            Money::USD($result)
         );
         self::assertEquals($expected, $dispatchedEvent);
+    }
+
+    /**
+     * @return array{string, int, BonusType, int, int}[]
+     * {"time modifier", "base salary", "bonus type", "bonus value", "result salary"}
+     */
+    public function salariesCalculations(): array
+    {
+        return [
+            ['-1 year', 110000, BonusType::PERCENTAGE, 1000, 121000],
+            ['-1 year', 100000, BonusType::PERCENTAGE, 11000, 210000],
+            ['-10 years', 100000, BonusType::PERMANENT, 10000, 200000],
+            ['-364 days', 200000, BonusType::PERMANENT, 10000, 200000],
+            ['-365 days', 200000, BonusType::PERMANENT, 10000, 210000],
+        ];
+    }
+
+    /**
+     * @dataProvider bonusTypes
+     */
+    public function testFailBonusCreation(BonusType $bonusType): void
+    {
+        self::expectException(InvalidArgumentException::class);
+        $department = aDepartment($bonusType, -1);
+        $this->calculatorFactory->create($department->bonusRule);
+    }
+
+    public function bonusTypes(): array
+    {
+        return [
+            [BonusType::PERCENTAGE],
+            [BonusType::PERMANENT],
+        ];
     }
 }
