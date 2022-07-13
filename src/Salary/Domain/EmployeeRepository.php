@@ -10,4 +10,6 @@ interface EmployeeRepository
      * @return Employee[]
      */
     public function all(): array;
+
+    public function save(Employee $employee): void;
 }

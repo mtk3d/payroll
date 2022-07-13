@@ -6,6 +6,7 @@ namespace Payroll\Salary\Infrastructure\Repository;
 
 use Payroll\Salary\Domain\Department;
 use Payroll\Salary\Domain\DepartmentRepository;
+use Payroll\Shared\DepartmentId;
 
 class InMemoryDepartmentRepository implements DepartmentRepository
 {
@@ -14,6 +15,11 @@ class InMemoryDepartmentRepository implements DepartmentRepository
 
     public function save(Department $department): void
     {
-        $this->departments[] = $department;
+        $this->departments[$department->id->toString()] = $department;
+    }
+
+    public function find(DepartmentId $departmentId): Department
+    {
+        return $this->departments[$departmentId->toString()];
     }
 }

@@ -4,11 +4,8 @@ declare(strict_types=1);
 
 namespace Payroll\Salary\Domain;
 
-use Money\Money;
 use Payroll\Shared\DepartmentId;
 use Payroll\Shared\DomainEvent;
-use Payroll\Shared\EmployeeId;
-use Payroll\Shared\ReportId;
 use Payroll\Shared\UUID;
 
 class DepartmentBonusSet implements DomainEvent
