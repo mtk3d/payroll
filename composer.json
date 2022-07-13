@@ -22,6 +22,7 @@
     },
     "require": {
         "moneyphp/money": "^4.0",
-        "ramsey/uuid": "^4.3"
+        "ramsey/uuid": "^4.3",
+        "nesbot/carbon": "^2.59"
     }
 }
