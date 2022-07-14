@@ -14,8 +14,8 @@ enum BonusType
     public static function fromString(string $type): self
     {
         return match ($type) {
-            'percentage' => self::PERCENTAGE,
-            'permanent' => self::PERMANENT,
+            'PERCENTAGE' => self::PERCENTAGE,
+            'PERMANENT' => self::PERMANENT,
             default => throw new InvalidArgumentException(
                 sprintf('There is no BonusType %s', $type)
             ),

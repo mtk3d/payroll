@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Payroll\Salary\Domain;
 
+use Payroll\Salary\Domain\Exception\DepartmentAlreadyExistException;
+use Payroll\Salary\Domain\Exception\DepartmentNotFoundException;
 use Payroll\Shared\DepartmentId;
 
 interface DepartmentRepository
 {
+    /**
+     * @throws DepartmentAlreadyExistException
+     */
     public function save(Department $department): void;
 
-    public function find(DepartmentId $departmentId): Department;
+    /**
+     * @throws DepartmentNotFoundException
+     */
+    public function find(DepartmentId $departmentId): ?Department;
 }

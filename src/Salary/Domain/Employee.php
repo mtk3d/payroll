@@ -20,7 +20,7 @@ class Employee
 
     public function bonusRule(): BonusRule
     {
-        return $this->department->bonusRule;
+        return $this->department->bonusRule();
     }
 
     public function bonusCriteria(): BonusCriteria

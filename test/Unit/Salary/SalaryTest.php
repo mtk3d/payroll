@@ -87,11 +87,19 @@ class SalaryTest extends TestCase
      */
     public function testFailBonusCreation(BonusType $bonusType): void
     {
+        // Expected
         self::expectException(InvalidArgumentException::class);
+
+        // Given
         $department = aDepartment($bonusType, -1);
-        $this->calculatorFactory->create($department->bonusRule);
+
+        // When
+        $this->calculatorFactory->create($department->bonusRule());
     }
 
+    /**
+     * @return array{BonusType}[]
+     */
     public function bonusTypes(): array
     {
         return [

@@ -6,12 +6,13 @@ namespace Payroll\Salary\Infrastructure\Repository;
 
 use Payroll\Salary\Domain\Department;
 use Payroll\Salary\Domain\DepartmentRepository;
+use Payroll\Salary\Domain\Exception\DepartmentNotFoundException;
 use Payroll\Shared\DepartmentId;
 
 class InMemoryDepartmentRepository implements DepartmentRepository
 {
     /** @var Department[] */
-    private array $departments;
+    private array $departments = [];
 
     public function save(Department $department): void
     {
@@ -20,6 +21,10 @@ class InMemoryDepartmentRepository implements DepartmentRepository
 
     public function find(DepartmentId $departmentId): Department
     {
-        return $this->departments[$departmentId->toString()];
+        if (isset($this->departments[$departmentId->toString()])) {
+            return $this->departments[$departmentId->toString()];
+        }
+
+        throw new DepartmentNotFoundException(sprintf('Department %s does not exist', $departmentId));
     }
 }

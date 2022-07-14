@@ -8,7 +8,7 @@ use Payroll\Shared\DepartmentId;
 use Payroll\Shared\DomainEvent;
 use Payroll\Shared\UUID;
 
-class DepartmentBonusSet implements DomainEvent
+class DepartmentBonusChanged implements DomainEvent
 {
     public function __construct(
         private UUID $eventId,
