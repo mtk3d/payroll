@@ -24,10 +24,10 @@ class BonusCalculatorFactory
 
         switch ($bonusRule->bonusType) {
             case BonusType::PERCENTAGE:
-                $calculator = new PercentageBonusCalculator($bonusRule->value);
+                $calculator = new PercentageBonusCalculator($bonusRule->factor);
                 break;
             case BonusType::PERMANENT:
-                $calculator = new PermanentBonusCalculator($this->clock, $bonusRule->value);
+                $calculator = new PermanentBonusCalculator($this->clock, $bonusRule->factor);
                 break;
         }
 
@@ -55,6 +55,6 @@ class BonusCalculatorFactory
 
     private function key(BonusRule $bonusRule): string
     {
-        return sprintf('%s_%s', $bonusRule->bonusType->name, $bonusRule->value);
+        return sprintf('%s_%s', $bonusRule->bonusType->name, $bonusRule->factor);
     }
 }

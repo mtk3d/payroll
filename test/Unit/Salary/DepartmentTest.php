@@ -30,10 +30,10 @@ class DepartmentTest extends TestCase
         //Given
         $departmentId = DepartmentId::newOne();
         $bonusType = 'PERCENTAGE';
-        $bonusValue = 10;
+        $bonusFactor = 10;
 
         // When
-        $command = new SetDepartmentBonus($departmentId, $bonusType, $bonusValue);
+        $command = new SetDepartmentBonus($departmentId, $bonusType, $bonusFactor);
         $this->setDepartmentBonusHandler->handle($command);
 
         // Then
@@ -42,7 +42,7 @@ class DepartmentTest extends TestCase
             $event->eventId(),
             $departmentId,
             $bonusType,
-            $bonusValue
+            $bonusFactor
         );
         self::assertEquals($expectedEvent, $event);
     }

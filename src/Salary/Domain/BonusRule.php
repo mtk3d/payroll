@@ -11,9 +11,9 @@ class BonusRule
 {
     public function __construct(
         readonly BonusType $bonusType,
-        readonly int $value
+        readonly int $factor
     ) {
-        if (0 > $this->value) {
+        if (0 > $this->factor) {
             throw new InvalidArgumentException('Bonus value cannot be lower than 0');
         }
     }

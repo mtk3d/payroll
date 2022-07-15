@@ -14,13 +14,13 @@ class DepartmentBonusChanged implements DomainEvent
         private UUID $eventId,
         readonly DepartmentId $departmentId,
         readonly string $bonusType,
-        readonly int $bonusValue
+        readonly int $bonusFactor
     ) {
     }
 
-    public static function newOne(DepartmentId $departmentId, string $bonusType, int $bonusValue): self
+    public static function newOne(DepartmentId $departmentId, string $bonusType, int $bonusFactor): self
     {
-        return new self(UUID::random(), $departmentId, $bonusType, $bonusValue);
+        return new self(UUID::random(), $departmentId, $bonusType, $bonusFactor);
     }
 
     public function eventId(): UUID

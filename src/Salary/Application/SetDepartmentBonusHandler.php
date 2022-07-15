@@ -25,7 +25,7 @@ class SetDepartmentBonusHandler
     public function handle(SetDepartmentBonus $command): void
     {
         $bonusType = BonusType::fromString($command->bonusType);
-        $bonusRule = new BonusRule($bonusType, $command->bonusValue);
+        $bonusRule = new BonusRule($bonusType, $command->bonusFactor);
         $department = new Department($command->departmentId, $bonusRule);
 
         $this->repository->save($department);
@@ -33,7 +33,7 @@ class SetDepartmentBonusHandler
         $this->bus->dispatch(DepartmentBonusChanged::newOne(
             $department->id,
             $department->bonusRule()->bonusType->name,
-            $department->bonusRule()->value
+            $department->bonusRule()->factor
         ));
     }
 }

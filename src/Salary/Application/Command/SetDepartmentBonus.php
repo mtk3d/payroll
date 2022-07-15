@@ -11,7 +11,7 @@ class SetDepartmentBonus
     public function __construct(
         readonly DepartmentId $departmentId,
         readonly string $bonusType,
-        readonly int $bonusValue
+        readonly int $bonusFactor
     ) {
     }
 }
