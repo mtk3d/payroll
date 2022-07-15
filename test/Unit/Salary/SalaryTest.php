@@ -7,10 +7,11 @@ namespace Test\Unit\Salary;
 use DateTimeImmutable;
 use InvalidArgumentException;
 use Money\Money;
-use Payroll\Salary\Application\CalculateSalariesHandler;
-use Payroll\Salary\Application\Command\CalculateSalaries;
+use Payroll\Salary\Application\CalculateReportSalariesHandler;
+use Payroll\Salary\Application\Command\CalculateReportSalaries;
 use Payroll\Salary\Domain\Bonus\BonusCalculatorFactory;
 use Payroll\Salary\Domain\Bonus\BonusType;
+use Payroll\Salary\Domain\ReportSalariesCalculated;
 use Payroll\Salary\Domain\SalaryCalculated;
 use Payroll\Salary\Infrastructure\Repository\InMemoryEmployeeRepository;
 use Payroll\Shared\Clock;
@@ -37,7 +38,7 @@ class SalaryTest extends TestCase
     /**
      * @dataProvider salariesCalculations
      */
-    public function testCalculateSalaries(
+    public function testCalculateReportSalaries(
         string    $timeModifier,
         int       $baseSalary,
         BonusType $bonusType,
@@ -45,7 +46,7 @@ class SalaryTest extends TestCase
         int       $bonus
     ): void {
         // Setup
-        $handler = new CalculateSalariesHandler($this->bus, $this->repository, $this->calculatorFactory);
+        $handler = new CalculateReportSalariesHandler($this->bus, $this->repository, $this->calculatorFactory);
 
         // Given
         $department = aDepartment($bonusType, $bonusFactor);
@@ -54,18 +55,28 @@ class SalaryTest extends TestCase
 
         // When
         $reportId = ReportId::newOne();
-        $handler->handle(new CalculateSalaries($reportId));
+        $handler->handle(new CalculateReportSalaries($reportId));
+
 
         // Then
-        $dispatchedEvent = $this->bus->latestEvent();
+        $events = $this->bus->events();
+
+        $dispatched = current($events);
         $expected = new SalaryCalculated(
-            $dispatchedEvent->eventId(),
+            $dispatched->eventId(),
             $employee->employeeId,
             $reportId,
             Money::USD($baseSalary),
             Money::USD($bonus)
         );
-        self::assertEquals($expected, $dispatchedEvent);
+        self::assertEquals($expected, $dispatched);
+
+        $dispatched = next($events);
+        $expected = new ReportSalariesCalculated(
+            $dispatched->eventId(),
+            $reportId
+        );
+        self::assertEquals($expected, $dispatched);
     }
 
     /**

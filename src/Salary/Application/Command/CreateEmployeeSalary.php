@@ -6,10 +6,11 @@ namespace Payroll\Salary\Application\Command;
 
 use DateTimeImmutable;
 use Money\Money;
+use Payroll\Shared\Command;
 use Payroll\Shared\DepartmentId;
 use Payroll\Shared\EmployeeId;
 
-class CreateEmployeeSalary
+class CreateEmployeeSalary implements Command
 {
     public function __construct(
         readonly EmployeeId $id,

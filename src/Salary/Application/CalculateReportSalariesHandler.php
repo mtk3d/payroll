@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace Payroll\Salary\Application;
 
-use Payroll\Salary\Application\Command\CalculateSalaries;
+use Payroll\Salary\Application\Command\CalculateReportSalaries;
 use Payroll\Salary\Domain\Bonus\BonusCalculatorFactory;
 use Payroll\Salary\Domain\EmployeeRepository;
+use Payroll\Salary\Domain\ReportSalariesCalculated;
 use Payroll\Salary\Domain\SalaryCalculated;
 use Payroll\Shared\DomainEventBus;
 
-class CalculateSalariesHandler
+class CalculateReportSalariesHandler
 {
     public function __construct(
         private DomainEventBus $bus,
@@ -19,7 +20,7 @@ class CalculateSalariesHandler
     ) {
     }
 
-    public function handle(CalculateSalaries $command): void
+    public function handle(CalculateReportSalaries $command): void
     {
         $employees = $this->repository->all();
         foreach ($employees as $employee) {
@@ -35,5 +36,7 @@ class CalculateSalariesHandler
                 )
             );
         }
+
+        $this->bus->dispatch(ReportSalariesCalculated::newOne($command->reportId));
     }
 }

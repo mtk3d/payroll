@@ -15,14 +15,13 @@ use PHPUnit\Framework\TestCase;
 class DepartmentTest extends TestCase
 {
     private InMemoryDomainEventBus $bus;
-    private InMemoryDepartmentRepository $repository;
     private SetDepartmentBonusHandler $setDepartmentBonusHandler;
 
     public function setUp(): void
     {
         $this->bus = new InMemoryDomainEventBus();
-        $this->repository = new InMemoryDepartmentRepository();
-        $this->setDepartmentBonusHandler = new SetDepartmentBonusHandler($this->bus, $this->repository);
+        $repository = new InMemoryDepartmentRepository();
+        $this->setDepartmentBonusHandler = new SetDepartmentBonusHandler($this->bus, $repository);
     }
 
     public function testSetDepartmentBonus(): void

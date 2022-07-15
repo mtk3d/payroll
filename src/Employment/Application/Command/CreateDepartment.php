@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Payroll\Employment\Application\Command;
 
+use Payroll\Shared\Command;
 use Payroll\Shared\DepartmentId;
 
-class CreateDepartment
+class CreateDepartment implements Command
 {
     public function __construct(
         readonly DepartmentId $id,
