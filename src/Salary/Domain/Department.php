@@ -14,11 +14,6 @@ class Department
     ) {
     }
 
-    public function setBonusRule(BonusRule $bonusRule): void
-    {
-        $this->bonusRule = $bonusRule;
-    }
-
     public function bonusRule(): BonusRule
     {
         return $this->bonusRule;

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Test\Unit\Salary;
 
 use DateTimeImmutable;
-use InvalidArgumentException;
 use Money\Money;
 use Payroll\Salary\Application\CalculateReportSalariesHandler;
 use Payroll\Salary\Application\Command\CalculateReportSalaries;
@@ -109,31 +108,5 @@ class SalaryTest extends TestCase
             $reportId
         );
         self::assertEquals($expected, $dispatched);
-    }
-
-    /**
-     * @dataProvider bonusTypes
-     */
-    public function testFailBonusCreation(BonusType $bonusType): void
-    {
-        // Expected
-        self::expectException(InvalidArgumentException::class);
-
-        // Given
-        $department = aDepartment($bonusType, -1);
-
-        // When
-        $this->calculatorFactory->create($department->bonusRule());
-    }
-
-    /**
-     * @return array{BonusType}[]
-     */
-    public function bonusTypes(): array
-    {
-        return [
-            [BonusType::PERCENTAGE],
-            [BonusType::PERMANENT],
-        ];
     }
 }
