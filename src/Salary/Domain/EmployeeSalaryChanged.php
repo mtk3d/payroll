@@ -11,7 +11,7 @@ use Payroll\Shared\DomainEvent;
 use Payroll\Shared\EmployeeId;
 use Payroll\Shared\UUID;
 
-class EmployeeSalaryCreated implements DomainEvent
+class EmployeeSalaryChanged implements DomainEvent
 {
     public function __construct(
         private UUID $eventId,

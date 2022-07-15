@@ -8,7 +8,7 @@ use DateTimeImmutable;
 use Money\Money;
 use Payroll\Salary\Application\Command\CreateEmployeeSalary;
 use Payroll\Salary\Application\CreateEmployeeSalaryHandler;
-use Payroll\Salary\Domain\EmployeeSalaryCreated;
+use Payroll\Salary\Domain\EmployeeSalaryChanged;
 use Payroll\Salary\Infrastructure\Repository\InMemoryDepartmentRepository;
 use Payroll\Salary\Infrastructure\Repository\InMemoryEmployeeRepository;
 use Payroll\Shared\EmployeeId;
@@ -51,7 +51,7 @@ class EmployeeTest extends TestCase
 
         // Then
         $event = $this->bus->latestEvent();
-        $expectedEvent = new EmployeeSalaryCreated(
+        $expectedEvent = new EmployeeSalaryChanged(
             $event->eventId(),
             $employeeId,
             $employmentDate,
