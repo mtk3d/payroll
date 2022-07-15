@@ -2,3 +2,4 @@
 /vendor/
 /.phpunit.cache
 /report/
+/.php-cs-fixer.cache
