@@ -24,6 +24,11 @@ class InMemoryDomainEventBus implements DomainEventBus
         return $this->events[array_key_last($this->events)] ?: null;
     }
 
+    public function firstEvent(): ?DomainEvent
+    {
+        return $this->events[array_key_first($this->events)] ?: null;
+    }
+
     /**
      * @return DomainEvent[]
      */

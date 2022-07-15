@@ -57,24 +57,14 @@ class SalaryTest extends TestCase
         $reportId = ReportId::newOne();
         $handler->handle(new CalculateReportSalaries($reportId));
 
-
         // Then
-        $events = $this->bus->events();
-
-        $dispatched = current($events);
+        $dispatched = $this->bus->firstEvent();
         $expected = new SalaryCalculated(
             $dispatched->eventId(),
             $employee->employeeId,
             $reportId,
             Money::USD($baseSalary),
             Money::USD($bonus)
-        );
-        self::assertEquals($expected, $dispatched);
-
-        $dispatched = next($events);
-        $expected = new ReportSalariesCalculated(
-            $dispatched->eventId(),
-            $reportId
         );
         self::assertEquals($expected, $dispatched);
     }
@@ -92,6 +82,33 @@ class SalaryTest extends TestCase
             ['-364 days', 200000, BonusType::PERMANENT, 10000, 0],
             ['-365 days', 200000, BonusType::PERMANENT, 10000, 10000],
         ];
+    }
+
+    public function testCalculateReportSalariesForMultipleEmployees(): void
+    {
+        // Setup
+        $handler = new CalculateReportSalariesHandler($this->bus, $this->repository, $this->calculatorFactory);
+
+        // Given
+        $department = aDepartment();
+        $firstEmployee = aEmployee(null, null, $department);
+        $this->repository->save($firstEmployee);
+        $secondEmployee = aEmployee(null, null, $department);
+        $this->repository->save($secondEmployee);
+
+        // When
+        $reportId = ReportId::newOne();
+        $handler->handle(new CalculateReportSalaries($reportId));
+
+        // Then
+        self::assertCount(3, $this->bus->events());
+
+        $dispatched = $this->bus->latestEvent();
+        $expected = new ReportSalariesCalculated(
+            $dispatched->eventId(),
+            $reportId
+        );
+        self::assertEquals($expected, $dispatched);
     }
 
     /**
