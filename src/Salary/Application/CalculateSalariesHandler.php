@@ -24,8 +24,16 @@ class CalculateSalariesHandler
         $employees = $this->repository->all();
         foreach ($employees as $employee) {
             $calculator = $this->calculatorFactory->create($employee->bonusRule());
-            $amount = $calculator->calculate($employee->bonusCriteria());
-            $this->bus->dispatch(SalaryCalculated::newOne($employee->employeeId, $command->reportId, $amount));
+            $bonusCriteria = $employee->bonusCriteria();
+            $bonus = $calculator->calculate($bonusCriteria);
+            $this->bus->dispatch(
+                SalaryCalculated::newOne(
+                    $employee->employeeId,
+                    $command->reportId,
+                    $bonusCriteria->baseSalary,
+                    $bonus
+                )
+            );
         }
     }
 }

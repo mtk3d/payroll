@@ -16,13 +16,14 @@ class SalaryCalculated implements DomainEvent
         private UUID $eventId,
         readonly EmployeeId $id,
         readonly ReportId $reportId,
-        readonly Money $amount
+        readonly Money $baseSalary,
+        readonly Money $bonus
     ) {
     }
 
-    public static function newOne(EmployeeId $id, ReportId $reportId, Money $amount): self
+    public static function newOne(EmployeeId $id, ReportId $reportId, Money $baseSalary, Money $bonus): self
     {
-        return new self(UUID::random(), $id, $reportId, $amount);
+        return new self(UUID::random(), $id, $reportId, $baseSalary, $bonus);
     }
 
     public function eventId(): UUID

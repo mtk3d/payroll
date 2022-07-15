@@ -38,17 +38,17 @@ class SalaryTest extends TestCase
      * @dataProvider salariesCalculations
      */
     public function testCalculateSalaries(
-        string $timeModifier,
-        int $baseSalary,
+        string    $timeModifier,
+        int       $baseSalary,
         BonusType $bonusType,
-        int $bonusValue,
-        int $salaryResult
+        int       $bonusFactor,
+        int       $bonus
     ): void {
         // Setup
         $handler = new CalculateSalariesHandler($this->bus, $this->repository, $this->calculatorFactory);
 
         // Given
-        $department = aDepartment($bonusType, $bonusValue);
+        $department = aDepartment($bonusType, $bonusFactor);
         $employee = aEmployee($this->now->modify($timeModifier), $baseSalary, $department);
         $this->repository->save($employee);
 
@@ -62,7 +62,8 @@ class SalaryTest extends TestCase
             $dispatchedEvent->eventId(),
             $employee->employeeId,
             $reportId,
-            Money::USD($salaryResult)
+            Money::USD($baseSalary),
+            Money::USD($bonus)
         );
         self::assertEquals($expected, $dispatchedEvent);
     }
@@ -74,11 +75,11 @@ class SalaryTest extends TestCase
     public function salariesCalculations(): array
     {
         return [
-            ['-1 year', 110000, BonusType::PERCENTAGE, 1000, 121000],
-            ['-1 year', 100000, BonusType::PERCENTAGE, 11000, 210000],
-            ['-10 years', 100000, BonusType::PERMANENT, 10000, 200000],
-            ['-364 days', 200000, BonusType::PERMANENT, 10000, 200000],
-            ['-365 days', 200000, BonusType::PERMANENT, 10000, 210000],
+            ['-1 year', 110000, BonusType::PERCENTAGE, 1000, 11000],
+            ['-1 year', 100000, BonusType::PERCENTAGE, 11000, 110000],
+            ['-10 years', 100000, BonusType::PERMANENT, 10000, 100000],
+            ['-364 days', 200000, BonusType::PERMANENT, 10000, 0],
+            ['-365 days', 200000, BonusType::PERMANENT, 10000, 10000],
         ];
     }
 
