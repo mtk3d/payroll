@@ -6,6 +6,7 @@ namespace Payroll\Report\Domain;
 
 use DateTimeImmutable;
 use Payroll\Shared\ReportId;
+use Payroll\Shared\Result;
 
 class Report
 {
@@ -19,5 +20,16 @@ class Report
     public function date(): DateTimeImmutable
     {
         return $this->date;
+    }
+
+    public function finishProcessing(): Result
+    {
+        if ($this->status === ReportStatus::GENERATED) {
+            return Result::failure(sprintf('Report %s already generated', $this->id));
+        }
+
+        $this->status = ReportStatus::GENERATED;
+
+        return Result::success(ReportGenerated::newOne($this->id));
     }
 }
