@@ -28,8 +28,6 @@ class InMemoryDepartmentRepository implements DepartmentRepository
             return $this->departments[$departmentId->toString()];
         }
 
-        throw new DepartmentNotFoundException(
-            sprintf('Department %s not found', $departmentId->toString())
-        );
+        throw new DepartmentNotFoundException(sprintf('Department %s not found', $departmentId->toString()));
     }
 }

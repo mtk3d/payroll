@@ -24,7 +24,7 @@ class Report
 
     public function finishProcessing(): Result
     {
-        if ($this->status === ReportStatus::GENERATED) {
+        if (ReportStatus::GENERATED === $this->status) {
             return Result::failure(sprintf('Report %s is already generated', $this->id->toString()));
         }
 

@@ -27,6 +27,7 @@ class InMemoryDomainEventBus implements DomainEventBus
     public function firstEvent(): ?DomainEvent
     {
         reset($this->events);
+
         return current($this->events) ?: null;
     }
 

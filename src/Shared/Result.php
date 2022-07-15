@@ -15,7 +15,6 @@ abstract class Result
 
     /**
      * @param DomainEvent[]|null $events
-     * @return Success
      */
     public static function success(DomainEvent ...$events): Success
     {
@@ -23,7 +22,6 @@ abstract class Result
     }
 
     /**
-     * @param string $reason
      * @param DomainEvent[]|null $events
      */
     public static function failure(string $reason, DomainEvent ...$events): Failure

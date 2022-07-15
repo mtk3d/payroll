@@ -31,7 +31,7 @@ class DepartmentTest extends TestCase
      */
     public function testSetDepartmentBonus(BonusType $bonusType): void
     {
-        //Given
+        // Given
         $departmentId = DepartmentId::newOne();
         $bonusType = $bonusType->name;
         $bonusFactor = 10;

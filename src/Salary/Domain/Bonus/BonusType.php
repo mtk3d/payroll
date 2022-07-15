@@ -16,9 +16,7 @@ enum BonusType
         return match ($type) {
             'PERCENTAGE' => self::PERCENTAGE,
             'PERMANENT' => self::PERMANENT,
-            default => throw new InvalidArgumentException(
-                sprintf('There is no BonusType %s', $type)
-            ),
+            default => throw new InvalidArgumentException(sprintf('There is no BonusType %s', $type)),
         };
     }
 }

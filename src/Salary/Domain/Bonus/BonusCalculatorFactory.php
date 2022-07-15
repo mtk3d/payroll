@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Payroll\Salary\Domain\Bonus;
 
-use Exception;
 use Payroll\Salary\Domain\BonusRule;
 use Payroll\Shared\Clock;
 

@@ -24,6 +24,7 @@ class PercentageBonusCalculator implements BonusCalculator
     public function calculate(BonusCriteria $criteria): Money
     {
         $baseSalary = $criteria->baseSalary;
+
         return $baseSalary->multiply($this->percent->toString());
     }
 }

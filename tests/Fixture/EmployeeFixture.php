@@ -13,7 +13,7 @@ use Payroll\Shared\EmployeeId;
 function aEmployee(?DateTimeImmutable $employmentDate = null, ?int $baseSalary = null, ?Department $department = null): Employee
 {
     if (is_null($employmentDate)) {
-        $employmentDate = new DateTimeImmutable("2005-03-14");
+        $employmentDate = new DateTimeImmutable('2005-03-14');
     }
 
     if (is_null($baseSalary)) {
@@ -40,5 +40,6 @@ function aDepartment(?BonusType $bonusType = null, ?int $value = null): Departme
     }
 
     $departmentId = DepartmentId::newOne();
+
     return new Department($departmentId, new BonusRule($bonusType, $value));
 }

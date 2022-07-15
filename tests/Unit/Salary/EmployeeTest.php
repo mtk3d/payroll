@@ -37,12 +37,12 @@ class EmployeeTest extends TestCase
             $this->departmentRepository
         );
 
-        //Given
+        // Given
         $department = aDepartment();
         $this->departmentRepository->save($department);
 
         $employeeId = EmployeeId::newOne();
-        $employmentDate = new DateTimeImmutable("2005-03-14 12:00");
+        $employmentDate = new DateTimeImmutable('2005-03-14 12:00');
         $baseSalary = Money::USD(100000);
 
         // When
