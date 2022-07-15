@@ -9,5 +9,5 @@ use Payroll\Shared\ReportId;
 
 class GenerateSalaryReport
 {
-    public function __construct(readonly ReportId $reportId, readonly DateTimeImmutable $date) {}
+    public function __construct(readonly ReportId $reportId) {}
 }

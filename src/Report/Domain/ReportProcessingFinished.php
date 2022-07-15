@@ -8,7 +8,7 @@ use Payroll\Shared\DomainEvent;
 use Payroll\Shared\ReportId;
 use Payroll\Shared\UUID;
 
-class ReportGenerated implements DomainEvent
+class ReportProcessingFinished implements DomainEvent
 {
     public function __construct(
         private UUID $eventId,

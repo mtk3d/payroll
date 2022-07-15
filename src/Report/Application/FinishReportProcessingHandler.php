@@ -18,6 +18,7 @@ class FinishReportProcessingHandler
         $result = $report->finishProcessing();
 
         if ($result->isFailure()) {
+            // TODO decide what to do
             return;
         }
 

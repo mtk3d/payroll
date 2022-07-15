@@ -11,8 +11,9 @@ use Payroll\Report\Application\FinishReportProcessingHandler;
 use Payroll\Report\Application\GenerateSalaryReportHandler;
 use Payroll\Report\Domain\Report;
 use Payroll\Report\Domain\ReportCreated;
-use Payroll\Report\Domain\ReportGenerated;
+use Payroll\Report\Domain\ReportProcessingFinished;
 use Payroll\Report\Infrastructure\Repository\InMemoryReportRepository;
+use Payroll\Shared\Clock;
 use Payroll\Shared\InMemoryDomainEventBus;
 use Payroll\Shared\ReportId;
 use PHPUnit\Framework\TestCase;
@@ -21,24 +22,27 @@ class ReportTest extends TestCase
 {
     private InMemoryDomainEventBus $bus;
     private InMemoryReportRepository $repository;
+    private Clock $clock;
 
     public function setUp(): void
     {
         $this->bus = new InMemoryDomainEventBus();
         $this->repository = new InMemoryReportRepository();
+        $this->clock = self::createMock(Clock::class);
+        $this->clock->method('now')->willReturn(new DateTimeImmutable('2005-03-14 12:00'));
     }
 
     public function testCreateReport(): void
     {
         // Setup
-        $handler = new GenerateSalaryReportHandler($this->bus, $this->repository);
+        $handler = new GenerateSalaryReportHandler($this->bus, $this->repository, $this->clock);
 
         // Given
         $reportId = ReportId::newOne();
-        $date = new DateTimeImmutable('2005-03-14');
+        $date = $this->clock->now();
 
         // When
-        $command = new GenerateSalaryReport($reportId, $date);
+        $command = new GenerateSalaryReport($reportId);
         $handler->handle($command);
 
         // Then
@@ -54,7 +58,7 @@ class ReportTest extends TestCase
 
         // Given
         $reportId = ReportId::newOne();
-        $date = new DateTimeImmutable('2005-03-14');
+        $date = $this->clock->now();
         $report = new Report($reportId, $date);
         $this->repository->save($report);
 
@@ -64,7 +68,7 @@ class ReportTest extends TestCase
 
         // Then
         $event = $this->bus->latestEvent();
-        $expected = new ReportGenerated($event->eventId(), $reportId);
+        $expected = new ReportProcessingFinished($event->eventId(), $reportId);
         self::assertEquals($expected, $event);
     }
 }

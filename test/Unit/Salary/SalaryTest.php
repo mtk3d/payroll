@@ -26,7 +26,7 @@ class SalaryTest extends TestCase
 
     public function setUp(): void
     {
-        $this->now = new DateTimeImmutable("2005-03-14");
+        $this->now = new DateTimeImmutable("2005-03-14 12:00");
         $clock = self::createMock(Clock::class);
         $clock->method('now')->willReturn($this->now);
         $this->calculatorFactory = new BonusCalculatorFactory($clock);
