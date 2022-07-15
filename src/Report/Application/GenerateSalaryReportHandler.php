@@ -30,7 +30,7 @@ class GenerateSalaryReportHandler
 
         $this->bus->dispatch(ReportCreated::newOne(
             $report->id,
-            $dateTimeNow,
+            $report->date(),
             ReportStatus::PROCESSING->name
         ));
     }
