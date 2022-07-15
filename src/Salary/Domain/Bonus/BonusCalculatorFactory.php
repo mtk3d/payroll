@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace Payroll\Salary\Domain\Bonus;
 
+use Exception;
 use Payroll\Salary\Domain\BonusRule;
 use Payroll\Shared\Clock;
 
 class BonusCalculatorFactory
 {
     /** @var array<string, BonusCalculator> */
-    private array $cache;
+    private array $cache = [];
 
     public function __construct(private Clock $clock)
     {
@@ -22,14 +23,10 @@ class BonusCalculatorFactory
             return $calculator;
         }
 
-        switch ($bonusRule->bonusType) {
-            case BonusType::PERCENTAGE:
-                $calculator = new PercentageBonusCalculator($bonusRule->factor);
-                break;
-            case BonusType::PERMANENT:
-                $calculator = new PermanentBonusCalculator($this->clock, $bonusRule->factor);
-                break;
-        }
+        $calculator = match ($bonusRule->bonusType) {
+            BonusType::PERCENTAGE => new PercentageBonusCalculator($bonusRule->factor),
+            BonusType::PERMANENT => new PermanentBonusCalculator($this->clock, $bonusRule->factor),
+        };
 
         $this->cache($bonusRule, $calculator);
 

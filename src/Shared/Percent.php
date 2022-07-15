@@ -15,8 +15,16 @@ class Percent
         return new Percent($value);
     }
 
+    /**
+     * @return numeric-string
+     */
     public function toString(): string
     {
-        return strval($this->value / 10000);
+        $value = strval($this->value / 10000);
+        if (!is_numeric($value)) {
+            return '0';
+        }
+
+        return $value;
     }
 }

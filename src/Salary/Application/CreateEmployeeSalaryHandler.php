@@ -9,6 +9,7 @@ use Payroll\Salary\Domain\DepartmentRepository;
 use Payroll\Salary\Domain\Employee;
 use Payroll\Salary\Domain\EmployeeRepository;
 use Payroll\Salary\Domain\EmployeeSalaryChanged;
+use Payroll\Salary\Domain\Exception\DepartmentNotFoundException;
 use Payroll\Shared\DomainEventBus;
 
 class CreateEmployeeSalaryHandler
@@ -20,6 +21,9 @@ class CreateEmployeeSalaryHandler
     ) {
     }
 
+    /**
+     * @throws DepartmentNotFoundException
+     */
     public function handle(CreateEmployeeSalary $command): void
     {
         $department = $this->departmentRepository->find($command->departmentId);

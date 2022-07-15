@@ -10,7 +10,7 @@ use Payroll\Salary\Domain\EmployeeRepository;
 class InMemoryEmployeeRepository implements EmployeeRepository
 {
     /** @var Employee[] $employees */
-    private array $employees;
+    private array $employees = [];
 
     /**
      * @return Employee[]

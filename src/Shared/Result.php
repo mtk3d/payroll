@@ -9,15 +9,15 @@ use Payroll\Shared\Result\Success;
 
 abstract class Result
 {
-    protected string $reason;
+    protected string $reason = '';
     /** @var DomainEvent[] */
-    protected array $events;
+    protected array $events = [];
 
     /**
      * @param DomainEvent[]|null $events
      * @return Success
      */
-    public static function success(?DomainEvent ...$events): Success
+    public static function success(DomainEvent ...$events): Success
     {
         return new Success($events);
     }
@@ -26,7 +26,7 @@ abstract class Result
      * @param string $reason
      * @param DomainEvent[]|null $events
      */
-    public static function failure(string $reason, ?DomainEvent ...$events): Failure
+    public static function failure(string $reason, DomainEvent ...$events): Failure
     {
         return new Failure($reason, $events);
     }

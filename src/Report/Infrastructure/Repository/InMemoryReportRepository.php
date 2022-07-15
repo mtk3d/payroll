@@ -12,7 +12,7 @@ use Payroll\Shared\ReportId;
 class InMemoryReportRepository implements ReportRepository
 {
     /** @var Report[] */
-    private array $reports;
+    private array $reports = [];
 
     public function find(ReportId $reportId): Report
     {
@@ -20,7 +20,7 @@ class InMemoryReportRepository implements ReportRepository
             return $this->reports[$reportId->toString()];
         }
 
-        throw new ReportNotFoundException(sprintf('Report %s does not exist', $reportId));
+        throw new ReportNotFoundException(sprintf('Report %s does not exist', $reportId->toString()));
     }
 
     public function save(Report $report): void
