@@ -19,8 +19,8 @@ class InMemoryDomainEventBus implements DomainEventBus
         $this->events[] = $event;
     }
 
-    public function latestEvent(): DomainEvent
+    public function latestEvent(): ?DomainEvent
     {
-        return end($this->events);
+        return end($this->events) ?: null;
     }
 }
