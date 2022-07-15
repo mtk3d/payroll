@@ -12,5 +12,6 @@ class SetDepartmentBonus
         readonly DepartmentId $departmentId,
         readonly string $bonusType,
         readonly int $bonusValue
-    ) {}
+    ) {
+    }
 }

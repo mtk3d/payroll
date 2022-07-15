@@ -9,5 +9,7 @@ use Money\Money;
 
 class BonusCriteria
 {
-    public function __construct(readonly DateTimeImmutable $employmentDate, readonly Money $baseSalary) {}
+    public function __construct(readonly DateTimeImmutable $employmentDate, readonly Money $baseSalary)
+    {
+    }
 }

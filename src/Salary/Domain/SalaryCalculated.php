@@ -17,7 +17,8 @@ class SalaryCalculated implements DomainEvent
         readonly EmployeeId $id,
         readonly ReportId $reportId,
         readonly Money $amount
-    ) {}
+    ) {
+    }
 
     public static function newOne(EmployeeId $id, ReportId $reportId, Money $amount): self
     {

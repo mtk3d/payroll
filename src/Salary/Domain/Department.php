@@ -11,7 +11,8 @@ class Department
     public function __construct(
         readonly DepartmentId $id,
         private BonusRule $bonusRule
-    ) {}
+    ) {
+    }
 
     public function setBonusRule(BonusRule $bonusRule): void
     {

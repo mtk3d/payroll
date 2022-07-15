@@ -16,7 +16,8 @@ class Employee
         private DateTimeImmutable $employmentDate,
         private Money $baseSalary,
         private Department $department
-    ) {}
+    ) {
+    }
 
     public function bonusRule(): BonusRule
     {

@@ -13,7 +13,8 @@ class ReportProcessingFinished implements DomainEvent
     public function __construct(
         private UUID $eventId,
         readonly ReportId $reportId
-    ) {}
+    ) {
+    }
 
     public static function newOne(ReportId $reportId): self
     {

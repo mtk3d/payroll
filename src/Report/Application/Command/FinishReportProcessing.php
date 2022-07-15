@@ -8,5 +8,7 @@ use Payroll\Shared\ReportId;
 
 class FinishReportProcessing
 {
-    public function __construct(readonly ReportId $reportId) {}
+    public function __construct(readonly ReportId $reportId)
+    {
+    }
 }

@@ -18,7 +18,8 @@ class CreateEmployeeSalaryHandler
         private DomainEventBus $bus,
         private EmployeeRepository $employeeRepository,
         private DepartmentRepository $departmentRepository
-    ) {}
+    ) {
+    }
 
     /**
      * @throws DepartmentNotFoundException

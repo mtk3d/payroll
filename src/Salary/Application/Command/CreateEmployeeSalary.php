@@ -16,5 +16,6 @@ class CreateEmployeeSalary
         readonly DateTimeImmutable $employmentDate,
         readonly Money $baseSalary,
         readonly DepartmentId $departmentId
-    ) {}
+    ) {
+    }
 }

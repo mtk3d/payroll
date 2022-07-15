@@ -26,6 +26,7 @@
     "require": {
         "moneyphp/money": "^4.0",
         "ramsey/uuid": "^4.3",
-        "nesbot/carbon": "^2.59"
+        "nesbot/carbon": "^2.59",
+        "friendsofphp/php-cs-fixer": "^3.9"
     }
 }

@@ -16,7 +16,8 @@ class ReportCreated implements DomainEvent
         readonly ReportId $reportId,
         readonly DateTimeImmutable $date,
         readonly string $status
-    ) {}
+    ) {
+    }
 
     public static function newOne(ReportId $reportId, DateTimeImmutable $date, string $status): self
     {

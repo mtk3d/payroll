@@ -18,7 +18,8 @@ class GenerateSalaryReportHandler
         private DomainEventBus $bus,
         private ReportRepository $repository,
         private Clock $clock
-    ) {}
+    ) {
+    }
 
     public function handle(GenerateSalaryReport $command): void
     {

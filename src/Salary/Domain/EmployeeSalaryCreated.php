@@ -19,7 +19,8 @@ class EmployeeSalaryCreated implements DomainEvent
         readonly DateTimeImmutable $employmentDate,
         readonly Money $baseSalary,
         readonly DepartmentId $departmentId
-    ) {}
+    ) {
+    }
 
     public static function newOne(
         EmployeeId $id,

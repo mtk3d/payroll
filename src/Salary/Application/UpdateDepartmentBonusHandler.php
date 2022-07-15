@@ -15,7 +15,9 @@ use Payroll\Shared\DomainEventBus;
 
 class UpdateDepartmentBonusHandler
 {
-    public function __construct(private DomainEventBus $bus, private DepartmentRepository $repository) {}
+    public function __construct(private DomainEventBus $bus, private DepartmentRepository $repository)
+    {
+    }
 
     /**
      * @throws DepartmentNotFoundException

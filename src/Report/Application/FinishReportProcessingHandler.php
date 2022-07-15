@@ -10,7 +10,9 @@ use Payroll\Shared\DomainEventBus;
 
 class FinishReportProcessingHandler
 {
-    public function __construct(private DomainEventBus $bus, private ReportRepository $repository) {}
+    public function __construct(private DomainEventBus $bus, private ReportRepository $repository)
+    {
+    }
 
     public function handle(FinishReportProcessing $command): void
     {

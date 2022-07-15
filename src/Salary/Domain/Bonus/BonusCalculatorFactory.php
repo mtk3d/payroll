@@ -12,7 +12,9 @@ class BonusCalculatorFactory
     /** @var array<string, BonusCalculator> */
     private array $cache;
 
-    public function __construct(private Clock $clock) {}
+    public function __construct(private Clock $clock)
+    {
+    }
 
     public function create(BonusRule $bonusRule): BonusCalculator
     {

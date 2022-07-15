@@ -16,7 +16,8 @@ class CalculateSalariesHandler
         private DomainEventBus $bus,
         private EmployeeRepository $repository,
         private BonusCalculatorFactory $calculatorFactory
-    ) {}
+    ) {
+    }
 
     public function handle(CalculateSalaries $command): void
     {

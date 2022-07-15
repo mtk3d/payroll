@@ -15,7 +15,8 @@ class DepartmentBonusChanged implements DomainEvent
         readonly DepartmentId $departmentId,
         readonly string $bonusType,
         readonly int $bonusValue
-    ) {}
+    ) {
+    }
 
     public static function newOne(DepartmentId $departmentId, string $bonusType, int $bonusValue): self
     {
