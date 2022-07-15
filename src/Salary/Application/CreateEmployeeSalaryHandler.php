@@ -10,9 +10,10 @@ use Payroll\Salary\Domain\Employee;
 use Payroll\Salary\Domain\EmployeeRepository;
 use Payroll\Salary\Domain\EmployeeSalaryChanged;
 use Payroll\Salary\Domain\Exception\DepartmentNotFoundException;
+use Payroll\Shared\CommandHandler;
 use Payroll\Shared\DomainEventBus;
 
-class CreateEmployeeSalaryHandler
+class CreateEmployeeSalaryHandler implements CommandHandler
 {
     public function __construct(
         private DomainEventBus $bus,

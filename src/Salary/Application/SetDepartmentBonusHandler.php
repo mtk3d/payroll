@@ -11,9 +11,10 @@ use Payroll\Salary\Domain\Department;
 use Payroll\Salary\Domain\DepartmentBonusChanged;
 use Payroll\Salary\Domain\DepartmentRepository;
 use Payroll\Salary\Domain\Exception\DepartmentAlreadyExistException;
+use Payroll\Shared\CommandHandler;
 use Payroll\Shared\DomainEventBus;
 
-class SetDepartmentBonusHandler
+class SetDepartmentBonusHandler implements CommandHandler
 {
     public function __construct(private DomainEventBus $bus, private DepartmentRepository $repository)
     {

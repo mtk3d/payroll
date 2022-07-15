@@ -9,9 +9,10 @@ use Payroll\Salary\Domain\Bonus\BonusCalculatorFactory;
 use Payroll\Salary\Domain\EmployeeRepository;
 use Payroll\Salary\Domain\ReportSalariesCalculated;
 use Payroll\Salary\Domain\SalaryCalculated;
+use Payroll\Shared\CommandHandler;
 use Payroll\Shared\DomainEventBus;
 
-class CalculateReportSalariesHandler
+class CalculateReportSalariesHandler implements CommandHandler
 {
     public function __construct(
         private DomainEventBus $bus,

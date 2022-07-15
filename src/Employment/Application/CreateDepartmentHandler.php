@@ -8,9 +8,10 @@ use Payroll\Employment\Application\Command\CreateDepartment;
 use Payroll\Employment\Domain\Department;
 use Payroll\Employment\Domain\DepartmentRegistered;
 use Payroll\Employment\Domain\DepartmentRepository;
+use Payroll\Shared\CommandHandler;
 use Payroll\Shared\DomainEventBus;
 
-class CreateDepartmentHandler
+class CreateDepartmentHandler implements CommandHandler
 {
     public function __construct(private DomainEventBus $bus, private DepartmentRepository $repository)
     {

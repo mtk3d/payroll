@@ -1,22 +1,44 @@
 framework:
     messenger:
-        # Uncomment this (and the failed transport below) to send failed messages to this transport for later handling.
-        # failure_transport: failed
+        default_bus: command.bus
+        buses:
+            command.bus:
+                middleware:
+                    - doctrine_transaction
+            event.bus: ~
 
         transports:
-            # https://symfony.com/doc/current/messenger.html#transport-configuration
-            # async: '%env(MESSENGER_TRANSPORT_DSN)%'
-            # failed: 'doctrine://default?queue_name=failed'
-            # sync: 'sync://'
+             async: '%env(MESSENGER_TRANSPORT_DSN)%'
+             sync: 'sync://'
 
         routing:
-            # Route your messages to the transports
-            # 'App\Message\YourMessage': async
+            # === COMMANDS ===
+            # Salary
+            Payroll\Salary\Application\Command\CalculateReportSalaries: sync
+            Payroll\Salary\Application\Command\CreateEmployeeSalary: sync
+            Payroll\Salary\Application\Command\SetDepartmentBonus: sync
+            # Report
+            Payroll\Report\Application\Command\FinishReportProcessing: sync
+            Payroll\Report\Application\Command\GenerateSalaryReport: async
+            # Employment
+            Payroll\Employment\Application\Command\CreateDepartment: sync
+            Payroll\Employment\Application\Command\CreateEmployee: sync
+
+            # === EVENTS ===
+            # Salary
+            Payroll\Salary\Domain\DepartmentBonusChanged: sync
+            Payroll\Salary\Domain\EmployeeSalaryChanged: sync
+            Payroll\Salary\Domain\ReportSalariesCalculated: sync
+            Payroll\Salary\Domain\SalaryCalculated: sync
+            # Report
+            Payroll\Report\Domain\ReportCreated: sync
+            Payroll\Report\Domain\ReportProcessingFinished: sync
+            # Employment
+            Payroll\Employment\Domain\DepartmentRegistered: sync
+            Payroll\Employment\Domain\EmployeeRegistered: sync
 
 # when@test:
 #    framework:
 #        messenger:
 #            transports:
-#                # replace with your transport name here (e.g., my_transport: 'in-memory://')
-#                # For more Messenger testing tools, see https://github.com/zenstruck/messenger-test
 #                async: 'in-memory://'

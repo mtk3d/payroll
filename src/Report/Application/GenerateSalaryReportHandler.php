@@ -10,9 +10,10 @@ use Payroll\Report\Domain\ReportCreated;
 use Payroll\Report\Domain\ReportRepository;
 use Payroll\Report\Domain\ReportStatus;
 use Payroll\Shared\Clock;
+use Payroll\Shared\CommandHandler;
 use Payroll\Shared\DomainEventBus;
 
-class GenerateSalaryReportHandler
+class GenerateSalaryReportHandler implements CommandHandler
 {
     public function __construct(
         private DomainEventBus $bus,

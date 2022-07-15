@@ -9,9 +9,10 @@ use Payroll\Employment\Domain\DepartmentRepository;
 use Payroll\Employment\Domain\Employee;
 use Payroll\Employment\Domain\EmployeeRegistered;
 use Payroll\Employment\Domain\EmployeeRepository;
+use Payroll\Shared\CommandHandler;
 use Payroll\Shared\DomainEventBus;
 
-class CreateEmployeeHandler
+class CreateEmployeeHandler implements CommandHandler
 {
     public function __construct(
         private DomainEventBus $bus,
