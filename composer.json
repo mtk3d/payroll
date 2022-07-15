@@ -2,15 +2,16 @@
     "name": "mateuszcholewka/payroll",
     "autoload": {
         "psr-4": {
-            "Test\\": "test/"
+            "Test\\": "tests/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Payroll\\": "src/"
+            "Payroll\\": "src/",
+            "App\\": "app/"
         },
         "files": [
-            "test/Fixture/EmployeeFixture.php"
+            "tests/Fixture/EmployeeFixture.php"
         ]
     },
     "authors": [
@@ -21,12 +22,40 @@
     ],
     "require-dev": {
         "phpunit/phpunit": "^9.5",
-        "vimeo/psalm": "^4.24"
+        "vimeo/psalm": "^4.24",
+        "symfony/dotenv": "^6.1",
+        "symfony/maker-bundle": "^1.44",
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
+        "symfony/stopwatch": "^6.1",
+        "symfony/web-profiler-bundle": "^6.1"
     },
     "require": {
         "moneyphp/money": "^4.0",
         "ramsey/uuid": "^4.3",
         "nesbot/carbon": "^2.59",
-        "friendsofphp/php-cs-fixer": "^3.9"
+        "friendsofphp/php-cs-fixer": "^3.9",
+        "symfony/flex": "^2.2",
+        "sensio/framework-extra-bundle": "^6.2",
+        "symfony/asset": "^6.1",
+        "symfony/twig-bundle": "^6.1",
+        "twig/extra-bundle": "^2.12|^3.0",
+        "twig/twig": "^2.12|^3.0",
+        "symfony/monolog-bundle": "^3.8",
+        "symfony/form": "^6.1",
+        "symfony/validator": "^6.1",
+        "symfony/runtime": "^6.1",
+        "symfony/yaml": "^6.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/flex": true,
+            "symfony/runtime": true
+        }
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        }
     }
 }
