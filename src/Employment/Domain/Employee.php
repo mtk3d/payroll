@@ -13,5 +13,6 @@ class Employee
         private string $firstname,
         private string $lastname,
         private Department $department
-    ) {}
+    ) {
+    }
 }

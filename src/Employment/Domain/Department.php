@@ -11,5 +11,6 @@ class Department
     public function __construct(
         readonly DepartmentId $id,
         private string $name
-    ) {}
+    ) {
+    }
 }

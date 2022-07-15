@@ -14,7 +14,6 @@ class CreateDepartmentHandler
 {
     public function __construct(private DomainEventBus $bus, private DepartmentRepository $repository)
     {
-
     }
 
     public function handle(CreateDepartment $command): void

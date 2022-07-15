@@ -13,7 +13,8 @@ use Payroll\Shared\CommandBus;
 class ReportGeneratingProcess
 {
     public function __construct(private CommandBus $bus)
-    {}
+    {
+    }
 
     public function handleSalaryReportCreated(ReportCreated $command): void
     {

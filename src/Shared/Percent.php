@@ -6,7 +6,9 @@ namespace Payroll\Shared;
 
 class Percent
 {
-    public function __construct(readonly int $value) {}
+    public function __construct(readonly int $value)
+    {
+    }
 
     public static function of(int $value): self
     {

@@ -15,5 +15,6 @@ class CreateEmployee implements Command
         readonly string $firstname,
         readonly string $lastname,
         readonly DepartmentId $departmentId
-    ) {}
+    ) {
+    }
 }

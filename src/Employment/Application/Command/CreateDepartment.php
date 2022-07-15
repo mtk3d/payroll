@@ -12,5 +12,6 @@ class CreateDepartment implements Command
     public function __construct(
         readonly DepartmentId $id,
         readonly string $name
-    ) {}
+    ) {
+    }
 }

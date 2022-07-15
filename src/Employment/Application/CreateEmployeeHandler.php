@@ -17,9 +17,7 @@ class CreateEmployeeHandler
         private DomainEventBus $bus,
         private EmployeeRepository $employeeRepository,
         private DepartmentRepository $departmentRepository
-    )
-    {
-
+    ) {
     }
 
     public function handle(CreateEmployee $command): void
