@@ -6,23 +6,24 @@ namespace Payroll\Salary\Domain\Bonus;
 
 use InvalidArgumentException;
 use Money\Money;
+use Payroll\Shared\Percent;
 
 class PercentageBonusCalculator implements BonusCalculator
 {
-    private float $multiplier;
+    private Percent $percent;
 
     public function __construct(int $value)
     {
-        $this->multiplier = $value / 10000;
-
-        if (0 > $this->multiplier) {
+        if (0 > $value) {
             throw new InvalidArgumentException('PercentageBonus cannot be lower than zero');
         }
+
+        $this->percent = Percent::of($value);
     }
 
     public function calculate(BonusCriteria $criteria): Money
     {
         $baseSalary = $criteria->baseSalary;
-        return $baseSalary->multiply(strval($this->multiplier));
+        return $baseSalary->multiply($this->percent->toString());
     }
 }
