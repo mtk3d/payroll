@@ -37,3 +37,7 @@ when@test:
             arguments:
                 $em: '@doctrine.orm.entity_manager'
             public: true
+        Payroll\Report\Infrastructure\Repository\DoctrineReportRepository:
+            arguments:
+                $em: '@doctrine.orm.entity_manager'
+            public: true

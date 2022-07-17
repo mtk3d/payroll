@@ -2,13 +2,13 @@
     "name": "mateuszcholewka/payroll",
     "autoload": {
         "psr-4": {
-            "Test\\": "tests/"
+            "Payroll\\": "src/",
+            "App\\": "app/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Payroll\\": "src/",
-            "App\\": "app/"
+            "Test\\": "tests/"
         },
         "files": [
             "tests/Fixture/EmployeeFixture.php"

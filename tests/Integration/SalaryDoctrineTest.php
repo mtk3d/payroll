@@ -4,17 +4,19 @@ declare(strict_types=1);
 
 namespace Test\Integration;
 
-use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\Tools\SchemaTool;
 use Payroll\Salary\Domain\Exception\DepartmentNotFoundException;
 use Payroll\Salary\Infrastructure\Repository\DoctrineDepartmentRepository;
 use Payroll\Salary\Infrastructure\Repository\DoctrineEmployeeRepository;
 use Payroll\Shared\UUID\DepartmentId;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Symfony\Component\HttpKernel\KernelInterface;
+use Test\InitDatabaseTrait;
+use function aDepartment;
+use function aEmployee;
 
 class SalaryDoctrineTest extends KernelTestCase
 {
+    use InitDatabaseTrait;
+
     private ?DoctrineEmployeeRepository $employeeRepository;
     private ?DoctrineDepartmentRepository $departmentRepository;
 
@@ -43,14 +45,5 @@ class SalaryDoctrineTest extends KernelTestCase
         self::expectException(DepartmentNotFoundException::class);
         $departmentId = DepartmentId::newOne();
         $this->departmentRepository->find($departmentId);
-    }
-
-    private function initDatabase(KernelInterface $kernel): void
-    {
-        /** @var EntityManagerInterface $entityManager */
-        $entityManager = $kernel->getContainer()->get('doctrine.orm.entity_manager');
-        $metaData = $entityManager->getMetadataFactory()->getAllMetadata();
-        $schemaTool = new SchemaTool($entityManager);
-        $schemaTool->updateSchema($metaData);
     }
 }

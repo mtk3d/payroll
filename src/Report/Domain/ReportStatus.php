@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Payroll\Report\Domain;
 
-enum ReportStatus
+enum ReportStatus: string
 {
-    case PROCESSING;
-    case GENERATED;
+    case PROCESSING = 'PROCESSING';
+    case GENERATED = 'GENERATED';
 }
