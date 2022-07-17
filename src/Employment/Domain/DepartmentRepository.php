@@ -10,5 +10,8 @@ interface DepartmentRepository
 {
     public function save(Department $department): void;
 
+    /**
+     * @throws DepartmentNotFoundException
+     */
     public function find(DepartmentId $departmentId): Department;
 }

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Payroll\Salary\Infrastructure\Repository;
+namespace Payroll\Employment\Infrastructure\Repository;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Payroll\Salary\Domain\Department;
-use Payroll\Salary\Domain\DepartmentRepository;
-use Payroll\Salary\Domain\Exception\DepartmentNotFoundException;
+use Payroll\Employment\Domain\Department;
+use Payroll\Employment\Domain\DepartmentNotFoundException;
+use Payroll\Employment\Domain\DepartmentRepository;
 use Payroll\Shared\UUID\DepartmentId;
 
 class DoctrineDepartmentRepository implements DepartmentRepository

@@ -41,3 +41,11 @@ when@test:
             arguments:
                 $em: '@doctrine.orm.entity_manager'
             public: true
+        Payroll\Employment\Infrastructure\Repository\DoctrineEmployeeRepository:
+            arguments:
+                $em: '@doctrine.orm.entity_manager'
+            public: true
+        Payroll\Employment\Infrastructure\Repository\DoctrineDepartmentRepository:
+            arguments:
+                $em: '@doctrine.orm.entity_manager'
+            public: true

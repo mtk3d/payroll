@@ -10,11 +10,8 @@ use Payroll\Salary\Domain\EmployeeRepository;
 
 class DoctrineEmployeeRepository implements EmployeeRepository
 {
-    private EntityManagerInterface $em;
-
-    public function __construct(EntityManagerInterface $em)
+    public function __construct(private EntityManagerInterface $em)
     {
-        $this->em = $em;
     }
 
     public function all(): array

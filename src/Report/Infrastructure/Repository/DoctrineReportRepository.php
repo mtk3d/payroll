@@ -12,11 +12,8 @@ use Payroll\Shared\UUID\ReportId;
 
 class DoctrineReportRepository implements ReportRepository
 {
-    private EntityManagerInterface $em;
-
-    public function __construct(EntityManagerInterface $em)
+    public function __construct(private EntityManagerInterface $em)
     {
-        $this->em = $em;
     }
 
     public function find(ReportId $reportId): Report
