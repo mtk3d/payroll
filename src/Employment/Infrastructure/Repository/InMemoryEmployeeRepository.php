@@ -6,7 +6,7 @@ namespace Payroll\Employment\Infrastructure\Repository;
 
 use Payroll\Employment\Domain\Employee;
 use Payroll\Employment\Domain\EmployeeRepository;
-use Payroll\Shared\EmployeeId;
+use Payroll\Shared\UUID\EmployeeId;
 
 class InMemoryEmployeeRepository implements EmployeeRepository
 {

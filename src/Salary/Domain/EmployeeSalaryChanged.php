@@ -6,10 +6,10 @@ namespace Payroll\Salary\Domain;
 
 use DateTimeImmutable;
 use Money\Money;
-use Payroll\Shared\DepartmentId;
 use Payroll\Shared\DomainEvent;
-use Payroll\Shared\EmployeeId;
-use Payroll\Shared\UUID;
+use Payroll\Shared\UUID\DepartmentId;
+use Payroll\Shared\UUID\EmployeeId;
+use Payroll\Shared\UUID\UUID;
 
 class EmployeeSalaryChanged implements DomainEvent
 {

@@ -6,9 +6,9 @@ namespace Payroll\Salary\Domain;
 
 use Money\Money;
 use Payroll\Shared\DomainEvent;
-use Payroll\Shared\EmployeeId;
-use Payroll\Shared\ReportId;
-use Payroll\Shared\UUID;
+use Payroll\Shared\UUID\EmployeeId;
+use Payroll\Shared\UUID\ReportId;
+use Payroll\Shared\UUID\UUID;
 
 class SalaryCalculated implements DomainEvent
 {

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Payroll\Employment\Domain;
 
-use Payroll\Shared\DepartmentId;
 use Payroll\Shared\DomainEvent;
-use Payroll\Shared\EmployeeId;
-use Payroll\Shared\UUID;
+use Payroll\Shared\UUID\DepartmentId;
+use Payroll\Shared\UUID\EmployeeId;
+use Payroll\Shared\UUID\UUID;
 
 class EmployeeRegistered implements DomainEvent
 {

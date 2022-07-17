@@ -6,7 +6,7 @@ namespace Payroll\Employment\Infrastructure\Repository;
 
 use Payroll\Employment\Domain\Department;
 use Payroll\Employment\Domain\DepartmentRepository;
-use Payroll\Shared\DepartmentId;
+use Payroll\Shared\UUID\DepartmentId;
 
 class InMemoryDepartmentRepository implements DepartmentRepository
 {

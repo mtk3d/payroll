@@ -45,7 +45,9 @@
         "symfony/validator": "^6.1",
         "symfony/runtime": "^6.1",
         "symfony/yaml": "^6.1",
-        "symfony/messenger": "^6.1"
+        "symfony/messenger": "^6.1",
+        "doctrine/doctrine-migrations-bundle": "^3.2",
+        "symfony/doctrine-messenger": "^6.1"
     },
     "config": {
         "allow-plugins": {

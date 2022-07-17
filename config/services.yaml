@@ -16,7 +16,24 @@ services:
         exclude:
             - '../app/Kernel.php'
 
+    Payroll\Shared\InMemoryDomainEventBus: ~
+    Payroll\Shared\DomainEventBus: '@Payroll\Shared\InMemoryDomainEventBus'
+    Payroll\Salary\Infrastructure\Repository\DoctrineDepartmentRepository: ~
+    Payroll\Salary\Infrastructure\Repository\DoctrineEmployeeRepository: ~
+    Payroll\Salary\Domain\DepartmentRepository: '@Payroll\Salary\Infrastructure\Repository\DoctrineDepartmentRepository'
+
     _instanceof:
         Payroll\Shared\CommandHandler:
             tags:
                 - { name: messenger.message_handler, bus: command.bus }
+
+when@test:
+    services:
+        Payroll\Salary\Infrastructure\Repository\DoctrineEmployeeRepository:
+            arguments:
+                $em: '@doctrine.orm.entity_manager'
+            public: true
+        Payroll\Salary\Infrastructure\Repository\DoctrineDepartmentRepository:
+            arguments:
+                $em: '@doctrine.orm.entity_manager'
+            public: true

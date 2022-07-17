@@ -7,8 +7,8 @@ use Payroll\Salary\Domain\Bonus\BonusType;
 use Payroll\Salary\Domain\BonusRule;
 use Payroll\Salary\Domain\Department;
 use Payroll\Salary\Domain\Employee;
-use Payroll\Shared\DepartmentId;
-use Payroll\Shared\EmployeeId;
+use Payroll\Shared\UUID\DepartmentId;
+use Payroll\Shared\UUID\EmployeeId;
 
 function aEmployee(?DateTimeImmutable $employmentDate = null, ?int $baseSalary = null, ?Department $department = null): Employee
 {

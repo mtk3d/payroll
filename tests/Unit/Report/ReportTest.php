@@ -15,7 +15,7 @@ use Payroll\Report\Domain\ReportProcessingFinished;
 use Payroll\Report\Infrastructure\Repository\InMemoryReportRepository;
 use Payroll\Shared\Clock;
 use Payroll\Shared\InMemoryDomainEventBus;
-use Payroll\Shared\ReportId;
+use Payroll\Shared\UUID\ReportId;
 use PHPUnit\Framework\TestCase;
 
 class ReportTest extends TestCase

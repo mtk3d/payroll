@@ -7,7 +7,7 @@ namespace Payroll\Report\Infrastructure\Repository;
 use Payroll\Report\Domain\Exception\ReportNotFoundException;
 use Payroll\Report\Domain\Report;
 use Payroll\Report\Domain\ReportRepository;
-use Payroll\Shared\ReportId;
+use Payroll\Shared\UUID\ReportId;
 
 class InMemoryReportRepository implements ReportRepository
 {

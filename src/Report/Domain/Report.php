@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Payroll\Report\Domain;
 
 use DateTimeImmutable;
-use Payroll\Shared\ReportId;
 use Payroll\Shared\Result;
+use Payroll\Shared\UUID\ReportId;
 
 class Report
 {

@@ -32,7 +32,7 @@ class CreateEmployeeSalaryHandler implements CommandHandler
         $this->employeeRepository->save($employee);
 
         $this->bus->dispatch(EmployeeSalaryChanged::newOne(
-            $employee->employeeId,
+            $employee->id,
             $employee->bonusCriteria()->employmentDate,
             $employee->bonusCriteria()->baseSalary,
             $department->id

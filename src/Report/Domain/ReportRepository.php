@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Payroll\Report\Domain;
 
-use Payroll\Shared\ReportId;
+use Payroll\Shared\UUID\ReportId;
 
 interface ReportRepository
 {

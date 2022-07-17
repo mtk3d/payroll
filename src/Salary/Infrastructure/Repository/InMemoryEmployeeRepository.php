@@ -22,6 +22,6 @@ class InMemoryEmployeeRepository implements EmployeeRepository
 
     public function save(Employee $employee): void
     {
-        $this->employees[$employee->employeeId->toString()] = $employee;
+        $this->employees[$employee->id->toString()] = $employee;
     }
 }

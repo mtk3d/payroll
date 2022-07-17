@@ -15,7 +15,7 @@ use Payroll\Salary\Domain\SalaryCalculated;
 use Payroll\Salary\Infrastructure\Repository\InMemoryEmployeeRepository;
 use Payroll\Shared\Clock;
 use Payroll\Shared\InMemoryDomainEventBus;
-use Payroll\Shared\ReportId;
+use Payroll\Shared\UUID\ReportId;
 use PHPUnit\Framework\TestCase;
 
 class SalaryTest extends TestCase
@@ -60,7 +60,7 @@ class SalaryTest extends TestCase
         $dispatched = $this->bus->firstEvent();
         $expected = new SalaryCalculated(
             $dispatched->eventId(),
-            $employee->employeeId,
+            $employee->id,
             $reportId,
             Money::USD($baseSalary),
             Money::USD($bonus)

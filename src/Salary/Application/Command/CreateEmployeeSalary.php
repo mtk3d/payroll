@@ -7,8 +7,8 @@ namespace Payroll\Salary\Application\Command;
 use DateTimeImmutable;
 use Money\Money;
 use Payroll\Shared\Command;
-use Payroll\Shared\DepartmentId;
-use Payroll\Shared\EmployeeId;
+use Payroll\Shared\UUID\DepartmentId;
+use Payroll\Shared\UUID\EmployeeId;
 
 class CreateEmployeeSalary implements Command
 {

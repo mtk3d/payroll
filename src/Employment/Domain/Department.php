@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Payroll\Employment\Domain;
 
-use Payroll\Shared\DepartmentId;
+use Payroll\Shared\UUID\DepartmentId;
 
 class Department
 {

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Payroll\Report\Domain;
 
 use Payroll\Shared\DomainEvent;
-use Payroll\Shared\ReportId;
-use Payroll\Shared\UUID;
+use Payroll\Shared\UUID\ReportId;
+use Payroll\Shared\UUID\UUID;
 
 class ReportProcessingFinished implements DomainEvent
 {

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Payroll\Salary\Application\Command;
 
 use Payroll\Shared\Command;
-use Payroll\Shared\ReportId;
+use Payroll\Shared\UUID\ReportId;
 
 class CalculateReportSalaries implements Command
 {

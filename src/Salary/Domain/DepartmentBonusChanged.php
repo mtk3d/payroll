@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Payroll\Salary\Domain;
 
-use Payroll\Shared\DepartmentId;
 use Payroll\Shared\DomainEvent;
-use Payroll\Shared\UUID;
+use Payroll\Shared\UUID\DepartmentId;
+use Payroll\Shared\UUID\UUID;
 
 class DepartmentBonusChanged implements DomainEvent
 {

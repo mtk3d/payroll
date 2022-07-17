@@ -6,10 +6,10 @@ namespace Payroll\Salary\Domain\Bonus;
 
 use InvalidArgumentException;
 
-enum BonusType
+enum BonusType: string
 {
-    case PERCENTAGE;
-    case PERMANENT;
+    case PERCENTAGE = 'PERCENTAGE';
+    case PERMANENT = 'PERMANENT';
 
     public static function fromString(string $type): self
     {

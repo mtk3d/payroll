@@ -7,12 +7,12 @@ namespace Payroll\Salary\Domain;
 use DateTimeImmutable;
 use Money\Money;
 use Payroll\Salary\Domain\Bonus\BonusCriteria;
-use Payroll\Shared\EmployeeId;
+use Payroll\Shared\UUID\EmployeeId;
 
 class Employee
 {
     public function __construct(
-        readonly EmployeeId $employeeId,
+        readonly EmployeeId $id,
         private DateTimeImmutable $employmentDate,
         private Money $baseSalary,
         private Department $department

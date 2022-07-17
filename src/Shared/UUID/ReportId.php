@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Payroll\Shared;
+namespace Payroll\Shared\UUID;
 
-class EmployeeId extends AbstractId
+class ReportId extends AbstractId
 {
     public static function of(string $id): self
     {

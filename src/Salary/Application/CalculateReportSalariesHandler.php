@@ -30,7 +30,7 @@ class CalculateReportSalariesHandler implements CommandHandler
             $bonus = $calculator->calculate($bonusCriteria);
             $this->bus->dispatch(
                 SalaryCalculated::newOne(
-                    $employee->employeeId,
+                    $employee->id,
                     $command->reportId,
                     $bonusCriteria->baseSalary,
                     $bonus
