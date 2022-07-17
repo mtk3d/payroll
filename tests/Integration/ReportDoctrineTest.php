@@ -39,7 +39,6 @@ class ReportDoctrineTest extends KernelTestCase
     public function testReportNotFound(): void
     {
         self::expectException(ReportNotFoundException::class);
-        $reportId = ReportId::newOne();
-        $this->reportRepository->find($reportId);
+        $this->reportRepository->find(ReportId::newOne());
     }
 }

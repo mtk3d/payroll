@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Integration;
 
 use Payroll\Employment\Domain\Department;
+use Payroll\Employment\Domain\DepartmentNotFoundException;
 use Payroll\Employment\Domain\Employee;
 use Payroll\Employment\Infrastructure\Repository\DoctrineDepartmentRepository;
 use Payroll\Employment\Infrastructure\Repository\DoctrineEmployeeRepository;
@@ -49,5 +50,11 @@ class EmploymentDoctrineTest extends KernelTestCase
         $this->employeeRepository->save($employee);
 
         self::assertEquals($employee, $this->employeeRepository->find($employeeId));
+    }
+
+    public function testDepartmentNotFound(): void
+    {
+        self::expectException(DepartmentNotFoundException::class);
+        $this->departmentRepository->find(DepartmentId::newOne());
     }
 }

@@ -44,7 +44,6 @@ class SalaryDoctrineTest extends KernelTestCase
     public function testDepartmentNotFound(): void
     {
         self::expectException(DepartmentNotFoundException::class);
-        $departmentId = DepartmentId::newOne();
-        $this->departmentRepository->find($departmentId);
+        $this->departmentRepository->find(DepartmentId::newOne());
     }
 }
