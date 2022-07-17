@@ -4,14 +4,15 @@ declare(strict_types=1);
 
 namespace Test\Integration;
 
+use function aDepartment;
+use function aEmployee;
+
 use Payroll\Salary\Domain\Exception\DepartmentNotFoundException;
 use Payroll\Salary\Infrastructure\Repository\DoctrineDepartmentRepository;
 use Payroll\Salary\Infrastructure\Repository\DoctrineEmployeeRepository;
 use Payroll\Shared\UUID\DepartmentId;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Test\InitDatabaseTrait;
-use function aDepartment;
-use function aEmployee;
 
 class SalaryDoctrineTest extends KernelTestCase
 {

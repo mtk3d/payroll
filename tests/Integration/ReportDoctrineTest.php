@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Test\Integration;
 
 use DateTimeImmutable;
+use Payroll\Report\Domain\Exception\ReportNotFoundException;
 use Payroll\Report\Domain\Report;
 use Payroll\Report\Infrastructure\Repository\DoctrineReportRepository;
 use Payroll\Shared\UUID\ReportId;
@@ -29,8 +30,16 @@ class ReportDoctrineTest extends KernelTestCase
     {
         $reportId = ReportId::newOne();
         $report = new Report($reportId, new DateTimeImmutable());
+
         $this->reportRepository->save($report);
 
         self::assertEquals($report, $this->reportRepository->find($reportId));
+    }
+
+    public function testReportNotFound(): void
+    {
+        self::expectException(ReportNotFoundException::class);
+        $reportId = ReportId::newOne();
+        $this->reportRepository->find($reportId);
     }
 }

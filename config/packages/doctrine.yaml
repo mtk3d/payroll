@@ -26,6 +26,12 @@ doctrine:
                 dir: '%kernel.project_dir%/src/Report/Infrastructure/config'
                 prefix: 'Payroll\Report\Domain'
                 alias: Report
+            Employment:
+                type: xml
+                is_bundle: false
+                dir: '%kernel.project_dir%/src/Employment/Infrastructure/config'
+                prefix: 'Payroll\Employment\Domain'
+                alias: Employment
 
 when@test:
     doctrine:
