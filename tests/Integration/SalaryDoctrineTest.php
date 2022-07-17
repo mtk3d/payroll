@@ -6,8 +6,10 @@ namespace Test\Integration;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Tools\SchemaTool;
+use Payroll\Salary\Domain\Exception\DepartmentNotFoundException;
 use Payroll\Salary\Infrastructure\Repository\DoctrineDepartmentRepository;
 use Payroll\Salary\Infrastructure\Repository\DoctrineEmployeeRepository;
+use Payroll\Shared\UUID\DepartmentId;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\HttpKernel\KernelInterface;
 
@@ -34,6 +36,13 @@ class SalaryDoctrineTest extends KernelTestCase
 
         self::assertEquals($department, $this->departmentRepository->find($department->id));
         self::assertContains($employee, $this->employeeRepository->all());
+    }
+
+    public function testDepartmentNotFound(): void
+    {
+        self::expectException(DepartmentNotFoundException::class);
+        $departmentId = DepartmentId::newOne();
+        $this->departmentRepository->find($departmentId);
     }
 
     private function initDatabase(KernelInterface $kernel): void
