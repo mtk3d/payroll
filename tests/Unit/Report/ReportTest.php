@@ -43,7 +43,7 @@ class ReportTest extends TestCase
 
         // When
         $command = new GenerateSalaryReport($reportId);
-        $handler->handle($command);
+        $handler->__invoke($command);
 
         // Then
         $event = $this->bus->latestEvent();
@@ -64,7 +64,7 @@ class ReportTest extends TestCase
 
         // When
         $command = new FinishReportProcessing($reportId);
-        $handler->handle($command);
+        $handler->__invoke($command);
 
         // Then
         $event = $this->bus->latestEvent();

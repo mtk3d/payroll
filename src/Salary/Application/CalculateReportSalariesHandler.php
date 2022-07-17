@@ -11,7 +11,9 @@ use Payroll\Salary\Domain\ReportSalariesCalculated;
 use Payroll\Salary\Domain\SalaryCalculated;
 use Payroll\Shared\CommandHandler;
 use Payroll\Shared\DomainEventBus;
+use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
+#[AsMessageHandler]
 class CalculateReportSalariesHandler implements CommandHandler
 {
     public function __construct(
@@ -21,7 +23,7 @@ class CalculateReportSalariesHandler implements CommandHandler
     ) {
     }
 
-    public function handle(CalculateReportSalaries $command): void
+    public function __invoke(CalculateReportSalaries $command): void
     {
         $employees = $this->repository->all();
         foreach ($employees as $employee) {

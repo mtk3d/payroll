@@ -11,7 +11,9 @@ use Payroll\Employment\Domain\EmployeeRegistered;
 use Payroll\Employment\Domain\EmployeeRepository;
 use Payroll\Shared\CommandHandler;
 use Payroll\Shared\DomainEventBus;
+use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
+#[AsMessageHandler]
 class CreateEmployeeHandler implements CommandHandler
 {
     public function __construct(
@@ -21,7 +23,7 @@ class CreateEmployeeHandler implements CommandHandler
     ) {
     }
 
-    public function handle(CreateEmployee $command): void
+    public function __invoke(CreateEmployee $command): void
     {
         $department = $this->departmentRepository->find($command->departmentId);
         $employee = new Employee(

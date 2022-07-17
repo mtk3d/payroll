@@ -15,12 +15,35 @@ services:
         resource: '../app/'
         exclude:
             - '../app/Kernel.php'
+    Payroll\:
+        resource: '../src/'
 
-    Payroll\Shared\InMemoryDomainEventBus: ~
-    Payroll\Shared\DomainEventBus: '@Payroll\Shared\InMemoryDomainEventBus'
-    Payroll\Salary\Infrastructure\Repository\DoctrineDepartmentRepository: ~
-    Payroll\Salary\Infrastructure\Repository\DoctrineEmployeeRepository: ~
+    Payroll\Shared\MessengerCommandBus:
+        arguments:
+            $bus: '@messenger.command.bus'
+    Payroll\Shared\MessengerDomainEventBus: ~
+    Payroll\Shared\CommandBus: '@Payroll\Shared\MessengerCommandBus'
+    Payroll\Shared\DomainEventBus: '@Payroll\Shared\MessengerDomainEventBus'
+    Payroll\Salary\Infrastructure\Repository\DoctrineDepartmentRepository:
+        arguments:
+            $em: '@doctrine.orm.entity_manager'
+    Payroll\Salary\Infrastructure\Repository\DoctrineEmployeeRepository:
+        arguments:
+            $em: '@doctrine.orm.entity_manager'
+    Payroll\Employment\Domain\DepartmentRepository: '@Payroll\Employment\Infrastructure\Repository\DoctrineDepartmentRepository'
     Payroll\Salary\Domain\DepartmentRepository: '@Payroll\Salary\Infrastructure\Repository\DoctrineDepartmentRepository'
+    Payroll\Salary\Domain\EmployeeRepository: '@Payroll\Salary\Infrastructure\Repository\DoctrineEmployeeRepository'
+    Payroll\Employment\Domain\EmployeeRepository: '@Payroll\Employment\Infrastructure\Repository\DoctrineEmployeeRepository'
+    Payroll\Report\Domain\ReportRepository: '@Payroll\Report\Infrastructure\Repository\DoctrineReportRepository'
+    Payroll\Report\Infrastructure\Repository\DoctrineReportRepository:
+        arguments:
+            $em: '@doctrine.orm.entity_manager'
+    Payroll\Employment\Infrastructure\Repository\DoctrineEmployeeRepository:
+        arguments:
+            $em: '@doctrine.orm.entity_manager'
+    Payroll\Employment\Infrastructure\Repository\DoctrineDepartmentRepository:
+        arguments:
+            $em: '@doctrine.orm.entity_manager'
 
     _instanceof:
         Payroll\Shared\CommandHandler:
@@ -30,22 +53,28 @@ services:
 when@test:
     services:
         Payroll\Salary\Infrastructure\Repository\DoctrineEmployeeRepository:
-            arguments:
-                $em: '@doctrine.orm.entity_manager'
             public: true
         Payroll\Salary\Infrastructure\Repository\DoctrineDepartmentRepository:
             arguments:
                 $em: '@doctrine.orm.entity_manager'
             public: true
         Payroll\Report\Infrastructure\Repository\DoctrineReportRepository:
-            arguments:
-                $em: '@doctrine.orm.entity_manager'
             public: true
         Payroll\Employment\Infrastructure\Repository\DoctrineEmployeeRepository:
-            arguments:
-                $em: '@doctrine.orm.entity_manager'
             public: true
         Payroll\Employment\Infrastructure\Repository\DoctrineDepartmentRepository:
             arguments:
                 $em: '@doctrine.orm.entity_manager'
+            public: true
+        Payroll\Shared\MessengerCommandBus:
+            arguments:
+                $bus: '@command.bus'
+            public: true
+        Payroll\Shared\MessengerQueryBus:
+            arguments:
+                $bus: '@query.bus'
+            public: true
+        Payroll\Shared\MessengerDomainEventBus:
+            arguments:
+                $bus: '@event.bus'
             public: true

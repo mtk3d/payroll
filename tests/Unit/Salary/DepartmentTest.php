@@ -38,7 +38,7 @@ class DepartmentTest extends TestCase
 
         // When
         $command = new SetDepartmentBonus($departmentId, $bonusType, $bonusFactor);
-        $this->setDepartmentBonusHandler->handle($command);
+        $this->setDepartmentBonusHandler->__invoke($command);
 
         // Then
         $event = $this->bus->latestEvent();
@@ -66,7 +66,7 @@ class DepartmentTest extends TestCase
 
         // When
         $command = new SetDepartmentBonus($departmentId, $bonusType, $bonusFactor);
-        $this->setDepartmentBonusHandler->handle($command);
+        $this->setDepartmentBonusHandler->__invoke($command);
     }
 
     /**

@@ -15,7 +15,7 @@ class FinishReportProcessingHandler implements CommandHandler
     {
     }
 
-    public function handle(FinishReportProcessing $command): void
+    public function __invoke(FinishReportProcessing $command): void
     {
         $report = $this->repository->find($command->reportId);
         $result = $report->finishProcessing();

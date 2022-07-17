@@ -22,7 +22,7 @@ class GenerateSalaryReportHandler implements CommandHandler
     ) {
     }
 
-    public function handle(GenerateSalaryReport $command): void
+    public function __invoke(GenerateSalaryReport $command): void
     {
         $dateTimeNow = $this->clock->now();
         $report = new Report($command->reportId, $dateTimeNow);

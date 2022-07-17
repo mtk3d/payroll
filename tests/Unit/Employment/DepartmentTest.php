@@ -32,7 +32,7 @@ class DepartmentTest extends TestCase
         $departmentName = 'Developers';
 
         $command = new CreateDepartment($departmentId, $departmentName);
-        $this->handler->handle($command);
+        $this->handler->__invoke($command);
 
         $event = $this->bus->latestEvent();
         $expected = new DepartmentRegistered($event->eventId(), $departmentId, $departmentName);

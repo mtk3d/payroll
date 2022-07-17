@@ -12,7 +12,9 @@ use Payroll\Salary\Domain\EmployeeSalaryChanged;
 use Payroll\Salary\Domain\Exception\DepartmentNotFoundException;
 use Payroll\Shared\CommandHandler;
 use Payroll\Shared\DomainEventBus;
+use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
+#[AsMessageHandler]
 class CreateEmployeeSalaryHandler implements CommandHandler
 {
     public function __construct(
@@ -25,7 +27,7 @@ class CreateEmployeeSalaryHandler implements CommandHandler
     /**
      * @throws DepartmentNotFoundException
      */
-    public function handle(CreateEmployeeSalary $command): void
+    public function __invoke(CreateEmployeeSalary $command): void
     {
         $department = $this->departmentRepository->find($command->departmentId);
         $employee = new Employee($command->id, $command->employmentDate, $command->baseSalary, $department);

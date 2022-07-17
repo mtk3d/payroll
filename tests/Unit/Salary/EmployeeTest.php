@@ -47,7 +47,7 @@ class EmployeeTest extends TestCase
 
         // When
         $command = new CreateEmployeeSalary($employeeId, $employmentDate, $baseSalary, $department->id);
-        $handler->handle($command);
+        $handler->__invoke($command);
 
         // Then
         $event = $this->bus->latestEvent();

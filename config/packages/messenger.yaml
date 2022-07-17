@@ -6,6 +6,7 @@ framework:
                 middleware:
                     - doctrine_transaction
             event.bus: ~
+            query.bus: ~
 
         transports:
              async: '%env(MESSENGER_TRANSPORT_DSN)%'

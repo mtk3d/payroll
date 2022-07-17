@@ -54,7 +54,7 @@ class SalaryTest extends TestCase
 
         // When
         $reportId = ReportId::newOne();
-        $handler->handle(new CalculateReportSalaries($reportId));
+        $handler->__invoke(new CalculateReportSalaries($reportId));
 
         // Then
         $dispatched = $this->bus->firstEvent();
@@ -97,7 +97,7 @@ class SalaryTest extends TestCase
 
         // When
         $reportId = ReportId::newOne();
-        $handler->handle(new CalculateReportSalaries($reportId));
+        $handler->__invoke(new CalculateReportSalaries($reportId));
 
         // Then
         self::assertCount(3, $this->bus->events());

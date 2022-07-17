@@ -13,7 +13,9 @@ use Payroll\Salary\Domain\DepartmentRepository;
 use Payroll\Salary\Domain\Exception\DepartmentAlreadyExistException;
 use Payroll\Shared\CommandHandler;
 use Payroll\Shared\DomainEventBus;
+use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
+#[AsMessageHandler]
 class SetDepartmentBonusHandler implements CommandHandler
 {
     public function __construct(private DomainEventBus $bus, private DepartmentRepository $repository)
@@ -23,7 +25,7 @@ class SetDepartmentBonusHandler implements CommandHandler
     /**
      * @throws DepartmentAlreadyExistException
      */
-    public function handle(SetDepartmentBonus $command): void
+    public function __invoke(SetDepartmentBonus $command): void
     {
         $bonusType = BonusType::fromString($command->bonusType);
         $bonusRule = new BonusRule($bonusType, $command->bonusFactor);

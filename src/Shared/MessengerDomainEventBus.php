@@ -8,15 +8,12 @@ use Symfony\Component\Messenger\MessageBusInterface;
 
 class MessengerDomainEventBus implements DomainEventBus
 {
-    private MessageBusInterface $eventBus;
-
-    public function __construct(MessageBusInterface $eventBus)
+    public function __construct(private MessageBusInterface $bus)
     {
-        $this->eventBus = $eventBus;
     }
 
     public function dispatch(DomainEvent $event): void
     {
-        $this->eventBus->dispatch($event);
+        $this->bus->dispatch($event);
     }
 }
