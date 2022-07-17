@@ -9,6 +9,8 @@ doctrine:
             employee_id: Payroll\Shared\UUID\DoctrineType\EmployeeIdType
             department_id: Payroll\Shared\UUID\DoctrineType\DepartmentIdType
             report_id: Payroll\Shared\UUID\DoctrineType\ReportIdType
+
+        schema_filter: ~(?<!_read_model)$~
     orm:
         auto_generate_proxy_classes: true
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
@@ -32,6 +34,12 @@ doctrine:
                 dir: '%kernel.project_dir%/src/Employment/Infrastructure/config'
                 prefix: 'Payroll\Employment\Domain'
                 alias: Employment
+            Money:
+                type: xml
+                is_bundle: false
+                dir: '%kernel.project_dir%/src/Shared/Money/config'
+                prefix: 'Money'
+                alias: Money
 
 when@test:
     doctrine:

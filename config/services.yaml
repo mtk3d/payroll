@@ -53,14 +53,20 @@ services:
 when@test:
     services:
         Payroll\Salary\Infrastructure\Repository\DoctrineEmployeeRepository:
+            arguments:
+                $em: '@doctrine.orm.entity_manager'
             public: true
         Payroll\Salary\Infrastructure\Repository\DoctrineDepartmentRepository:
             arguments:
                 $em: '@doctrine.orm.entity_manager'
             public: true
         Payroll\Report\Infrastructure\Repository\DoctrineReportRepository:
+            arguments:
+                $em: '@doctrine.orm.entity_manager'
             public: true
         Payroll\Employment\Infrastructure\Repository\DoctrineEmployeeRepository:
+            arguments:
+                $em: '@doctrine.orm.entity_manager'
             public: true
         Payroll\Employment\Infrastructure\Repository\DoctrineDepartmentRepository:
             arguments:

@@ -13,6 +13,8 @@
 
         <field name="employmentDate" column="employment_date" type="datetime_immutable" nullable="false" />
 
+        <embedded name="baseSalary" class="Money\Money" />
+
         <one-to-one field="department" target-entity="Payroll\Salary\Domain\Department">
             <join-column name="department_id" referenced-column-name="id" />
         </one-to-one>
