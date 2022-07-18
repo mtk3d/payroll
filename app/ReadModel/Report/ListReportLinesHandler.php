@@ -15,11 +15,14 @@ class ListReportLinesHandler
     {
     }
 
-    public function __invoke(ListReportLines $query)
+    public function __invoke(ListReportLines $query): array
     {
-        $stmt = $this->conn->prepare('SELECT * FROM report_line_read_model WHERE report_id = :reportId LIMIT 1');
+        $stmt = $this->conn->prepare(<<<SQL
+            SELECT employee_id, first_name, last_name, department, base_salary, bonus, bonus_type, salary
+            FROM report_line_read_model WHERE report_id = :reportId
+        SQL);
         $stmt->bindValue(':reportId', $query->reportId->toString());
 
-        return $stmt->executeQuery()->fetchOne();
+        return $stmt->executeQuery()->fetchAllAssociative();
     }
 }

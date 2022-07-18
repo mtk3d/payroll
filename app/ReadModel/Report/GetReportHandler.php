@@ -15,11 +15,14 @@ class GetReportHandler
     {
     }
 
-    public function __invoke(GetReport $query)
+    public function __invoke(GetReport $query): array
     {
         $stmt = $this->conn->prepare('SELECT * FROM report_read_model WHERE id = :id LIMIT 1');
         $stmt->bindValue(':id', $query->reportId->toString());
 
-        return $stmt->executeQuery()->fetchOne();
+        $result = $stmt->executeQuery()->fetchAllAssociative();
+        reset($result);
+
+        return current($result);
     }
 }

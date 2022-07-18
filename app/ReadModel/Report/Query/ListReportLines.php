@@ -11,5 +11,6 @@ class ListReportLines implements Query
 {
     public function __construct(
         readonly ReportId $reportId
-    ) {}
+    ) {
+    }
 }

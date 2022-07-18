@@ -15,7 +15,7 @@ class ListDepartmentsHandler
     {
     }
 
-    public function __invoke(ListDepartments $query)
+    public function __invoke(ListDepartments $query): array
     {
         return $this->conn->executeQuery(<<<SQL
             SELECT * FROM department_read_model

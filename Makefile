@@ -9,7 +9,10 @@ fix: ## Fix all code formatting problems
 test: ## Run tests
 	$(PHPUNIT)
 
-.PHONY: lint test fix
+test-%: ## Run specific tests `test-[all|unit|integration|functional]`
+	$(PHPUNIT) --testsuite=$*
+
+.PHONY: lint test test-% fix
 .DEFAULT_GOAL=help
 
 help:

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Test\Unit\Report;
 
-use DateTimeImmutable;
 use Payroll\Report\Application\Command\FinishReportProcessing;
 use Payroll\Report\Application\Command\GenerateSalaryReport;
 use Payroll\Report\Application\FinishReportProcessingHandler;
@@ -14,6 +13,7 @@ use Payroll\Report\Domain\ReportCreated;
 use Payroll\Report\Domain\ReportProcessingFinished;
 use Payroll\Report\Infrastructure\Repository\InMemoryReportRepository;
 use Payroll\Shared\Clock;
+use Payroll\Shared\FakeClock;
 use Payroll\Shared\InMemoryDomainEventBus;
 use Payroll\Shared\UUID\ReportId;
 use PHPUnit\Framework\TestCase;
@@ -28,8 +28,7 @@ class ReportTest extends TestCase
     {
         $this->bus = new InMemoryDomainEventBus();
         $this->repository = new InMemoryReportRepository();
-        $this->clock = self::createMock(Clock::class);
-        $this->clock->method('now')->willReturn(new DateTimeImmutable('2005-03-14 12:00'));
+        $this->clock = new FakeClock();
     }
 
     public function testCreateReport(): void

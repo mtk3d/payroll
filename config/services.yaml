@@ -45,6 +45,8 @@ services:
         arguments:
             $em: '@doctrine.orm.entity_manager'
 
+    Payroll\Shared\Clock: '@Payroll\Shared\CommonClock'
+
     _instanceof:
         Payroll\Shared\CommandHandler:
             tags:
@@ -84,3 +86,4 @@ when@test:
             arguments:
                 $bus: '@event.bus'
             public: true
+        Payroll\Shared\Clock: '@Payroll\Shared\FakeClock'

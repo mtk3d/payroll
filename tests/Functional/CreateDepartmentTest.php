@@ -13,19 +13,15 @@ use Payroll\Shared\MessengerQueryBus;
 use Payroll\Shared\QueryBus;
 use Payroll\Shared\UUID\DepartmentId;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Test\InitDatabaseTrait;
 
 class CreateDepartmentTest extends KernelTestCase
 {
-    use InitDatabaseTrait;
-
     private ?CommandBus $commandBus;
     private ?QueryBus $queryBus;
 
     public function setUp(): void
     {
         $kernel = $this->bootKernel();
-//        $this->initDatabase($kernel);
         $container = $kernel->getContainer();
         $this->commandBus = $container->get(MessengerCommandBus::class);
         $this->queryBus = $container->get(MessengerQueryBus::class);
@@ -34,12 +30,10 @@ class CreateDepartmentTest extends KernelTestCase
     public function testCreateDepartment(): void
     {
         $departmentId = DepartmentId::newOne();
-        $this->commandBus->dispatch(
-            new CreateDepartment($departmentId, 'IT')
-        );
-        $this->commandBus->dispatch(
-            new SetDepartmentBonus($departmentId, 'PERMANENT', 1000)
-        );
+        $createDepartment = new CreateDepartment($departmentId, 'IT');
+        $setDepartmentBonus = new SetDepartmentBonus($departmentId, 'PERMANENT', 1000);
+        $this->commandBus->dispatch($createDepartment);
+        $this->commandBus->dispatch($setDepartmentBonus);
 
         $departments = $this->queryBus->query(new ListDepartments());
 

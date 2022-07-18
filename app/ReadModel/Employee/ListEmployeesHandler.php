@@ -15,7 +15,7 @@ class ListEmployeesHandler
     {
     }
 
-    public function __invoke(ListEmployees $query)
+    public function __invoke(ListEmployees $query): array
     {
         return $this->conn->executeQuery(<<<SQL
             SELECT * FROM employee_read_model

@@ -18,19 +18,15 @@ use Payroll\Shared\QueryBus;
 use Payroll\Shared\UUID\DepartmentId;
 use Payroll\Shared\UUID\EmployeeId;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Test\InitDatabaseTrait;
 
 class CreateEmployeeTest extends KernelTestCase
 {
-    use InitDatabaseTrait;
-
     private ?CommandBus $commandBus;
     private ?QueryBus $queryBus;
 
     public function setUp(): void
     {
         $kernel = $this->bootKernel();
-//        $this->initDatabase($kernel);
         $container = $kernel->getContainer();
         $this->commandBus = $container->get(MessengerCommandBus::class);
         $this->queryBus = $container->get(MessengerQueryBus::class);
@@ -39,20 +35,16 @@ class CreateEmployeeTest extends KernelTestCase
     public function testCreateDepartment(): void
     {
         $departmentId = DepartmentId::newOne();
-        $this->commandBus->dispatch(
-            new CreateDepartment($departmentId, 'IT')
-        );
-        $this->commandBus->dispatch(
-            new SetDepartmentBonus($departmentId, 'PERMANENT', 1000)
-        );
+        $createDepartment = new CreateDepartment($departmentId, 'IT');
+        $setDepartmentBonus = new SetDepartmentBonus($departmentId, 'PERMANENT', 1000);
+        $this->commandBus->dispatch($createDepartment);
+        $this->commandBus->dispatch($setDepartmentBonus);
 
         $employeeId = EmployeeId::newOne();
-        $this->commandBus->dispatch(
-            new CreateEmployee($employeeId, 'John', 'Doe', $departmentId)
-        );
-        $this->commandBus->dispatch(
-            new CreateEmployeeSalary($employeeId, new DateTimeImmutable('2005-03-14'), Money::USD(500000), $departmentId)
-        );
+        $createEmployee = new CreateEmployee($employeeId, 'John', 'Doe', $departmentId);
+        $createEmployeeSalary = new CreateEmployeeSalary($employeeId, new DateTimeImmutable('2005-03-14'), Money::USD(500000), $departmentId);
+        $this->commandBus->dispatch($createEmployee);
+        $this->commandBus->dispatch($createEmployeeSalary);
 
         $employees = $this->queryBus->query(new ListEmployees());
 

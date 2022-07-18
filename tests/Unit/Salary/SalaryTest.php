@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Test\Unit\Salary;
 
-use DateTimeImmutable;
 use Money\Money;
 use Payroll\Salary\Application\CalculateReportSalariesHandler;
 use Payroll\Salary\Application\Command\CalculateReportSalaries;
@@ -14,22 +13,21 @@ use Payroll\Salary\Domain\ReportSalariesCalculated;
 use Payroll\Salary\Domain\SalaryCalculated;
 use Payroll\Salary\Infrastructure\Repository\InMemoryEmployeeRepository;
 use Payroll\Shared\Clock;
+use Payroll\Shared\FakeClock;
 use Payroll\Shared\InMemoryDomainEventBus;
 use Payroll\Shared\UUID\ReportId;
 use PHPUnit\Framework\TestCase;
 
 class SalaryTest extends TestCase
 {
-    private DateTimeImmutable $now;
+    private Clock $clock;
     private BonusCalculatorFactory $calculatorFactory;
     private InMemoryDomainEventBus $bus;
 
     public function setUp(): void
     {
-        $this->now = new DateTimeImmutable('2005-03-14 12:00');
-        $clock = self::createMock(Clock::class);
-        $clock->method('now')->willReturn($this->now);
-        $this->calculatorFactory = new BonusCalculatorFactory($clock);
+        $this->clock = new FakeClock();
+        $this->calculatorFactory = new BonusCalculatorFactory($this->clock);
         $this->bus = new InMemoryDomainEventBus();
         $this->repository = new InMemoryEmployeeRepository();
     }
@@ -49,7 +47,7 @@ class SalaryTest extends TestCase
 
         // Given
         $department = aDepartment($bonusType, $bonusFactor);
-        $employee = aEmployee($this->now->modify($timeModifier), $baseSalary, $department);
+        $employee = aEmployee($this->clock->now()->modify($timeModifier), $baseSalary, $department);
         $this->repository->save($employee);
 
         // When
