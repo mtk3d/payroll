@@ -80,6 +80,7 @@ class SalaryTest extends TestCase
             ['-10 years', 100000, BonusType::PERMANENT, 10000, 100000],
             ['-364 days', 200000, BonusType::PERMANENT, 10000, 0],
             ['-365 days', 200000, BonusType::PERMANENT, 10000, 10000],
+            ['-15 years', 100000, BonusType::PERMANENT, 10000, 100000],
         ];
     }
 

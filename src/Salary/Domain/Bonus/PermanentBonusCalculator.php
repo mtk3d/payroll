@@ -24,7 +24,8 @@ class PermanentBonusCalculator implements BonusCalculator
     public function calculate(BonusCriteria $criteria): Money
     {
         $seniorityYears = $criteria->employmentDate->diff($this->clock->now())->y;
+        $seniorityToCalculate = min($seniorityYears, 10);
 
-        return $this->amount->multiply($seniorityYears);
+        return $this->amount->multiply($seniorityToCalculate);
     }
 }
