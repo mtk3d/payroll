@@ -12,11 +12,9 @@ use Payroll\Salary\Infrastructure\Repository\DoctrineDepartmentRepository;
 use Payroll\Salary\Infrastructure\Repository\DoctrineEmployeeRepository;
 use Payroll\Shared\UUID\DepartmentId;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Test\InitDatabaseTrait;
 
 class SalaryDoctrineTest extends KernelTestCase
 {
-    use InitDatabaseTrait;
 
     private ?DoctrineEmployeeRepository $employeeRepository;
     private ?DoctrineDepartmentRepository $departmentRepository;
@@ -24,7 +22,6 @@ class SalaryDoctrineTest extends KernelTestCase
     protected function setUp(): void
     {
         $kernel = $this->bootKernel();
-//        $this->initDatabase($kernel);
         $container = $kernel->getContainer();
         $this->employeeRepository = $container->get(DoctrineEmployeeRepository::class);
         $this->departmentRepository = $container->get(DoctrineDepartmentRepository::class);
