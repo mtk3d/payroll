@@ -20,7 +20,7 @@ services:
 
     Payroll\Shared\MessengerCommandBus:
         arguments:
-            $bus: '@messenger.command.bus'
+            $bus: '@command.bus'
     Payroll\Shared\MessengerDomainEventBus: ~
     Payroll\Shared\CommandBus: '@Payroll\Shared\MessengerCommandBus'
     Payroll\Shared\DomainEventBus: '@Payroll\Shared\MessengerDomainEventBus'

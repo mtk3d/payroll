@@ -17,6 +17,7 @@ class MessengerQueryBus implements QueryBus
     {
         $envelope = $this->bus->dispatch($query);
         $handledStamp = $envelope->last(HandledStamp::class);
-        return $handledStamp->getResult();
+
+        return $handledStamp?->getResult();
     }
 }

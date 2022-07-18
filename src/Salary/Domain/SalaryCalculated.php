@@ -14,7 +14,7 @@ class SalaryCalculated implements DomainEvent
 {
     public function __construct(
         private UUID $eventId,
-        readonly EmployeeId $id,
+        readonly EmployeeId $employeeId,
         readonly ReportId $reportId,
         readonly Money $baseSalary,
         readonly Money $bonus

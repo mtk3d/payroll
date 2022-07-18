@@ -44,9 +44,9 @@ class CreateDepartmentTest extends KernelTestCase
         $departments = $this->queryBus->query(new ListDepartments());
 
         $expected = [
-            "id" => $departmentId->toString(),
-            "name" => 'IT',
-            "bonus_type" => 'PERMANENT'
+            'id' => $departmentId->toString(),
+            'name' => 'IT',
+            'bonus_type' => 'PERMANENT',
         ];
 
         self::assertContains($expected, $departments);

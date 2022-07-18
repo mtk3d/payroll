@@ -14,9 +14,9 @@
         <field name="firstname" column="first_name" type="string" nullable="false" />
         <field name="lastname" column="last_name" type="string" nullable="false" />
 
-        <one-to-one field="department" target-entity="Payroll\Employment\Domain\Department">
+        <many-to-one field="department" target-entity="Payroll\Employment\Domain\Department">
             <join-column name="department_id" referenced-column-name="id" />
-        </one-to-one>
+        </many-to-one>
 
     </entity>
 

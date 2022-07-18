@@ -12,7 +12,9 @@ use Payroll\Report\Domain\ReportStatus;
 use Payroll\Shared\Clock;
 use Payroll\Shared\CommandHandler;
 use Payroll\Shared\DomainEventBus;
+use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
+#[AsMessageHandler]
 class GenerateSalaryReportHandler implements CommandHandler
 {
     public function __construct(

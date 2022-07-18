@@ -18,7 +18,9 @@ class DoctrineEmployeeRepository implements EmployeeRepository
     {
         /** @var Employee[] $result */
         $result = $this->em->createQuery(<<<DQL
-            SELECT e FROM Payroll\Salary\Domain\Employee e
+            SELECT e, d
+            FROM Payroll\Salary\Domain\Employee e
+            JOIN e.department d
         DQL)->getResult();
 
         return $result;

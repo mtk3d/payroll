@@ -20,7 +20,7 @@ framework:
             Payroll\Salary\Application\Command\SetDepartmentBonus: sync
             # Report
             Payroll\Report\Application\Command\FinishReportProcessing: sync
-            Payroll\Report\Application\Command\GenerateSalaryReport: async
+            Payroll\Report\Application\Command\GenerateSalaryReport: sync
             # Employment
             Payroll\Employment\Application\Command\CreateDepartment: sync
             Payroll\Employment\Application\Command\CreateEmployee: sync

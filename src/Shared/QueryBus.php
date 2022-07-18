@@ -7,7 +7,7 @@ namespace Payroll\Shared;
 interface QueryBus
 {
     /**
-     * @return mixed
+     * @return mixed|null
      */
     public function query(Query $query);
 }

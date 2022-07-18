@@ -9,8 +9,9 @@ use Payroll\Report\Domain\ReportCreated;
 use Payroll\Salary\Application\Command\CalculateReportSalaries;
 use Payroll\Salary\Domain\ReportSalariesCalculated;
 use Payroll\Shared\CommandBus;
+use Symfony\Component\Messenger\Handler\MessageSubscriberInterface;
 
-class ReportGeneratingProcess
+class ReportGeneratingProcess implements MessageSubscriberInterface
 {
     public function __construct(private CommandBus $bus)
     {
@@ -28,5 +29,16 @@ class ReportGeneratingProcess
         $this->bus->dispatch(
             new FinishReportProcessing($command->reportId)
         );
+    }
+
+    public static function getHandledMessages(): iterable
+    {
+        yield ReportCreated::class => [
+            'method' => 'handleSalaryReportCreated',
+        ];
+
+        yield ReportSalariesCalculated::class => [
+            'method' => 'handleReportSalariesCalculated',
+        ];
     }
 }

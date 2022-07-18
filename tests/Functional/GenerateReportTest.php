@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace Test\Functional;
 
-use App\ReadModel\Employee\Query\ListEmployees;
+use App\ReadModel\Report\Query\GetReport;
+use App\ReadModel\Report\Query\ListReportLines;
 use DateTimeImmutable;
 use Money\Money;
 use Payroll\Employment\Application\Command\CreateDepartment;
 use Payroll\Employment\Application\Command\CreateEmployee;
+use Payroll\Report\Application\Command\GenerateSalaryReport;
 use Payroll\Salary\Application\Command\CreateEmployeeSalary;
 use Payroll\Salary\Application\Command\SetDepartmentBonus;
 use Payroll\Shared\CommandBus;
@@ -17,10 +19,11 @@ use Payroll\Shared\MessengerQueryBus;
 use Payroll\Shared\QueryBus;
 use Payroll\Shared\UUID\DepartmentId;
 use Payroll\Shared\UUID\EmployeeId;
+use Payroll\Shared\UUID\ReportId;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Test\InitDatabaseTrait;
 
-class CreateEmployeeTest extends KernelTestCase
+class GenerateReportTest extends KernelTestCase
 {
     use InitDatabaseTrait;
 
@@ -36,7 +39,7 @@ class CreateEmployeeTest extends KernelTestCase
         $this->queryBus = $container->get(MessengerQueryBus::class);
     }
 
-    public function testCreateDepartment(): void
+    public function testGenerateReport(): void
     {
         $departmentId = DepartmentId::newOne();
         $this->commandBus->dispatch(
@@ -54,17 +57,29 @@ class CreateEmployeeTest extends KernelTestCase
             new CreateEmployeeSalary($employeeId, new DateTimeImmutable('2005-03-14'), Money::USD(500000), $departmentId)
         );
 
-        $employees = $this->queryBus->query(new ListEmployees());
+        $departmentId = DepartmentId::newOne();
+        $this->commandBus->dispatch(
+            new CreateDepartment($departmentId, 'HR')
+        );
+        $this->commandBus->dispatch(
+            new SetDepartmentBonus($departmentId, 'PERCENTAGE', 1000)
+        );
 
-        $expected = [
-            'id' => $employeeId->toString(),
-            'first_name' => 'John',
-            'last_name' => 'Doe',
-            'employment_date' => '2005-03-14 00:00:00',
-            'base_salary' => '$5,000.00',
-            'department_id' => $departmentId->toString(),
-        ];
+        $employeeId = EmployeeId::newOne();
+        $this->commandBus->dispatch(
+            new CreateEmployee($employeeId, 'Jane', 'Doe', $departmentId)
+        );
+        $this->commandBus->dispatch(
+            new CreateEmployeeSalary($employeeId, new DateTimeImmutable('2005-03-14'), Money::USD(200000), $departmentId)
+        );
 
-        self::assertContains($expected, $employees);
+        $reportId = ReportId::newOne();
+
+        $this->commandBus->dispatch(new GenerateSalaryReport($reportId));
+
+        $report = $this->queryBus->query(new GetReport($reportId));
+        $reportLines = $this->queryBus->query(new ListReportLines($reportId));
+
+        self::assertTrue(true);
     }
 }

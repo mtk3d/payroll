@@ -8,7 +8,9 @@ use Payroll\Report\Application\Command\FinishReportProcessing;
 use Payroll\Report\Domain\ReportRepository;
 use Payroll\Shared\CommandHandler;
 use Payroll\Shared\DomainEventBus;
+use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
+#[AsMessageHandler]
 class FinishReportProcessingHandler implements CommandHandler
 {
     public function __construct(private DomainEventBus $bus, private ReportRepository $repository)
