@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reports List{% endblock %}
+
+{% block body %}
+<a class="button outline primary" href="/report/create">Generate Report</a>
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Date</td>
+            <td>Status</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for report in reports %}
+            <tr>
+                <td><a href="/report/{{ report.id }}">{{ report.id }}</a></td>
+                <td>{{ report.date }}</td>
+                <td>{{ report.status }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        <link rel="stylesheet" href="https://unpkg.com/chota@latest">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -12,8 +12,30 @@
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
+
+        <style>
+            .wrapper {
+                width: 90%;
+                margin: 0 auto;
+            }
+            .nav {
+                margin-bottom: 2rem;
+            }
+        </style>
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <nav class="nav">
+            <div class="nav-left">
+                <a class="brand" href="/">Salary</a>
+                <div class="tabs">
+                    <a href="/department">Departments</a>
+                    <a href="/employee">Employees</a>
+                    <a href="/">Reports</a>
+                </div>
+            </div>
+        </nav>
+        <div class="wrapper">
+            {% block body %}{% endblock %}
+        </div>
     </body>
 </html>
