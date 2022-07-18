@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Test\Integration;
+namespace Tests\Integration;
 
 use DateTimeImmutable;
 use Payroll\Report\Domain\Exception\ReportNotFoundException;

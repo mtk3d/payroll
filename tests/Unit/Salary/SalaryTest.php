@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Test\Unit\Salary;
+namespace Tests\Unit\Salary;
 
 use Money\Money;
 use Payroll\Salary\Application\CalculateReportSalariesHandler;
@@ -17,6 +17,8 @@ use Payroll\Shared\FakeClock;
 use Payroll\Shared\InMemoryDomainEventBus;
 use Payroll\Shared\UUID\ReportId;
 use PHPUnit\Framework\TestCase;
+use function Tests\Fixture\aDepartment;
+use function Tests\Fixture\aEmployee;
 
 class SalaryTest extends TestCase
 {

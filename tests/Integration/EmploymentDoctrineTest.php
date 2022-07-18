@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Integration;
+namespace Tests\Integration;
 
 use Payroll\Employment\Domain\Department;
 use Payroll\Employment\Domain\DepartmentNotFoundException;

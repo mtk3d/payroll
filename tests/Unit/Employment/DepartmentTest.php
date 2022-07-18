@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Test\Unit\Employment;
+namespace Tests\Unit\Employment;
 
 use Payroll\Employment\Application\Command\CreateDepartment;
 use Payroll\Employment\Application\CreateDepartmentHandler;

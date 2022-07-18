@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Test\Functional;
+namespace Tests\Functional;
 
 use App\ReadModel\Report\Query\GetReport;
 use App\ReadModel\Report\Query\ListReportLines;

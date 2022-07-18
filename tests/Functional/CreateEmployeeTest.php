@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Test\Functional;
+namespace Tests\Functional;
 
 use App\ReadModel\Employee\Query\ListEmployees;
 use DateTimeImmutable;

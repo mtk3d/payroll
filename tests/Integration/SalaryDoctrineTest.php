@@ -2,16 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Test\Integration;
-
-use function aDepartment;
-use function aEmployee;
+namespace Tests\Integration;
 
 use Payroll\Salary\Domain\Exception\DepartmentNotFoundException;
 use Payroll\Salary\Infrastructure\Repository\DoctrineDepartmentRepository;
 use Payroll\Salary\Infrastructure\Repository\DoctrineEmployeeRepository;
 use Payroll\Shared\UUID\DepartmentId;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use function Tests\Fixture\aDepartment;
+use function Tests\Fixture\aEmployee;
 
 class SalaryDoctrineTest extends KernelTestCase
 {

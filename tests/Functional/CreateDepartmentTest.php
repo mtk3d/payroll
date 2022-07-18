@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Test\Functional;
+namespace Tests\Functional;
 
 use App\ReadModel\Department\Query\ListDepartments;
 use Payroll\Employment\Application\Command\CreateDepartment;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Test\Unit\Report;
+namespace Tests\Unit\Report;
 
 use Payroll\Report\Application\Command\FinishReportProcessing;
 use Payroll\Report\Application\Command\GenerateSalaryReport;

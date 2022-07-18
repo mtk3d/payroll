@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Test\Unit\Salary;
+namespace Tests\Unit\Salary;
 
 use InvalidArgumentException;
 use Payroll\Salary\Application\Command\SetDepartmentBonus;

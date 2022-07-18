@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+namespace Tests\Fixture;
+
+use DateTimeImmutable;
 use Money\Money;
 use Payroll\Salary\Domain\Bonus\BonusType;
 use Payroll\Salary\Domain\BonusRule;
