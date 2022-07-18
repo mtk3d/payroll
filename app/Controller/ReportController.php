@@ -7,6 +7,8 @@ use App\ReadModel\Report\Query\ListReportLines;
 use App\ReadModel\Report\Query\ListReports;
 use App\ReadModel\Shared\FilterBy;
 use App\ReadModel\Shared\SortBy;
+use Payroll\Report\Application\Command\GenerateSalaryReport;
+use Payroll\Shared\CommandBus;
 use Payroll\Shared\QueryBus;
 use Payroll\Shared\UUID\ReportId;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,7 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ReportController extends AbstractController
 {
-    public function __construct(private QueryBus $queryBus)
+    public function __construct(private QueryBus $queryBus, private CommandBus $commandBus)
     {
     }
 
@@ -39,6 +41,15 @@ class ReportController extends AbstractController
         return $this->render('report/show.html.twig', [
             'report' => $report,
         ]);
+    }
+
+    #[Route('/report/generate', name: 'app_report_generate', methods: 'POST')]
+    public function generate(): Response
+    {
+        $reportId = ReportId::newOne();
+        $this->commandBus->dispatch(new GenerateSalaryReport($reportId));
+
+        return $this->redirectToRoute('app_report', ['id' => $reportId->toString()]);
     }
 
     #[Route('/api/report/{id}/lines', name: 'api_report_lines', methods: 'GET', format: 'json')]

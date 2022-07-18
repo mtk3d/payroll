@@ -2,8 +2,13 @@
 
 {% block title %}Reports List{% endblock %}
 
+{% block action %}
+    <form action="/report/generate" method="POST">
+        <button class="button outline primary" type="submit">📄 Generate Report</button>
+    </form>
+{% endblock %}
+
 {% block body %}
-<a class="button outline primary" href="/report/create">📄 Generate Report</a>
 <table>
     <thead>
         <tr>

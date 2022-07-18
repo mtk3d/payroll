@@ -2,13 +2,16 @@
 
 {% block title %}Reports List{% endblock %}
 
+{% block action %}
+    <a class="button outline secondary" href="/">🔙 Back</a>
+{% endblock %}
+
 {% block body %}
     <style>
         .clickable {
             cursor: pointer;
         }
     </style>
-    <a class="button outline secondary" href="/">🔙 Back</a>
     <div x-data="{
             lines: [],
             sortBy: 'first_name',

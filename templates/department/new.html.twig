@@ -3,5 +3,10 @@
 {% block title %}New Department{% endblock %}
 
 {% block body %}
+    <style>
+        form > div > div {
+            margin-bottom: 2rem;
+        }
+    </style>
     {{ form(form) }}
 {% endblock %}
