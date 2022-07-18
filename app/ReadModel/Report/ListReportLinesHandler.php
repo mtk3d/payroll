@@ -17,12 +17,23 @@ class ListReportLinesHandler
 
     public function __invoke(ListReportLines $query): array
     {
-        $stmt = $this->conn->prepare(<<<SQL
-            SELECT employee_id, first_name, last_name, department, base_salary, bonus, bonus_type, salary
-            FROM report_line_read_model WHERE report_id = :reportId
-        SQL);
-        $stmt->bindValue(':reportId', $query->reportId->toString());
+        $q = $this->conn->createQueryBuilder()
+            ->select('employee_id', 'first_name', 'last_name', 'department', 'base_salary', 'bonus', 'bonus_type', 'salary')
+            ->from('report_line_read_model')
+            ->where('report_id = :reportId')
+            ->setParameter('reportId', $query->reportId->toString());
 
-        return $stmt->executeQuery()->fetchAllAssociative();
+        if ($query->sortBy) {
+            $q->orderBy($query->sortBy->column, $query->sortBy->asc ? 'ASC' : 'DESC');
+        }
+
+        $paramNum = 0;
+        foreach ($query->filters as $filter) {
+            $q->andWhere($q->expr()->like($filter->column, '?'));
+            $q->setParameter($paramNum, "%$filter->value%");
+            ++$paramNum;
+        }
+
+        return $q->executeQuery()->fetchAllAssociative();
     }
 }

@@ -6,6 +6,7 @@ namespace Tests\Functional;
 
 use App\ReadModel\Report\Query\GetReport;
 use App\ReadModel\Report\Query\ListReportLines;
+use App\ReadModel\Shared\FilterBy;
 use DateTimeImmutable;
 use Money\Money;
 use Payroll\Employment\Application\Command\CreateDepartment;
@@ -82,11 +83,27 @@ class GenerateReportTest extends KernelTestCase
         );
     }
 
-    private function filterLine(array $lines, EmployeeId $id): array
+    public function testFilterReport(): void
+    {
+        $adamId = EmployeeId::newOne();
+        $aniaId = EmployeeId::newOne();
+        $this->provideFixtures($adamId, $aniaId);
+
+        $reportId = ReportId::newOne();
+        $this->commandBus->dispatch(new GenerateSalaryReport($reportId));
+
+        $query = new ListReportLines($reportId, null, [new FilterBy('first_name', 'Ania')]);
+        $reportLines = $this->queryBus->query($query);
+
+        self::assertEmpty($this->filterLine($reportLines, $adamId));
+        self::assertNotEmpty($this->filterLine($reportLines, $aniaId));
+    }
+
+    private function filterLine(array $lines, EmployeeId $id): ?array
     {
         $result = array_filter($lines, fn ($line) => $line['employee_id'] == $id->toString());
 
-        return current($result);
+        return current($result) ?: null;
     }
 
     private function provideFixtures(EmployeeId $adamId, EmployeeId $aniaId): void

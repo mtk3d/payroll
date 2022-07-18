@@ -14,6 +14,7 @@ use Payroll\Salary\Infrastructure\Repository\InMemoryEmployeeRepository;
 use Payroll\Shared\InMemoryDomainEventBus;
 use Payroll\Shared\UUID\EmployeeId;
 use PHPUnit\Framework\TestCase;
+
 use function Tests\Fixture\aDepartment;
 
 class EmployeeTest extends TestCase

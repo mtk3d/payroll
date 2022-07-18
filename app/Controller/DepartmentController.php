@@ -17,7 +17,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class DepartmentController extends AbstractController
 {
     public function __construct(private QueryBus $queryBus, private CommandBus $commandBus)
-    {}
+    {
+    }
 
     #[Route('/department', name: 'app_department', methods: 'GET')]
     public function index(): Response

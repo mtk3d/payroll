@@ -8,5 +8,4 @@ use Payroll\Shared\Query;
 
 class ListReports implements Query
 {
-
 }

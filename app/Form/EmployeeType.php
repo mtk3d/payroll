@@ -34,7 +34,7 @@ class EmployeeType extends AbstractType
             ->add('employmentDate', DateType::class, [
                 'required' => true,
                 'widget' => 'single_text',
-                'input'  => 'datetime_immutable'
+                'input' => 'datetime_immutable',
             ])
             ->add('baseSalary', MoneyType::class, [
                 'required' => true,
@@ -42,7 +42,7 @@ class EmployeeType extends AbstractType
                 'currency' => 'USD',
             ])
             ->add('department', ChoiceType::class, [
-                'choices'  => $this->queryBus->query(new ListDepartmentsChoices()),
+                'choices' => $this->queryBus->query(new ListDepartmentsChoices()),
             ])
             ->add('save', SubmitType::class)
         ;

@@ -19,7 +19,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class EmployeeController extends AbstractController
 {
     public function __construct(private QueryBus $queryBus, private CommandBus $commandBus)
-    {}
+    {
+    }
 
     #[Route('/employee', name: 'app_employee')]
     public function index(): Response

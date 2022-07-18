@@ -2,18 +2,25 @@
 
 namespace App\Controller;
 
+use App\ReadModel\Report\Query\GetReport;
+use App\ReadModel\Report\Query\ListReportLines;
 use App\ReadModel\Report\Query\ListReports;
+use App\ReadModel\Shared\FilterBy;
+use App\ReadModel\Shared\SortBy;
 use Payroll\Shared\QueryBus;
+use Payroll\Shared\UUID\ReportId;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ReportController extends AbstractController
 {
     public function __construct(private QueryBus $queryBus)
-    {}
+    {
+    }
 
-    #[Route('/', name: 'app_report')]
+    #[Route('/', name: 'app_reports', methods: 'GET')]
     public function index(): Response
     {
         $reports = $this->queryBus->query(new ListReports());
@@ -23,9 +30,29 @@ class ReportController extends AbstractController
         ]);
     }
 
-    #[Route('/report/{id}', name: 'report')]
+    #[Route('/report/{id}', name: 'app_report', methods: 'GET')]
     public function report(string $id): Response
     {
+        $reportId = ReportId::of($id);
+        $report = $this->queryBus->query(new GetReport($reportId));
 
+        return $this->render('report/show.html.twig', [
+            'report' => $report,
+        ]);
+    }
+
+    #[Route('/api/report/{id}/lines', name: 'api_report_lines', methods: 'GET', format: 'json')]
+    public function reportLines(Request $request, string $id): Response
+    {
+        $filters = FilterBy::ofList($request->query->all()['filters'] ?? []);
+        $sort = null;
+        if ($request->query->has('sort')) {
+            $sort = SortBy::fromQueryString($request->query->get('sort'));
+        }
+
+        $reportId = ReportId::of($id);
+        $reportLines = $this->queryBus->query(new ListReportLines($reportId, $sort, $filters));
+
+        return $this->json($reportLines);
     }
 }

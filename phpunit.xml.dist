@@ -39,6 +39,8 @@
         </include>
         <exclude>
             <directory prefix="InMemory" suffix="Repository.php">src</directory>
+            <directory suffix=".php">app/Controller</directory>
+            <directory suffix=".php">app/Form</directory>
         </exclude>
     </coverage>
 

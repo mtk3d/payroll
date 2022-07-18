@@ -13,7 +13,6 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class ReportDoctrineTest extends KernelTestCase
 {
-
     private ?DoctrineReportRepository $reportRepository;
 
     protected function setUp(): void

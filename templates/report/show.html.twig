@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reports List{% endblock %}
+
+{% block body %}
+    <style>
+        .clickable {
+            cursor: pointer;
+        }
+    </style>
+    <a class="button outline secondary" href="/">🔙 Back</a>
+    <div x-data="{
+            lines: [],
+            sortBy: 'first_name',
+            sortDirection: 'asc',
+            filters: {
+                first_name: '',
+                last_name: '',
+                department: '',
+            },
+            toggleSort(column) {
+                if (this.sortBy === column) {
+                    this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc'
+                } else {
+                    this.sortDirection = 'asc'
+                    this.sortBy = column
+                }
+                this.fetchData()
+            },
+            arrow(column) {
+                if (column === this.sortBy) {
+                    return this.sortDirection === 'asc' ? '🔼' : '🔽'
+                }
+                return ''
+            },
+            async fetchData() {
+                var sort = 'sort='+this.sortBy+'+'+this.sortDirection
+                var filter = 'filters[first_name]='+this.filters.first_name+'&filters[last_name]='+this.filters.last_name+'&filters[department]='+this.filters.department
+                var url = '/api/report/{{ report.id }}/lines?'+sort+'&'+filter
+                var fetchResult = await fetch(url)
+                this.lines = await fetchResult.json()
+            }
+        }" x-init="fetchData()"
+    >
+        <table>
+            <thead>
+            <tr>
+                <td><input type="text" @keyup.enter="fetchData()" x-model="filters.first_name" /></td>
+                <td><input type="text" @keyup.enter="fetchData()" x-model="filters.last_name" /></td>
+                <td><input type="text" @keyup.enter="fetchData()" x-model="filters.department" /></td>
+                <td><button @click="fetchData()" class="button clear">Apply Filters</button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td x-on:click="toggleSort('first_name')" class="clickable">First Name <span x-text="arrow('first_name')"></span></td>
+                <td x-on:click="toggleSort('last_name')" class="clickable">Last Name <span x-text="arrow('last_name')"></span></td>
+                <td x-on:click="toggleSort('department')" class="clickable">Department <span x-text="arrow('department')"></span></td>
+                <td x-on:click="toggleSort('base_salary')" class="clickable">Base Salary <span x-text="arrow('base_salary')"></span></td>
+                <td x-on:click="toggleSort('bonus')" class="clickable">Bonus <span x-text="arrow('bonus')"></span></td>
+                <td x-on:click="toggleSort('bonus_type')" class="clickable">Bonus Type <span x-text="arrow('bonus_type')"></span></td>
+                <td x-on:click="toggleSort('salary')" class="clickable">Salary <span x-text="arrow('salary')"></span></td>
+            </tr>
+            </thead>
+            <tbody>
+                <template x-for="line in lines">
+                    <tr>
+                        <td x-text="line.first_name"></td>
+                        <td x-text="line.last_name"></td>
+                        <td x-text="line.department"></td>
+                        <td x-text="line.base_salary"></td>
+                        <td x-text="line.bonus"></td>
+                        <td x-text="line.bonus_type"></td>
+                        <td x-text="line.salary"></td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
