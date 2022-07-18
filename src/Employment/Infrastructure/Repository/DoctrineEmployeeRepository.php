@@ -23,6 +23,19 @@ class DoctrineEmployeeRepository implements EmployeeRepository
 
     public function find(EmployeeId $employeeId): ?Employee
     {
-        return $this->em->find(Employee::class, $employeeId);
+        /** @var Employee[] $result */
+        $query = $this->em->createQuery(<<<DQL
+            SELECT e, d
+            FROM Payroll\Employment\Domain\Employee e
+            JOIN e.department d
+            WHERE e.id = :id
+        DQL);
+
+        $query->setParameter('id', $employeeId->toString());
+        $result = $query->getResult();
+
+        reset($result);
+
+        return current($result) ?: null;
     }
 }

@@ -9,7 +9,7 @@ use Payroll\Shared\UUID\ReportId;
 
 class ListReportLines implements Query
 {
-    public function __construct(readonly ReportId $reportId)
-    {
-    }
+    public function __construct(
+        readonly ReportId $reportId
+    ) {}
 }
