@@ -41,6 +41,7 @@
             <directory prefix="InMemory" suffix="Repository.php">src</directory>
             <directory suffix=".php">app/Controller</directory>
             <directory suffix=".php">app/Form</directory>
+            <directory suffix=".php">app/DataFixtures</directory>
         </exclude>
     </coverage>
 

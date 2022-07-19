@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests\Functional;
 
 use App\ReadModel\Department\Query\ListDepartments;
+use App\ReadModel\Department\Query\ListDepartmentsChoices;
 use Payroll\Employment\Application\Command\CreateDepartment;
 use Payroll\Salary\Application\Command\SetDepartmentBonus;
 use Payroll\Shared\CQRS\CommandBus;
@@ -45,5 +46,18 @@ class CreateDepartmentTest extends KernelTestCase
         ];
 
         self::assertContains($expected, $departments);
+    }
+
+    public function testGetDepartmentChoicesList(): void
+    {
+        $departmentId = DepartmentId::newOne();
+        $createDepartment = new CreateDepartment($departmentId, 'Marketing');
+        $setDepartmentBonus = new SetDepartmentBonus($departmentId, 'PERCENTAGE', 1000);
+        $this->commandBus->dispatch($createDepartment);
+        $this->commandBus->dispatch($setDepartmentBonus);
+
+        $departments = $this->queryBus->query(new ListDepartmentsChoices());
+
+        self::assertArrayHasKey('Marketing', $departments);
     }
 }
