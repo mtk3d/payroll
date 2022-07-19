@@ -1,8 +1,8 @@
-# Payroll
+# Payroll 💸
 
 Small application built for manage employments, and generate salary reports.
 
-## Assumptions
+## 📝 Assumptions
 
 - Application is built using as many patterns and good practices as possible in a finite time
 - Report generating process is ready to run it asynchronously
@@ -12,7 +12,7 @@ Small application built for manage employments, and generate salary reports.
 - Report read model must be as simple as possible, like simple single database table
 - App frontend must be simple as possible using basic tools, like CSS and JS framework from cdn
 
-## Setup local environment
+## 🚀 Setup local environment
 
 Just run
 
@@ -22,7 +22,7 @@ make up
 
 this command will build and create entire docker environment, and will load database fixtures
 
-## Run tests
+## 🧪 Run tests
 
 To run functional tests, you have to go inside docker shell
 
@@ -51,7 +51,7 @@ If you're not using docker environment, you have to load fixtures before running
 php bin/console doctrine:fixtures:load
 ```
 
-## Other usefully commands
+## 🧑‍🚀 Other usefully commands
 
 ```shell
 Usage:
@@ -67,7 +67,7 @@ Targets:
 
 ```
 
-## Architecture
+## 🏗️ Architecture
 
 - [Event Storming](./docs/EventStorming.md)
 - [C4 model](./docs/C4-model.md)
