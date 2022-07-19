@@ -31,11 +31,11 @@ class SalaryCalculatedListener
         $stmt->bindValue(':reportId', $event->reportId->toString());
         $stmt->bindValue(':employeeId', $event->employeeId->toString());
         $stmt->bindValue(':baseSalary', $this->moneyFormat($event->baseSalary));
-        $stmt->bindValue(':rawBaseSalary', (int)$event->baseSalary->getAmount());
+        $stmt->bindValue(':rawBaseSalary', (int) $event->baseSalary->getAmount());
         $stmt->bindValue(':bonus', $this->moneyFormat($event->bonus));
-        $stmt->bindValue(':rawBonus', (int)$event->bonus->getAmount());
+        $stmt->bindValue(':rawBonus', (int) $event->bonus->getAmount());
         $stmt->bindValue(':salary', $this->moneyFormat($event->baseSalary->add($event->bonus)));
-        $stmt->bindValue(':rawSalary', (int)$event->baseSalary->add($event->bonus)->getAmount());
+        $stmt->bindValue(':rawSalary', (int) $event->baseSalary->add($event->bonus)->getAmount());
 
         $stmt->executeQuery();
     }

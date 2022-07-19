@@ -68,7 +68,7 @@ class ReportController extends AbstractController
             ], Response::HTTP_NOT_FOUND);
         }
 
-        if ($report['status'] === 'PROCESSING') {
+        if ('PROCESSING' === $report['status']) {
             return $this->json([
                 'message' => 'Report is still processing',
             ], Response::HTTP_ACCEPTED);
