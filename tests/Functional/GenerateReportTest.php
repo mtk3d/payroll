@@ -30,8 +30,8 @@ class GenerateReportTest extends KernelTestCase
 
     public function setUp(): void
     {
-        $kernel = $this->bootKernel();
-        $container = $kernel->getContainer();
+        self::bootKernel();
+        $container = self::getContainer();
         $this->commandBus = $container->get(MessengerCommandBus::class);
         $this->queryBus = $container->get(MessengerQueryBus::class);
     }

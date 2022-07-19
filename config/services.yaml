@@ -18,72 +18,28 @@ services:
     Payroll\:
         resource: '../src/'
 
-    Payroll\Shared\CQRS\MessengerCommandBus:
-        arguments:
-            $bus: '@command.bus'
-    Payroll\Shared\Event\MessengerDomainEventBus: ~
-    Payroll\Shared\CQRS\CommandBus: '@Payroll\Shared\CQRS\MessengerCommandBus'
-    Payroll\Shared\Event\DomainEventBus: '@Payroll\Shared\Event\MessengerDomainEventBus'
-    Payroll\Salary\Infrastructure\Repository\DoctrineDepartmentRepository:
-        arguments:
-            $em: '@doctrine.orm.entity_manager'
-    Payroll\Salary\Infrastructure\Repository\DoctrineEmployeeRepository:
-        arguments:
-            $em: '@doctrine.orm.entity_manager'
     Payroll\Employment\Domain\DepartmentRepository: '@Payroll\Employment\Infrastructure\Repository\DoctrineDepartmentRepository'
     Payroll\Salary\Domain\DepartmentRepository: '@Payroll\Salary\Infrastructure\Repository\DoctrineDepartmentRepository'
     Payroll\Salary\Domain\EmployeeRepository: '@Payroll\Salary\Infrastructure\Repository\DoctrineEmployeeRepository'
     Payroll\Employment\Domain\EmployeeRepository: '@Payroll\Employment\Infrastructure\Repository\DoctrineEmployeeRepository'
     Payroll\Report\Domain\ReportRepository: '@Payroll\Report\Infrastructure\Repository\DoctrineReportRepository'
-    Payroll\Report\Infrastructure\Repository\DoctrineReportRepository:
-        arguments:
-            $em: '@doctrine.orm.entity_manager'
-    Payroll\Employment\Infrastructure\Repository\DoctrineEmployeeRepository:
-        arguments:
-            $em: '@doctrine.orm.entity_manager'
-    Payroll\Employment\Infrastructure\Repository\DoctrineDepartmentRepository:
-        arguments:
-            $em: '@doctrine.orm.entity_manager'
 
     Payroll\Shared\Clock: '@Payroll\Shared\CommonClock'
 
-    _instanceof:
-        Payroll\Shared\CQRS\CommandHandler:
-            tags:
-                - { name: messenger.message_handler, bus: command.bus }
+    Payroll\Shared\CQRS\MessengerCommandBus:
+        arguments:
+            $bus: '@command.bus'
+    Payroll\Shared\CQRS\MessengerQueryBus:
+        arguments:
+            $bus: '@query.bus'
+    Payroll\Shared\Event\MessengerDomainEventBus:
+        arguments:
+            $bus: '@event.bus'
+
+    Payroll\Shared\CQRS\CommandBus: '@Payroll\Shared\CQRS\MessengerCommandBus'
+    Payroll\Shared\CQRS\QueryBus: '@Payroll\Shared\CQRS\MessengerQueryBus'
+    Payroll\Shared\Event\DomainEventBus: '@Payroll\Shared\Event\MessengerDomainEventBus'
 
 when@test:
     services:
-        Payroll\Salary\Infrastructure\Repository\DoctrineEmployeeRepository:
-            arguments:
-                $em: '@doctrine.orm.entity_manager'
-            public: true
-        Payroll\Salary\Infrastructure\Repository\DoctrineDepartmentRepository:
-            arguments:
-                $em: '@doctrine.orm.entity_manager'
-            public: true
-        Payroll\Report\Infrastructure\Repository\DoctrineReportRepository:
-            arguments:
-                $em: '@doctrine.orm.entity_manager'
-            public: true
-        Payroll\Employment\Infrastructure\Repository\DoctrineEmployeeRepository:
-            arguments:
-                $em: '@doctrine.orm.entity_manager'
-            public: true
-        Payroll\Employment\Infrastructure\Repository\DoctrineDepartmentRepository:
-            arguments:
-                $em: '@doctrine.orm.entity_manager'
-            public: true
-        Payroll\Shared\CQRS\MessengerCommandBus:
-            arguments:
-                $bus: '@command.bus'
-            public: true
-        Payroll\Shared\CQRS\MessengerQueryBus:
-            arguments:
-                $bus: '@query.bus'
-            public: true
-        Payroll\Shared\Event\MessengerDomainEventBus:
-            arguments:
-                $bus: '@event.bus'
-            public: true
         Payroll\Shared\Clock: '@Payroll\Shared\FakeClock'

@@ -20,8 +20,8 @@ class SalaryDoctrineTest extends KernelTestCase
 
     protected function setUp(): void
     {
-        $kernel = $this->bootKernel();
-        $container = $kernel->getContainer();
+        self::bootKernel();
+        $container = self::getContainer();
         $this->employeeRepository = $container->get(DoctrineEmployeeRepository::class);
         $this->departmentRepository = $container->get(DoctrineDepartmentRepository::class);
     }

@@ -17,8 +17,8 @@ class ReportDoctrineTest extends KernelTestCase
 
     protected function setUp(): void
     {
-        $kernel = $this->bootKernel();
-        $container = $kernel->getContainer();
+        self::bootKernel();
+        $container = self::getContainer();
         $this->reportRepository = $container->get(DoctrineReportRepository::class);
     }
 
