@@ -18,7 +18,7 @@ class ListReportsHandler
     public function __invoke(ListReports $query): array
     {
         return $this->conn
-            ->executeQuery('SELECT * FROM report_read_model')
+            ->executeQuery('SELECT * FROM report_read_model ORDER BY date DESC')
             ->fetchAllAssociative();
     }
 }

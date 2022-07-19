@@ -29,7 +29,7 @@ class ReportCreatedListener
         SQL);
 
         $stmt->bindValue(':id', $event->reportId->toString());
-        $stmt->bindValue(':date', $event->date->format('Y-m-d'));
+        $stmt->bindValue(':date', $event->date->format('Y-m-d H:i:s'));
         $stmt->bindValue(':status', $event->status);
 
         $stmt->executeQuery();
