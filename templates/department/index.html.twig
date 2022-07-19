@@ -22,7 +22,7 @@
                     <td>{{ department.id }}</td>
                     <td>{{ department.name }}</td>
                     <td>{{ department.bonus_type }}</td>
-                    {% if department.bonus_type == 'PERCENTAGE' %}
+                    {% if department.bonus_type == 'PERMANENT' %}
                         <td>{{ (department.bonus_factor / 100) | format_currency('USD', {rounding_mode: 'floor'}) }}</td>
                     {% else %}
                         <td>{{ (department.bonus_factor / 100) | number_format(2, '.', ',') }}%</td>
