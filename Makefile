@@ -1,6 +1,7 @@
 up: ## Up and run docker environment
 up: .env docker-compose-up migrate load-fixtures
-	@echo "Application is available on: http://127.0.0.1:9090"
+	@echo ""
+	@echo "Application is now available on: http://127.0.0.1:9090"
 
 down: ## Stop environment
 	$(DOCKER_COMPOSE) down
