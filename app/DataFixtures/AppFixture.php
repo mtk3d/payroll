@@ -21,7 +21,9 @@ use Payroll\Shared\UUID\ReportId;
 
 class AppFixture extends Fixture
 {
-    public function __construct(private CommandBus $commandBus, private Connection $conn) {}
+    public function __construct(private CommandBus $commandBus, private Connection $conn)
+    {
+    }
 
     public function load(ObjectManager $manager)
     {

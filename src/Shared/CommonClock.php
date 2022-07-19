@@ -9,7 +9,9 @@ use DateTimeZone;
 
 class CommonClock implements Clock
 {
-    public function __construct(private string $timezone) {}
+    public function __construct(private string $timezone)
+    {
+    }
 
     public function now(): DateTimeImmutable
     {

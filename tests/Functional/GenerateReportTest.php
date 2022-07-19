@@ -80,7 +80,7 @@ class GenerateReportTest extends KernelTestCase
     {
         $filters = [
             new FilterBy('first_name', 'Ania'),
-            new FilterBy('non_existing_column', 'XYZ')
+            new FilterBy('non_existing_column', 'XYZ'),
         ];
 
         $query = new ListReportLines(self::$reportId, null, $filters);
