@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  web:
+    container_name: payroll.web
+    build:
+      context: ../
+      dockerfile: build/package/nginx/Dockerfile
+    ports:
+      - "9090:80"
+    depends_on:
+      - app
+    volumes:
+      - ./public:/app/public
+
+  app:
+    container_name: payroll.app
+    build:
+      context: ../
+      dockerfile: build/package/php/Dockerfile
+      target: development
+    volumes:
+      - ../:/app
+
+  database:
+    container_name: payroll.database
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: payroll
+      MYSQL_USER: payroll
+      MYSQL_PASSWORD: payroll
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - payroll.database:/var/lib/mysql
+
+volumes:
+  payroll.database: {}
+
+networks:
+  payroll_net: {}
