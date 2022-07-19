@@ -11,6 +11,7 @@ Small application built for manage employments, and generate salary reports.
 - ☑️ Single employee could be attached to only one department 
 - ☑️ Domain is open to define new salary calculations types
 - ☑️ Report read model must be as simple and fast as possible, like single database table without any relations required
+- ☑️ Reports needs to be sortable and filterable
 - ☑️ App frontend must be simple as possible using basic tools, like CSS and JS framework from cdn
 
 ## 🚀 Setup local environment
