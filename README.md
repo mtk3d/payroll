@@ -2,6 +2,8 @@
 
 Small application built for manage employments, and generate salary reports.
 
+![Application interface](docs/assets/app.png)
+
 ## 📝 Assumptions
 
 - ☑️ Application is built using as many patterns and good practices as possible in a finite time
