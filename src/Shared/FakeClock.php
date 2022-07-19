@@ -10,6 +10,6 @@ class FakeClock implements Clock
 {
     public function now(): DateTimeImmutable
     {
-        return new DateTimeImmutable('2005-03-14');
+        return new DateTimeImmutable('2005-03-14 12:00:00');
     }
 }

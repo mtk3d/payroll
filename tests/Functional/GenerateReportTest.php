@@ -10,11 +10,11 @@ use App\ReadModel\Report\Query\ListReports;
 use App\ReadModel\Shared\FilterBy;
 use App\ReadModel\Shared\SortBy;
 use Payroll\Report\Application\Command\GenerateSalaryReport;
-use Payroll\Report\Domain\Report;
 use Payroll\Shared\CQRS\CommandBus;
 use Payroll\Shared\CQRS\MessengerCommandBus;
 use Payroll\Shared\CQRS\MessengerQueryBus;
 use Payroll\Shared\CQRS\QueryBus;
+use Payroll\Shared\FakeClock;
 use Payroll\Shared\UUID\ReportId;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
@@ -23,6 +23,7 @@ class GenerateReportTest extends KernelTestCase
     public static ReportId $reportId;
     private ?QueryBus $queryBus;
     private ?CommandBus $commandBus;
+    private FakeClock $clock;
 
     public function setUp(): void
     {
@@ -30,6 +31,7 @@ class GenerateReportTest extends KernelTestCase
         $container = self::getContainer();
         $this->queryBus = $container->get(MessengerQueryBus::class);
         $this->commandBus = $container->get(MessengerCommandBus::class);
+        $this->clock = new FakeClock();
     }
 
     public static function setUpBeforeClass(): void
@@ -52,7 +54,7 @@ class GenerateReportTest extends KernelTestCase
 
         $expectedReport = [
             'id' => $reportId->toString(),
-            'date' => '2005-03-14 00:00:00',
+            'date' => $this->clock->now()->format('Y-m-d H:i:s'),
             'status' => 'GENERATED',
         ];
 
@@ -67,7 +69,7 @@ class GenerateReportTest extends KernelTestCase
 
         $expectedReport = [
             'id' => self::$reportId->toString(),
-            'date' => '2005-03-14 00:00:00',
+            'date' => $this->clock->now()->format('Y-m-d H:i:s'),
             'status' => 'GENERATED',
         ];
 
