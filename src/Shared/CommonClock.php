@@ -9,12 +9,15 @@ use DateTimeZone;
 
 class CommonClock implements Clock
 {
-    public function __construct(private string $timezone)
+    private DateTimeZone $timezone;
+
+    public function __construct(string $timezone)
     {
+        $this->timezone = new DateTimeZone($timezone);
     }
 
     public function now(): DateTimeImmutable
     {
-        return new DateTimeImmutable('now', new DateTimeZone($this->timezone));
+        return new DateTimeImmutable('now', $this->timezone);
     }
 }
