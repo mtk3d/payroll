@@ -38,6 +38,10 @@ class ReportController extends AbstractController
         $reportId = ReportId::of($id);
         $report = $this->queryBus->query(new GetReport($reportId));
 
+        if (!$report) {
+            throw $this->createNotFoundException('The report does not exist');
+        }
+
         return $this->render('report/show.html.twig', [
             'report' => $report,
         ]);
@@ -55,13 +59,27 @@ class ReportController extends AbstractController
     #[Route('/api/report/{id}/lines', name: 'api_report_lines', methods: 'GET', format: 'json')]
     public function reportLines(Request $request, string $id): Response
     {
+        $reportId = ReportId::of($id);
+        $report = $this->queryBus->query(new GetReport($reportId));
+
+        if (!$report) {
+            return $this->json([
+                'message' => 'The report does not exist',
+            ], Response::HTTP_NOT_FOUND);
+        }
+
+        if ($report['status'] === 'PROCESSING') {
+            return $this->json([
+                'message' => 'Report is still processing',
+            ], Response::HTTP_ACCEPTED);
+        }
+
         $filters = FilterBy::ofList($request->query->all()['filters'] ?? []);
         $sort = null;
         if ($request->query->has('sort')) {
             $sort = SortBy::fromQueryString($request->query->get('sort'));
         }
 
-        $reportId = ReportId::of($id);
         $reportLines = $this->queryBus->query(new ListReportLines($reportId, $sort, $filters));
 
         return $this->json($reportLines);

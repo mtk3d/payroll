@@ -15,7 +15,7 @@ class GetReportHandler
     {
     }
 
-    public function __invoke(GetReport $query): array
+    public function __invoke(GetReport $query): array|false
     {
         $stmt = $this->conn->prepare('SELECT * FROM report_read_model WHERE id = :id LIMIT 1');
         $stmt->bindValue(':id', $query->reportId->toString());
