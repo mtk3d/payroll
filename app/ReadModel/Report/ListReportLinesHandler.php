@@ -12,6 +12,7 @@ use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 class ListReportLinesHandler
 {
     private const FILTER_COLUMNS = ['first_name', 'last_name', 'department'];
+    private const SORT_COLUMNS = ['employee_id', 'first_name', 'last_name', 'department', 'base_salary', 'raw_base_salary', 'bonus', 'raw_bonus', 'bonus_type', 'salary', 'raw_salary'];
 
     public function __construct(private Connection $conn)
     {
@@ -25,7 +26,7 @@ class ListReportLinesHandler
             ->where('report_id = :reportId')
             ->setParameter('reportId', $query->reportId->toString());
 
-        if ($query->sortBy) {
+        if ($query->sortBy && in_array($query->sortBy->column, self::SORT_COLUMNS)) {
             $q->orderBy($query->sortBy->column, $query->sortBy->order());
         }
 
