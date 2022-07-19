@@ -28,6 +28,9 @@ class EmployeeIdType extends GuidType
         return $value->toString();
     }
 
+    /**
+     * @return string
+     */
     public function getName()
     {
         return self::EMPLOYEE_ID;

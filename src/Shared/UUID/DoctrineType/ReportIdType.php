@@ -28,6 +28,9 @@ class ReportIdType extends GuidType
         return $value->toString();
     }
 
+    /**
+     * @return string
+     */
     public function getName()
     {
         return self::REPORT_ID;

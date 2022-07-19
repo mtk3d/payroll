@@ -32,6 +32,9 @@ class DepartmentIdType extends GuidType
         return $value->toString();
     }
 
+    /**
+     * @return string
+     */
     public function getName()
     {
         return self::DEPARTMENT_ID;
