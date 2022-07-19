@@ -4,13 +4,13 @@ Small application built for manage employments, and generate salary reports.
 
 ## 📝 Assumptions
 
-- Application is built using as many patterns and good practices as possible in a finite time
-- Report generating process is ready to run it asynchronously
-- Framework installation deferred as long as possible, use framework-agnostic approach
-- App has a basic C4 model and EventStorming session output
-- Employee must be attached to Department
-- Report read model must be as simple as possible, like simple single database table
-- App frontend must be simple as possible using basic tools, like CSS and JS framework from cdn
+- ☑️ Application is built using as many patterns and good practices as possible in a finite time
+- ☑️ Report generating process is ready to run it asynchronously
+- ☑️ Framework installation deferred as long as possible, use framework-agnostic approach
+- ☑️ App has a basic C4 model and EventStorming session output
+- ☑️ Single employee could be attached to only one department 
+- ☑️ Report read model must be as simple as possible, like simple single database table
+- ☑️ App frontend must be simple as possible using basic tools, like CSS and JS framework from cdn
 
 ## 🚀 Setup local environment
 
