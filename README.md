@@ -2,38 +2,52 @@
 
 Small application built for manage employments, and generate salary reports.
 
+## Assumptions
+
+- Application is built using as many patterns and good practices as possible in a finite time
+- Report generating process is ready to run it asynchronously
+- Framework installation deferred as long as possible, use framework-agnostic approach
+- App has a basic C4 model and EventStorming session output
+- Employee must be attached to Department
+- Report read model must be as simple as possible, like simple single database table
+- App frontend must be simple as possible using basic tools, like CSS and JS framework from cdn
+
 ## Setup local environment
 
-
+```shell
+make up
+```
 
 ## Run tests
 
+To run functional tests, You have to run app fixtures first
 
+```shell
+php bin/console doctrine:fixtures:load
+```
 
-## Event Storming session
+and then go inside docker shell
 
-I made short event storming session, where I built a big-picture context of an application.
-I managed to find three contexts:
+```shell
+make shell
+```
 
-- `Employment` - this context is basically a catalog with departments, employees, and relation between them.
-- `Salary` - in this context aggregates all data required to properly calculate salaries.
-- `Report` - simple context, to keep report information, status and date of generating.
+and then
 
-I discovered also two small processes, about creating department and employee, and one bigger, about generating salary report.
-This process is going across report and salary contexts, so I need to define a process manager here.
+```shell
+make test
+```
 
-Output of the session:
-![Payroll-EventStorming](./docs/assets/Payroll-EventStorming.png)
+or you can run only specific type tests
 
-## C4 model diagram
+```shell
+make test-all
+make test-unit
+make test-integration
+make test-functional
+```
 
-This is a simple representation of the system in C4 notation. I prepared first three levels.
+## Architecture
 
-### C1 diagram
-![Payroll-C1](./docs/assets/Payroll-C1.svg)
-
-### C2 diagram
-![Payroll-C1](./docs/assets/Payroll-C2.svg)
-
-### C3 diagram
-![Payroll-C1](./docs/assets/Payroll-C3.svg)
+- [Event Storming](./docs/EventStorming.md)
+- [C4 model](./docs/C4-model.md)
