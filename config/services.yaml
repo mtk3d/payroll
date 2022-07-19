@@ -19,9 +19,9 @@ services:
         resource: '../src/'
 
     Payroll\Employment\Domain\DepartmentRepository: '@Payroll\Employment\Infrastructure\Repository\DoctrineDepartmentRepository'
+    Payroll\Employment\Domain\EmployeeRepository: '@Payroll\Employment\Infrastructure\Repository\DoctrineEmployeeRepository'
     Payroll\Salary\Domain\DepartmentRepository: '@Payroll\Salary\Infrastructure\Repository\DoctrineDepartmentRepository'
     Payroll\Salary\Domain\EmployeeRepository: '@Payroll\Salary\Infrastructure\Repository\DoctrineEmployeeRepository'
-    Payroll\Employment\Domain\EmployeeRepository: '@Payroll\Employment\Infrastructure\Repository\DoctrineEmployeeRepository'
     Payroll\Report\Domain\ReportRepository: '@Payroll\Report\Infrastructure\Repository\DoctrineReportRepository'
 
     Payroll\Shared\Clock: '@Payroll\Shared\CommonClock'
