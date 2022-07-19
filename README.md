@@ -9,7 +9,8 @@ Small application built for manage employments, and generate salary reports.
 - ☑️ Framework installation deferred as long as possible, use framework-agnostic approach
 - ☑️ App has a basic C4 model and EventStorming session output
 - ☑️ Single employee could be attached to only one department 
-- ☑️ Report read model must be as simple as possible, like simple single database table
+- ☑️ Domain is open to define new salary calculations types
+- ☑️ Report read model must be as simple and fast as possible, like single database table without any relations required
 - ☑️ App frontend must be simple as possible using basic tools, like CSS and JS framework from cdn
 
 ## 🚀 Setup local environment
