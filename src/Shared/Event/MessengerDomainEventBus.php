@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Payroll\Shared;
+namespace Payroll\Shared\Event;
 
 use Symfony\Component\Messenger\MessageBusInterface;
 
-class MessengerCommandBus implements CommandBus
+class MessengerDomainEventBus implements DomainEventBus
 {
     public function __construct(private MessageBusInterface $bus)
     {
     }
 
-    public function dispatch(Command $command): void
+    public function dispatch(DomainEvent $event): void
     {
-        $this->bus->dispatch($command);
+        $this->bus->dispatch($event);
     }
 }

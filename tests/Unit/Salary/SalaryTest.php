@@ -13,8 +13,8 @@ use Payroll\Salary\Domain\ReportSalariesCalculated;
 use Payroll\Salary\Domain\SalaryCalculated;
 use Payroll\Salary\Infrastructure\Repository\InMemoryEmployeeRepository;
 use Payroll\Shared\Clock;
+use Payroll\Shared\Event\InMemoryDomainEventBus;
 use Payroll\Shared\FakeClock;
-use Payroll\Shared\InMemoryDomainEventBus;
 use Payroll\Shared\UUID\ReportId;
 use PHPUnit\Framework\TestCase;
 

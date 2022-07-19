@@ -9,7 +9,7 @@ use Payroll\Employment\Application\CreateDepartmentHandler;
 use Payroll\Employment\Domain\Department;
 use Payroll\Employment\Domain\DepartmentRegistered;
 use Payroll\Employment\Infrastructure\Repository\InMemoryDepartmentRepository;
-use Payroll\Shared\InMemoryDomainEventBus;
+use Payroll\Shared\Event\InMemoryDomainEventBus;
 use Payroll\Shared\UUID\DepartmentId;
 use PHPUnit\Framework\TestCase;
 

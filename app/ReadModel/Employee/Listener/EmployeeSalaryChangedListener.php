@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\ReadModel\Employee;
+namespace App\ReadModel\Employee\Listener;
 
 use App\ReadModel\Shared\MoneyFormatter;
 use Doctrine\DBAL\Connection;

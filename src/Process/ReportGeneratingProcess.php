@@ -8,7 +8,7 @@ use Payroll\Report\Application\Command\FinishReportProcessing;
 use Payroll\Report\Domain\ReportCreated;
 use Payroll\Salary\Application\Command\CalculateReportSalaries;
 use Payroll\Salary\Domain\ReportSalariesCalculated;
-use Payroll\Shared\CommandBus;
+use Payroll\Shared\CQRS\CommandBus;
 use Symfony\Component\Messenger\Handler\MessageSubscriberInterface;
 
 class ReportGeneratingProcess implements MessageSubscriberInterface

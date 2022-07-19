@@ -8,8 +8,8 @@ use Payroll\Employment\Application\Command\CreateDepartment;
 use Payroll\Employment\Domain\Department;
 use Payroll\Employment\Domain\DepartmentRegistered;
 use Payroll\Employment\Domain\DepartmentRepository;
-use Payroll\Shared\CommandHandler;
-use Payroll\Shared\DomainEventBus;
+use Payroll\Shared\CQRS\CommandHandler;
+use Payroll\Shared\Event\DomainEventBus;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 #[AsMessageHandler]

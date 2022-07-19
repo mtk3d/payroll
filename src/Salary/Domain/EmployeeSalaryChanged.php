@@ -6,7 +6,7 @@ namespace Payroll\Salary\Domain;
 
 use DateTimeImmutable;
 use Money\Money;
-use Payroll\Shared\DomainEvent;
+use Payroll\Shared\Event\DomainEvent;
 use Payroll\Shared\UUID\DepartmentId;
 use Payroll\Shared\UUID\EmployeeId;
 use Payroll\Shared\UUID\UUID;

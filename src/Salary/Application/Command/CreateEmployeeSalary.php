@@ -6,7 +6,7 @@ namespace Payroll\Salary\Application\Command;
 
 use DateTimeImmutable;
 use Money\Money;
-use Payroll\Shared\Command;
+use Payroll\Shared\CQRS\Command;
 use Payroll\Shared\UUID\DepartmentId;
 use Payroll\Shared\UUID\EmployeeId;
 

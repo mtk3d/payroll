@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Payroll\Employment\Application\Command;
 
-use Payroll\Shared\Command;
+use Payroll\Shared\CQRS\Command;
 use Payroll\Shared\UUID\DepartmentId;
 use Payroll\Shared\UUID\EmployeeId;
 

@@ -9,8 +9,8 @@ use Payroll\Salary\Domain\Bonus\BonusCalculatorFactory;
 use Payroll\Salary\Domain\EmployeeRepository;
 use Payroll\Salary\Domain\ReportSalariesCalculated;
 use Payroll\Salary\Domain\SalaryCalculated;
-use Payroll\Shared\CommandHandler;
-use Payroll\Shared\DomainEventBus;
+use Payroll\Shared\CQRS\CommandHandler;
+use Payroll\Shared\Event\DomainEventBus;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 #[AsMessageHandler]

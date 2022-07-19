@@ -13,8 +13,8 @@ use Payroll\Report\Domain\ReportCreated;
 use Payroll\Report\Domain\ReportProcessingFinished;
 use Payroll\Report\Infrastructure\Repository\InMemoryReportRepository;
 use Payroll\Shared\Clock;
+use Payroll\Shared\Event\InMemoryDomainEventBus;
 use Payroll\Shared\FakeClock;
-use Payroll\Shared\InMemoryDomainEventBus;
 use Payroll\Shared\UUID\ReportId;
 use PHPUnit\Framework\TestCase;
 

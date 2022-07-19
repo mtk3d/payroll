@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\ReadModel\Report;
+namespace App\ReadModel\Report\Listener;
 
 use Doctrine\DBAL\Connection;
 use Payroll\Report\Domain\ReportCreated;

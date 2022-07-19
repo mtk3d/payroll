@@ -10,7 +10,7 @@ use Payroll\Salary\Application\SetDepartmentBonusHandler;
 use Payroll\Salary\Domain\Bonus\BonusType;
 use Payroll\Salary\Domain\DepartmentBonusChanged;
 use Payroll\Salary\Infrastructure\Repository\InMemoryDepartmentRepository;
-use Payroll\Shared\InMemoryDomainEventBus;
+use Payroll\Shared\Event\InMemoryDomainEventBus;
 use Payroll\Shared\UUID\DepartmentId;
 use PHPUnit\Framework\TestCase;
 

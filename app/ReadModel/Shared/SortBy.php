@@ -18,4 +18,9 @@ class SortBy
 
         return new self($column, 'asc' === $direction);
     }
+
+    public function order(): string
+    {
+        return $this->asc ? 'ASC' : 'DESC';
+    }
 }

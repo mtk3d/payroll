@@ -11,7 +11,7 @@ use Payroll\Salary\Application\CreateEmployeeSalaryHandler;
 use Payroll\Salary\Domain\EmployeeSalaryChanged;
 use Payroll\Salary\Infrastructure\Repository\InMemoryDepartmentRepository;
 use Payroll\Salary\Infrastructure\Repository\InMemoryEmployeeRepository;
-use Payroll\Shared\InMemoryDomainEventBus;
+use Payroll\Shared\Event\InMemoryDomainEventBus;
 use Payroll\Shared\UUID\EmployeeId;
 use PHPUnit\Framework\TestCase;
 

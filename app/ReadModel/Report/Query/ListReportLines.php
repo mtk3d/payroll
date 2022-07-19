@@ -6,7 +6,7 @@ namespace App\ReadModel\Report\Query;
 
 use App\ReadModel\Shared\FilterBy;
 use App\ReadModel\Shared\SortBy;
-use Payroll\Shared\Query;
+use Payroll\Shared\CQRS\Query;
 use Payroll\Shared\UUID\ReportId;
 
 class ListReportLines implements Query

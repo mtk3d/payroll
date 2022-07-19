@@ -11,6 +11,8 @@ use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 #[AsMessageHandler]
 class ListReportLinesHandler
 {
+    private const FILTER_COLUMNS = ['first_name', 'last_name', 'department'];
+
     public function __construct(private Connection $conn)
     {
     }
@@ -24,14 +26,16 @@ class ListReportLinesHandler
             ->setParameter('reportId', $query->reportId->toString());
 
         if ($query->sortBy) {
-            $q->orderBy($query->sortBy->column, $query->sortBy->asc ? 'ASC' : 'DESC');
+            $q->orderBy($query->sortBy->column, $query->sortBy->order());
         }
 
-        $paramNum = 0;
         foreach ($query->filters as $filter) {
-            $q->andWhere($q->expr()->like($filter->column, '?'));
-            $q->setParameter($paramNum, "%$filter->value%");
-            ++$paramNum;
+            if (!in_array($filter->column, self::FILTER_COLUMNS)) {
+                continue;
+            }
+
+            $q->andWhere($q->expr()->like($filter->column, $filter->parameter()));
+            $q->setParameter($filter->column, $filter->filterValue());
         }
 
         return $q->executeQuery()->fetchAllAssociative();

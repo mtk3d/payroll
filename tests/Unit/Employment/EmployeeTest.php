@@ -11,7 +11,7 @@ use Payroll\Employment\Domain\Employee;
 use Payroll\Employment\Domain\EmployeeRegistered;
 use Payroll\Employment\Infrastructure\Repository\InMemoryDepartmentRepository;
 use Payroll\Employment\Infrastructure\Repository\InMemoryEmployeeRepository;
-use Payroll\Shared\InMemoryDomainEventBus;
+use Payroll\Shared\Event\InMemoryDomainEventBus;
 use Payroll\Shared\UUID\DepartmentId;
 use Payroll\Shared\UUID\EmployeeId;
 use PHPUnit\Framework\TestCase;

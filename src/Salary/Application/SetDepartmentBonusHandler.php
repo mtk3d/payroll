@@ -11,8 +11,8 @@ use Payroll\Salary\Domain\Department;
 use Payroll\Salary\Domain\DepartmentBonusChanged;
 use Payroll\Salary\Domain\DepartmentRepository;
 use Payroll\Salary\Domain\Exception\DepartmentAlreadyExistException;
-use Payroll\Shared\CommandHandler;
-use Payroll\Shared\DomainEventBus;
+use Payroll\Shared\CQRS\CommandHandler;
+use Payroll\Shared\Event\DomainEventBus;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 #[AsMessageHandler]

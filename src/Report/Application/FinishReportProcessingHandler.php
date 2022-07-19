@@ -6,8 +6,8 @@ namespace Payroll\Report\Application;
 
 use Payroll\Report\Application\Command\FinishReportProcessing;
 use Payroll\Report\Domain\ReportRepository;
-use Payroll\Shared\CommandHandler;
-use Payroll\Shared\DomainEventBus;
+use Payroll\Shared\CQRS\CommandHandler;
+use Payroll\Shared\Event\DomainEventBus;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 #[AsMessageHandler]

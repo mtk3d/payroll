@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Payroll\Shared;
 
+use Payroll\Shared\Event\DomainEvent;
 use Payroll\Shared\Result\Failure;
 use Payroll\Shared\Result\Success;
 

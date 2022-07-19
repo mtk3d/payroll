@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Payroll\Report\Domain;
 
 use DateTimeImmutable;
-use Payroll\Shared\DomainEvent;
+use Payroll\Shared\Event\DomainEvent;
 use Payroll\Shared\UUID\ReportId;
 use Payroll\Shared\UUID\UUID;
 

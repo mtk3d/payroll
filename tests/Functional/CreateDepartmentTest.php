@@ -7,10 +7,10 @@ namespace Tests\Functional;
 use App\ReadModel\Department\Query\ListDepartments;
 use Payroll\Employment\Application\Command\CreateDepartment;
 use Payroll\Salary\Application\Command\SetDepartmentBonus;
-use Payroll\Shared\CommandBus;
-use Payroll\Shared\MessengerCommandBus;
-use Payroll\Shared\MessengerQueryBus;
-use Payroll\Shared\QueryBus;
+use Payroll\Shared\CQRS\CommandBus;
+use Payroll\Shared\CQRS\MessengerCommandBus;
+use Payroll\Shared\CQRS\MessengerQueryBus;
+use Payroll\Shared\CQRS\QueryBus;
 use Payroll\Shared\UUID\DepartmentId;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 

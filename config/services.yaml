@@ -18,12 +18,12 @@ services:
     Payroll\:
         resource: '../src/'
 
-    Payroll\Shared\MessengerCommandBus:
+    Payroll\Shared\CQRS\MessengerCommandBus:
         arguments:
             $bus: '@command.bus'
-    Payroll\Shared\MessengerDomainEventBus: ~
-    Payroll\Shared\CommandBus: '@Payroll\Shared\MessengerCommandBus'
-    Payroll\Shared\DomainEventBus: '@Payroll\Shared\MessengerDomainEventBus'
+    Payroll\Shared\Event\MessengerDomainEventBus: ~
+    Payroll\Shared\CQRS\CommandBus: '@Payroll\Shared\CQRS\MessengerCommandBus'
+    Payroll\Shared\Event\DomainEventBus: '@Payroll\Shared\Event\MessengerDomainEventBus'
     Payroll\Salary\Infrastructure\Repository\DoctrineDepartmentRepository:
         arguments:
             $em: '@doctrine.orm.entity_manager'
@@ -48,7 +48,7 @@ services:
     Payroll\Shared\Clock: '@Payroll\Shared\CommonClock'
 
     _instanceof:
-        Payroll\Shared\CommandHandler:
+        Payroll\Shared\CQRS\CommandHandler:
             tags:
                 - { name: messenger.message_handler, bus: command.bus }
 
@@ -74,15 +74,15 @@ when@test:
             arguments:
                 $em: '@doctrine.orm.entity_manager'
             public: true
-        Payroll\Shared\MessengerCommandBus:
+        Payroll\Shared\CQRS\MessengerCommandBus:
             arguments:
                 $bus: '@command.bus'
             public: true
-        Payroll\Shared\MessengerQueryBus:
+        Payroll\Shared\CQRS\MessengerQueryBus:
             arguments:
                 $bus: '@query.bus'
             public: true
-        Payroll\Shared\MessengerDomainEventBus:
+        Payroll\Shared\Event\MessengerDomainEventBus:
             arguments:
                 $bus: '@event.bus'
             public: true

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Payroll\Shared;
+namespace Payroll\Shared\CQRS;
 
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Messenger\Stamp\HandledStamp;

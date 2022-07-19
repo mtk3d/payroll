@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Payroll\Shared;
+namespace Payroll\Shared\CQRS;
 
 interface CommandHandler
 {

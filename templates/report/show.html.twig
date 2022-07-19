@@ -10,6 +10,7 @@
     <style>
         .clickable {
             cursor: pointer;
+            user-select: none;
         }
     </style>
     <div x-data="{
@@ -48,10 +49,10 @@
         <table>
             <thead>
             <tr>
-                <td><input type="text" @keyup.enter="fetchData()" x-model="filters.first_name" /></td>
-                <td><input type="text" @keyup.enter="fetchData()" x-model="filters.last_name" /></td>
-                <td><input type="text" @keyup.enter="fetchData()" x-model="filters.department" /></td>
-                <td><button @click="fetchData()" class="button clear">Apply Filters</button></td>
+                <td><input type="search" @input.debounce="fetchData()" x-model="filters.first_name" placeholder="Filter by first name..." /></td>
+                <td><input type="search" @input.debounce="fetchData()" x-model="filters.last_name" placeholder="Filter by last name..." /></td>
+                <td><input type="search" @input.debounce="fetchData()" x-model="filters.department" placeholder="Filter by department..." /></td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>

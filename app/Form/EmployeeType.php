@@ -3,7 +3,7 @@
 namespace App\Form;
 
 use App\ReadModel\Department\Query\ListDepartmentsChoices;
-use Payroll\Shared\QueryBus;
+use Payroll\Shared\CQRS\QueryBus;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;

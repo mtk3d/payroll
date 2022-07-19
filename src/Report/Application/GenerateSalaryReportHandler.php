@@ -10,8 +10,8 @@ use Payroll\Report\Domain\ReportCreated;
 use Payroll\Report\Domain\ReportRepository;
 use Payroll\Report\Domain\ReportStatus;
 use Payroll\Shared\Clock;
-use Payroll\Shared\CommandHandler;
-use Payroll\Shared\DomainEventBus;
+use Payroll\Shared\CQRS\CommandHandler;
+use Payroll\Shared\Event\DomainEventBus;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 #[AsMessageHandler]

@@ -10,8 +10,8 @@ use Payroll\Salary\Domain\Employee;
 use Payroll\Salary\Domain\EmployeeRepository;
 use Payroll\Salary\Domain\EmployeeSalaryChanged;
 use Payroll\Salary\Domain\Exception\DepartmentNotFoundException;
-use Payroll\Shared\CommandHandler;
-use Payroll\Shared\DomainEventBus;
+use Payroll\Shared\CQRS\CommandHandler;
+use Payroll\Shared\Event\DomainEventBus;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 #[AsMessageHandler]

@@ -22,4 +22,14 @@ class FilterBy
 
         return $filters;
     }
+
+    public function parameter(): string
+    {
+        return ":$this->column";
+    }
+
+    public function filterValue(): string
+    {
+        return "%$this->value%";
+    }
 }

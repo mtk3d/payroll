@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Payroll\Salary\Domain;
 
-use Payroll\Shared\DomainEvent;
+use Payroll\Shared\Event\DomainEvent;
 use Payroll\Shared\UUID\DepartmentId;
 use Payroll\Shared\UUID\UUID;
 

@@ -9,8 +9,8 @@ use Payroll\Employment\Domain\DepartmentRepository;
 use Payroll\Employment\Domain\Employee;
 use Payroll\Employment\Domain\EmployeeRegistered;
 use Payroll\Employment\Domain\EmployeeRepository;
-use Payroll\Shared\CommandHandler;
-use Payroll\Shared\DomainEventBus;
+use Payroll\Shared\CQRS\CommandHandler;
+use Payroll\Shared\Event\DomainEventBus;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 #[AsMessageHandler]

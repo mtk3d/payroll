@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\ReadModel\Employee;
+namespace App\ReadModel\Employee\Listener;
 
 use Doctrine\DBAL\Connection;
 use Payroll\Employment\Domain\EmployeeRegistered;

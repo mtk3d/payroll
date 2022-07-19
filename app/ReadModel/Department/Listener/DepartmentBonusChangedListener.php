@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\ReadModel\Department;
+namespace App\ReadModel\Department\Listener;
 
 use Doctrine\DBAL\Connection;
 use Payroll\Salary\Domain\DepartmentBonusChanged;
