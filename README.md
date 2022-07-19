@@ -14,9 +14,13 @@ Small application built for manage employments, and generate salary reports.
 
 ## Setup local environment
 
+Just run
+
 ```shell
 make up
 ```
+
+this command will build and create entire docker environment, and will load database fixtures
 
 ## Run tests
 
