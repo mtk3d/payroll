@@ -21,7 +21,7 @@ class ListReportLinesHandler
     public function __invoke(ListReportLines $query): array
     {
         $q = $this->conn->createQueryBuilder()
-            ->select('employee_id', 'first_name', 'last_name', 'department', 'base_salary', 'bonus', 'bonus_type', 'salary')
+            ->select('first_name', 'last_name', 'department', 'base_salary', 'bonus', 'bonus_type', 'salary')
             ->from('report_line_read_model')
             ->where('report_id = :reportId')
             ->setParameter('reportId', $query->reportId->toString());

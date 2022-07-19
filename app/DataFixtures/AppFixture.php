@@ -34,7 +34,7 @@ class AppFixture extends Fixture
         $this->createEmployee($adamId, 'Adam', 'Kowalski', '1990-03-14', 100000, $HRDepartmentId);
         $this->createEmployee($aniaId, 'Ania', 'Nowak', '2000-03-14', 110000, $CSDepartment);
 
-        $this->generateReport();
+        $this->generateReport(ReportId::newOne());
     }
 
     private function createDepartment(DepartmentId $id, string $name, string $bonusType, int $bonusFactor): void
@@ -61,8 +61,8 @@ class AppFixture extends Fixture
         $this->commandBus->dispatch($createEmployeeSalary);
     }
 
-    private function generateReport(): void
+    private function generateReport(ReportId $reportId): void
     {
-        $this->commandBus->dispatch(new GenerateSalaryReport(ReportId::newOne()));
+        $this->commandBus->dispatch(new GenerateSalaryReport($reportId));
     }
 }
