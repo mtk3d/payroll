@@ -37,9 +37,6 @@ help:
 docker-compose-up:
 	@$(DOCKER_COMPOSE) up -d
 
-docker-compose-up-build:
-	@$(DOCKER_COMPOSE) up -d --build
-
 migrate:
 	@$(DOCKER_COMPOSE) exec -it -- app $(SYMFONY_CONSOLE) doctrine:migrations:migrate --no-interaction
 
