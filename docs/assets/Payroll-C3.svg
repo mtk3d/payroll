@@ -1,0 +1,665 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="732" height="753" viewBox="-0.5 -0.5 732 753" style="background-color:#fff">
+  <defs>
+    <path d="M311.52 146 207.74 251.77" fill="none" stroke-dasharray="6 6" pointer-events="stroke" id="reuse-0"/>
+    <path d="m203.53 256.05 2.75-8.51 1.46 4.23 4.25 1.38Z" fill="#707070" pointer-events="all" id="reuse-1"/>
+    <path id="YM9EGEGD4cFIlwKf" d="M205.844 188.01h103.32m-103.32 13.6h103.32"/>
+    <path id="4M9EGEGD4cFIlwKi" d="M205.844 227.595h103.32"/>
+    <path d="M365 146v103.41" fill="none" stroke-dasharray="6 6" pointer-events="stroke" id="reuse-2"/>
+    <path d="m365 255.41-4-8 4 2 4-2Z" fill="#707070" pointer-events="all" id="reuse-3"/>
+    <path id="kM9EGEGD4cFIlwKj" d="M313.844 187.01h103.32m-103.32 13.6h103.32"/>
+    <path id="0M9EGEGD4cFIlwKm" d="M313.844 226.595h103.32"/>
+    <path d="m418.48 146 103.78 105.77" fill="none" stroke-dasharray="6 6" pointer-events="stroke" id="reuse-4"/>
+    <path d="m526.47 256.05-8.46-2.9 4.25-1.38 1.46-4.23Z" fill="#707070" pointer-events="all" id="reuse-5"/>
+    <path id="MM9EGEGD4cFIlwKn" d="M421.844 188.01h103.32m-103.32 13.6h103.32"/>
+    <path id="cM9EGEGD4cFIlwKq" d="M421.844 227.595h103.32"/>
+    <path d="m442.51 448-41.92-73.2" fill="none" stroke-dasharray="6 6" pointer-events="stroke" id="reuse-6"/>
+    <path d="m397.61 369.59 7.44 4.96-4.46.25-2.48 3.72Z" fill="#707070" pointer-events="all" id="reuse-7"/>
+    <path id="8M9EGEGD4cFIlwKr" d="M367.844 394.01h103.32m-103.32 13.6h103.32"/>
+    <path id="iM9EGEGD4cFIlwKu" d="M367.844 433.595h103.32"/>
+    <path d="m505.21 448 41.52-73.19" fill="none" stroke-dasharray="6 6" pointer-events="stroke" id="reuse-8"/>
+    <path d="m549.69 369.59-.47 8.94-2.49-3.72-4.47-.23Z" fill="#707070" pointer-events="all" id="reuse-9"/>
+    <path id="SM9EGEGD4cFIlwKv" d="M476.844 393.01h103.32m-103.32 13.6h103.32"/>
+    <path id="KM9EGEGD4cFIlwKy" d="M476.844 432.595h103.32"/>
+  </defs>
+  <defs>
+    <style>
+      .h1,.h2,.h3,.h4,.h5,.h6{margin-bottom:.5rem;font-weight:500;line-height:1.2}.h1{font-size:2.5rem}.h4{font-size:1.5rem}.h5{font-size:1.25rem}.h6{font-size:1rem}
+    </style>
+  </defs>
+  <rect width="730" height="589" rx="29.45" ry="29.45" fill="#fff" stroke="#000" pointer-events="all"/>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="bvfJkN8uMh2okAD2_HI2-1" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe flex-end;justify-content:unsafe flex-start;width:728px;height:1px;padding-top:586px;margin-left:2px">
+        <div style="box-sizing:border-box;font-size:0;text-align:left">
+          <div style="display:inline-block;font-size:12px;font-family:Helvetica,&quot;VP Default&quot;;color:#000;line-height:1.2;pointer-events:all;word-break:break-word;white-space:normal;word-wrap:normal">
+            <div>
+              <div style="text-align:left">
+                Salary App
+              </div>
+              <div style="text-align:left">
+                [Deployment Unit]
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <path id="z09EGEGD4cFIlwKL" d="M2 570.803h95.375"/>
+        <path id="L09EGEGD4cFIlwKM" d="M2 585.202h95.375"/>
+      </defs>
+      <text font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#z09EGEGD4cFIlwKL"><tspan xml:space="preserve">Salary App</tspan></textPath></text>
+      <text font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#L09EGEGD4cFIlwKM"><tspan xml:space="preserve">[Deployment Unit]</tspan></textPath></text>
+    </svg>
+  </switch>
+  <rect x="285" y="37" width="160" height="109" rx="10.9" ry="10.9" fill="#85bbf0" stroke="#78a8d8" pointer-events="all"/>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="bvfJkN8uMh2okAD2_HI2-2" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:158px;height:1px;padding-top:92px;margin-left:286px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:12px;font-family:Helvetica,&quot;VP Default&quot;;color:#fff;line-height:1.2;pointer-events:all;word-break:break-word;white-space:normal;word-wrap:normal">
+            <div>
+              <b>
+                Backend for frontend
+              </b>
+              <div>
+                [Component: PHP]
+              </div>
+              <br/>
+              <div>
+                Contains controllers that are calling CQRS commands, forms, and read models
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <path id="b09EGEGD4cFIlwKN" d="M304.328 61.905h121.344"/>
+        <path id="b09EGEGD4cFIlwKO" d="M286 76.303h158"/>
+        <path id="709EGEGD4cFIlwKP" d="M286 105.1h158m-158 14.4h158m-158 14.4h158"/>
+      </defs>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#b09EGEGD4cFIlwKN" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">Backend for frontend</tspan></textPath></text>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#b09EGEGD4cFIlwKO" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[Component: PHP]</tspan></textPath></text>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#709EGEGD4cFIlwKP"><tspan xml:space="preserve">Contains controllers that are calling CQRS commands, forms, and read models</tspan></textPath></text>
+    </svg>
+  </switch>
+  <g stroke="#3c7fc0" stroke-miterlimit="10" pointer-events="all">
+    <path d="M285 640c0-37.33 160-37.33 160 0v84c0 37.33-160 37.33-160 0Z" fill="#438dd5"/>
+    <path d="M285 640c0 28 160 28 160 0" fill="none"/>
+  </g>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="DyhhviZLR5FPmPIgvWs9-0" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:158px;height:1px;padding-top:702px;margin-left:286px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:12px;font-family:Helvetica,&quot;VP Default&quot;;color:#fff;line-height:1.2;pointer-events:all;word-break:break-word;white-space:normal;word-wrap:normal">
+            <div>
+              Database
+              <div>
+                [Container: MySQL]
+              </div>
+              <br/>
+              <div>
+                Store all employments data and read models
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <path id="H09EGEGD4cFIlwKQ" d="M286 679.108h158m-158 14.4h158m-158 14.4h158m-158 14.4h158m-158 14.4h158"/>
+        <path id="n09EGEGD4cFIlwKR" d="M286 693.506h158"/>
+        <path id="n09EGEGD4cFIlwKS" d="M286 722.303h158m-158 14.4h158"/>
+      </defs>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#H09EGEGD4cFIlwKQ"><tspan xml:space="preserve">Database</tspan><tspan xml:space="preserve"><tspan xml:space="preserve">[Container: MySQL]</tspan></tspan><tspan xml:space="preserve"><tspan xml:space="preserve">Store all employments data and read models</tspan></tspan></textPath></text>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#n09EGEGD4cFIlwKR" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[Container: MySQL]</tspan></textPath></text>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#n09EGEGD4cFIlwKS"><tspan xml:space="preserve">Store all employments data and read models</tspan></textPath></text>
+    </svg>
+  </switch>
+  <rect x="68" y="257.65" width="160" height="110" rx="11" ry="11" fill="#85bbf0" stroke="#78a8d8" pointer-events="all"/>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="DyhhviZLR5FPmPIgvWs9-1" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:158px;height:1px;padding-top:313px;margin-left:69px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:12px;font-family:Helvetica,&quot;VP Default&quot;;color:#fff;line-height:1.2;pointer-events:all;word-break:break-word;white-space:normal;word-wrap:normal">
+            <div>
+              <b>
+                Employment module
+              </b>
+              <div>
+                [Component: PHP]
+              </div>
+              <br/>
+              <div>
+                Allows to store basic employments data
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <path id="309EGEGD4cFIlwKT" d="M88.992 290.108h118.016"/>
+        <path id="P09EGEGD4cFIlwKU" d="M69 304.506h158"/>
+        <path id="P09EGEGD4cFIlwKV" d="M69 333.303h158m-158 14.4h158"/>
+      </defs>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#309EGEGD4cFIlwKT" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">Employment module</tspan></textPath></text>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#P09EGEGD4cFIlwKU" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[Component: PHP]</tspan></textPath></text>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#P09EGEGD4cFIlwKV"><tspan xml:space="preserve">Allows to store basic employments data</tspan></textPath></text>
+    </svg>
+  </switch>
+  <rect x="285" y="257.65" width="160" height="110" rx="11" ry="11" fill="#85bbf0" stroke="#78a8d8" pointer-events="all"/>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="DyhhviZLR5FPmPIgvWs9-3" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:158px;height:1px;padding-top:313px;margin-left:286px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:12px;font-family:Helvetica,&quot;VP Default&quot;;color:#fff;line-height:1.2;pointer-events:all;word-break:break-word;white-space:normal;word-wrap:normal">
+            <div>
+              <b>
+                Salary module
+              </b>
+              <div>
+                [Component: PHP]
+              </div>
+              <br/>
+              <div>
+                Allows to store salary data and running salary calculations
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <path id="f09EGEGD4cFIlwKW" d="M323.984 282.905h82.032"/>
+        <path id="f09EGEGD4cFIlwKX" d="M286 297.303h158"/>
+        <path id="_09EGEGD4cFIlwKY" d="M286 326.1h158m-158 14.4h158m-158 14.4h158"/>
+      </defs>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#f09EGEGD4cFIlwKW" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">Salary module</tspan></textPath></text>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#f09EGEGD4cFIlwKX" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[Component: PHP]</tspan></textPath></text>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#_09EGEGD4cFIlwKY"><tspan xml:space="preserve">Allows to store salary data and running salary calculations</tspan></textPath></text>
+    </svg>
+  </switch>
+  <rect x="502" y="257.65" width="160" height="110" rx="11" ry="11" fill="#85bbf0" stroke="#78a8d8" pointer-events="all"/>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="DyhhviZLR5FPmPIgvWs9-4" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:158px;height:1px;padding-top:313px;margin-left:503px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:12px;font-family:Helvetica,&quot;VP Default&quot;;color:#fff;line-height:1.2;pointer-events:all;word-break:break-word;white-space:normal;word-wrap:normal">
+            <div>
+              <b>
+                Report Module
+              </b>
+              <div>
+                [Component: PHP]
+              </div>
+              <br/>
+              <div>
+                Allows to store report data
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <path id="AM9EGEGD4cFIlwKZ" d="M540 297.303h84"/>
+        <path id="gM9EGEGD4cFIlwKa" d="M512.297 311.702h139.406"/>
+        <path id="gM9EGEGD4cFIlwKb" d="M512.297 340.498h139.406"/>
+      </defs>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#AM9EGEGD4cFIlwKZ" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">Report Module</tspan></textPath></text>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#gM9EGEGD4cFIlwKa" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[Component: PHP]</tspan></textPath></text>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#gM9EGEGD4cFIlwKb" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">Allows to store report data</tspan></textPath></text>
+    </svg>
+  </switch>
+  <rect x="394" y="448" width="160" height="110" rx="11" ry="11" fill="#85bbf0" stroke="#78a8d8" pointer-events="all"/>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="DyhhviZLR5FPmPIgvWs9-5" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:158px;height:1px;padding-top:503px;margin-left:395px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:12px;font-family:Helvetica,&quot;VP Default&quot;;color:#fff;line-height:1.2;pointer-events:all;word-break:break-word;white-space:normal;word-wrap:normal">
+            <div>
+              <b>
+                Report Generating Process Manager
+              </b>
+              <div>
+                [Component: PHP]
+              </div>
+              <br/>
+              <div>
+                Runs the process of generating reports across modules
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <path id="wM9EGEGD4cFIlwKc" d="M396.305 465.71h155.382m-155.382 14.4h155.382"/>
+        <path id="wM9EGEGD4cFIlwKd" d="M395 494.506h158"/>
+        <path id="IM9EGEGD4cFIlwKe" d="M395 523.303h158m-158 14.4h158m-158 14.4h158"/>
+      </defs>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#wM9EGEGD4cFIlwKc"><tspan xml:space="preserve">Report Generating Process Manager</tspan></textPath></text>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#wM9EGEGD4cFIlwKd" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[Component: PHP]</tspan></textPath></text>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#IM9EGEGD4cFIlwKe"><tspan xml:space="preserve">Runs the process of generating reports across modules</tspan></textPath></text>
+    </svg>
+  </switch>
+  <g stroke="#707070" stroke-width="2" stroke-miterlimit="10">
+    <use stroke-dasharray="6 6" pointer-events="stroke" xlink:href="#reuse-0"/>
+    <use pointer-events="all" xlink:href="#reuse-1"/>
+  </g>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="DyhhviZLR5FPmPIgvWs9-6" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:202px;margin-left:257px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:11px;font-family:Helvetica,&quot;VP Default&quot;;color:#707070;line-height:1.2;pointer-events:all;white-space:nowrap">
+            <div>
+              <div style="text-align:left">
+                <div style="text-align:center">
+                  <b>
+                    Execute commands
+                    <br/>
+                    and
+                    <br/>
+                    build read model
+                  </b>
+                </div>
+                <div style="text-align:center">
+                  [CQRS]
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <use id="YM9EGEGD4cFIlwKg" xlink:href="#YM9EGEGD4cFIlwKf"/>
+        <use id="4M9EGEGD4cFIlwKh" xlink:href="#YM9EGEGD4cFIlwKf"/>
+      </defs>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#YM9EGEGD4cFIlwKf"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">build read model</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#YM9EGEGD4cFIlwKg"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">build read model</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#4M9EGEGD4cFIlwKh"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">build read model</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#4M9EGEGD4cFIlwKi" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[CQRS]</tspan></textPath></text>
+    </svg>
+  </switch>
+  <g stroke="#707070" stroke-width="2" stroke-miterlimit="10">
+    <use stroke-dasharray="6 6" pointer-events="stroke" xlink:href="#reuse-2"/>
+    <use pointer-events="all" xlink:href="#reuse-3"/>
+  </g>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="DyhhviZLR5FPmPIgvWs9-8" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:201px;margin-left:365px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:11px;font-family:Helvetica,&quot;VP Default&quot;;color:#707070;line-height:1.2;pointer-events:all;white-space:nowrap">
+            <div>
+              <div style="text-align:left">
+                <div style="text-align:center">
+                  <b>
+                    Execute commands
+                    <br/>
+                    and
+                    <br/>
+                    build read model
+                  </b>
+                </div>
+                <div style="text-align:center">
+                  [CQRS]
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <use id="UM9EGEGD4cFIlwKk" xlink:href="#kM9EGEGD4cFIlwKj"/>
+        <use id="UM9EGEGD4cFIlwKl" xlink:href="#kM9EGEGD4cFIlwKj"/>
+      </defs>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#kM9EGEGD4cFIlwKj"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">build read model</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#UM9EGEGD4cFIlwKk"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">build read model</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#UM9EGEGD4cFIlwKl"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">build read model</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#0M9EGEGD4cFIlwKm" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[CQRS]</tspan></textPath></text>
+    </svg>
+  </switch>
+  <g stroke="#707070" stroke-width="2" stroke-miterlimit="10">
+    <use stroke-dasharray="6 6" pointer-events="stroke" xlink:href="#reuse-4"/>
+    <use pointer-events="all" xlink:href="#reuse-5"/>
+  </g>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="DyhhviZLR5FPmPIgvWs9-9" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:202px;margin-left:473px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:11px;font-family:Helvetica,&quot;VP Default&quot;;color:#707070;line-height:1.2;pointer-events:all;white-space:nowrap">
+            <div>
+              <div style="text-align:left">
+                <div style="text-align:center">
+                  <b>
+                    Execute commands
+                    <br/>
+                    and
+                    <br/>
+                    build read model
+                  </b>
+                </div>
+                <div style="text-align:center">
+                  [CQRS]
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <use id="sM9EGEGD4cFIlwKo" xlink:href="#MM9EGEGD4cFIlwKn"/>
+        <use id="sM9EGEGD4cFIlwKp" xlink:href="#MM9EGEGD4cFIlwKn"/>
+      </defs>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#MM9EGEGD4cFIlwKn"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">build read model</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#sM9EGEGD4cFIlwKo"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">build read model</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#sM9EGEGD4cFIlwKp"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">build read model</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#cM9EGEGD4cFIlwKq" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[CQRS]</tspan></textPath></text>
+    </svg>
+  </switch>
+  <g stroke="#707070" stroke-width="2" stroke-miterlimit="10">
+    <use stroke-dasharray="6 6" pointer-events="stroke" xlink:href="#reuse-6"/>
+    <use pointer-events="all" xlink:href="#reuse-7"/>
+  </g>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="DyhhviZLR5FPmPIgvWs9-11" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:408px;margin-left:419px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:11px;font-family:Helvetica,&quot;VP Default&quot;;color:#707070;line-height:1.2;pointer-events:all;white-space:nowrap">
+            <div>
+              <div style="text-align:left">
+                <div style="text-align:center">
+                  <b>
+                    Execute commands
+                    <br/>
+                    and
+                    <br/>
+                    listen to events
+                  </b>
+                </div>
+                <div style="text-align:center">
+                  [CQRS]
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <use id="CM9EGEGD4cFIlwKs" xlink:href="#8M9EGEGD4cFIlwKr"/>
+        <use id="CM9EGEGD4cFIlwKt" xlink:href="#8M9EGEGD4cFIlwKr"/>
+      </defs>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#8M9EGEGD4cFIlwKr"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">listen to events</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#CM9EGEGD4cFIlwKs"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">listen to events</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#CM9EGEGD4cFIlwKt"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">listen to events</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#iM9EGEGD4cFIlwKu" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[CQRS]</tspan></textPath></text>
+    </svg>
+  </switch>
+  <g stroke="#707070" stroke-width="2" stroke-miterlimit="10">
+    <use stroke-dasharray="6 6" pointer-events="stroke" xlink:href="#reuse-8"/>
+    <use pointer-events="all" xlink:href="#reuse-9"/>
+  </g>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="DyhhviZLR5FPmPIgvWs9-12" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:407px;margin-left:528px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:11px;font-family:Helvetica,&quot;VP Default&quot;;color:#707070;line-height:1.2;pointer-events:all;white-space:nowrap">
+            <div>
+              <div style="text-align:left">
+                <div style="text-align:center">
+                  <b>
+                    Execute commands
+                    <br/>
+                    and
+                    <br/>
+                    listen to events
+                  </b>
+                </div>
+                <div style="text-align:center">
+                  [CQRS]
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <use id="yM9EGEGD4cFIlwKw" xlink:href="#SM9EGEGD4cFIlwKv"/>
+        <use id="yM9EGEGD4cFIlwKx" xlink:href="#SM9EGEGD4cFIlwKv"/>
+      </defs>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#SM9EGEGD4cFIlwKv"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">listen to events</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#yM9EGEGD4cFIlwKw"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">listen to events</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#yM9EGEGD4cFIlwKx"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">listen to events</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#KM9EGEGD4cFIlwKy" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[CQRS]</tspan></textPath></text>
+    </svg>
+  </switch>
+  <g stroke="#707070" stroke-width="2" stroke-miterlimit="10">
+    <use stroke-dasharray="6 6" pointer-events="stroke" xlink:href="#reuse-0"/>
+    <use pointer-events="all" xlink:href="#reuse-1"/>
+  </g>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="DyhhviZLR5FPmPIgvWs9-6" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:202px;margin-left:257px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:11px;font-family:Helvetica,&quot;VP Default&quot;;color:#707070;line-height:1.2;pointer-events:all;white-space:nowrap">
+            <div>
+              <div style="text-align:left">
+                <div style="text-align:center">
+                  <b>
+                    Execute commands
+                    <br/>
+                    and
+                    <br/>
+                    build read model
+                  </b>
+                </div>
+                <div style="text-align:center">
+                  [CQRS]
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <use id="aM9EGEGD4cFIlwKz" xlink:href="#YM9EGEGD4cFIlwKf"/>
+        <use id="aM9EGEGD4cFIlwK0" xlink:href="#YM9EGEGD4cFIlwKf"/>
+        <use id="aM9EGEGD4cFIlwK1" xlink:href="#YM9EGEGD4cFIlwKf"/>
+        <use id="6M9EGEGD4cFIlwK2" xlink:href="#4M9EGEGD4cFIlwKi"/>
+      </defs>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#aM9EGEGD4cFIlwKz"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">build read model</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#aM9EGEGD4cFIlwK0"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">build read model</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#aM9EGEGD4cFIlwK1"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">build read model</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#6M9EGEGD4cFIlwK2" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[CQRS]</tspan></textPath></text>
+    </svg>
+  </switch>
+  <g stroke="#707070" stroke-width="2" stroke-miterlimit="10">
+    <use stroke-dasharray="6 6" pointer-events="stroke" xlink:href="#reuse-2"/>
+    <use pointer-events="all" xlink:href="#reuse-3"/>
+  </g>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="DyhhviZLR5FPmPIgvWs9-8" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:201px;margin-left:365px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:11px;font-family:Helvetica,&quot;VP Default&quot;;color:#707070;line-height:1.2;pointer-events:all;white-space:nowrap">
+            <div>
+              <div style="text-align:left">
+                <div style="text-align:center">
+                  <b>
+                    Execute commands
+                    <br/>
+                    and
+                    <br/>
+                    build read model
+                  </b>
+                </div>
+                <div style="text-align:center">
+                  [CQRS]
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <use id="mM9EGEGD4cFIlwK3" xlink:href="#kM9EGEGD4cFIlwKj"/>
+        <use id="mM9EGEGD4cFIlwK4" xlink:href="#kM9EGEGD4cFIlwKj"/>
+        <use id="WM9EGEGD4cFIlwK5" xlink:href="#kM9EGEGD4cFIlwKj"/>
+        <use id="WM9EGEGD4cFIlwK6" xlink:href="#0M9EGEGD4cFIlwKm"/>
+      </defs>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#mM9EGEGD4cFIlwK3"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">build read model</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#mM9EGEGD4cFIlwK4"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">build read model</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#WM9EGEGD4cFIlwK5"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">build read model</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#WM9EGEGD4cFIlwK6" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[CQRS]</tspan></textPath></text>
+    </svg>
+  </switch>
+  <g stroke="#707070" stroke-width="2" stroke-miterlimit="10">
+    <use stroke-dasharray="6 6" pointer-events="stroke" xlink:href="#reuse-4"/>
+    <use pointer-events="all" xlink:href="#reuse-5"/>
+  </g>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="DyhhviZLR5FPmPIgvWs9-9" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:202px;margin-left:473px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:11px;font-family:Helvetica,&quot;VP Default&quot;;color:#707070;line-height:1.2;pointer-events:all;white-space:nowrap">
+            <div>
+              <div style="text-align:left">
+                <div style="text-align:center">
+                  <b>
+                    Execute commands
+                    <br/>
+                    and
+                    <br/>
+                    build read model
+                  </b>
+                </div>
+                <div style="text-align:center">
+                  [CQRS]
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <use id="OM9EGEGD4cFIlwK7" xlink:href="#MM9EGEGD4cFIlwKn"/>
+        <use id="OM9EGEGD4cFIlwK8" xlink:href="#MM9EGEGD4cFIlwKn"/>
+        <use id="uM9EGEGD4cFIlwK9" xlink:href="#MM9EGEGD4cFIlwKn"/>
+        <use id="uM9EGEGD4cFIlwK." xlink:href="#cM9EGEGD4cFIlwKq"/>
+      </defs>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#OM9EGEGD4cFIlwK7"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">build read model</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#OM9EGEGD4cFIlwK8"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">build read model</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#uM9EGEGD4cFIlwK9"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">build read model</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#uM9EGEGD4cFIlwK." startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[CQRS]</tspan></textPath></text>
+    </svg>
+  </switch>
+  <g stroke="#707070" stroke-width="2" stroke-miterlimit="10">
+    <use stroke-dasharray="6 6" pointer-events="stroke" xlink:href="#reuse-6"/>
+    <use pointer-events="all" xlink:href="#reuse-7"/>
+  </g>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="DyhhviZLR5FPmPIgvWs9-11" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:408px;margin-left:419px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:11px;font-family:Helvetica,&quot;VP Default&quot;;color:#707070;line-height:1.2;pointer-events:all;white-space:nowrap">
+            <div>
+              <div style="text-align:left">
+                <div style="text-align:center">
+                  <b>
+                    Execute commands
+                    <br/>
+                    and
+                    <br/>
+                    listen to events
+                  </b>
+                </div>
+                <div style="text-align:center">
+                  [CQRS]
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <use id=".M9EGEGD4cFIlwK_" xlink:href="#8M9EGEGD4cFIlwKr"/>
+        <use id=".M9EGEGD4cFIlwLA" xlink:href="#8M9EGEGD4cFIlwKr"/>
+        <use id="hM9EGEGD4cFIlwLB" xlink:href="#8M9EGEGD4cFIlwKr"/>
+        <use id="RM9EGEGD4cFIlwLC" xlink:href="#iM9EGEGD4cFIlwKu"/>
+      </defs>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#.M9EGEGD4cFIlwK_"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">listen to events</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#.M9EGEGD4cFIlwLA"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">listen to events</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#hM9EGEGD4cFIlwLB"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">listen to events</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#RM9EGEGD4cFIlwLC" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[CQRS]</tspan></textPath></text>
+    </svg>
+  </switch>
+  <g stroke="#707070" stroke-width="2" stroke-miterlimit="10">
+    <use stroke-dasharray="6 6" pointer-events="stroke" xlink:href="#reuse-8"/>
+    <use pointer-events="all" xlink:href="#reuse-9"/>
+  </g>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="DyhhviZLR5FPmPIgvWs9-12" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:407px;margin-left:528px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:11px;font-family:Helvetica,&quot;VP Default&quot;;color:#707070;line-height:1.2;pointer-events:all;white-space:nowrap">
+            <div>
+              <div style="text-align:left">
+                <div style="text-align:center">
+                  <b>
+                    Execute commands
+                    <br/>
+                    and
+                    <br/>
+                    listen to events
+                  </b>
+                </div>
+                <div style="text-align:center">
+                  [CQRS]
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <use id="JM9EGEGD4cFIlwLD" xlink:href="#SM9EGEGD4cFIlwKv"/>
+        <use id="JM9EGEGD4cFIlwLE" xlink:href="#SM9EGEGD4cFIlwKv"/>
+        <use id="JM9EGEGD4cFIlwLF" xlink:href="#SM9EGEGD4cFIlwKv"/>
+        <use id="pM9EGEGD4cFIlwLG" xlink:href="#KM9EGEGD4cFIlwKy"/>
+      </defs>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#JM9EGEGD4cFIlwLD"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">listen to events</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#JM9EGEGD4cFIlwLE"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">listen to events</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#JM9EGEGD4cFIlwLF"><tspan xml:space="preserve">Execute commands</tspan><tspan xml:space="preserve">and</tspan><tspan xml:space="preserve">listen to events</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#pM9EGEGD4cFIlwLG" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[CQRS]</tspan></textPath></text>
+    </svg>
+  </switch>
+</svg>

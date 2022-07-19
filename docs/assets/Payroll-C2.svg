@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="568" viewBox="-0.5 -0.5 250 568" style="background-color:#fff">
+  <defs>
+    <path d="M125 309v72.76" fill="none" stroke-dasharray="6 6" pointer-events="stroke" id="reuse-0"/>
+    <path d="m125 387.76-4-8 4 2 4-2Z" fill="#707070" pointer-events="all" id="reuse-1"/>
+    <path id="dOyEGEGD4cFIlwKF" d="M62.852 349.205h125.296"/>
+    <path id="dOyEGEGD4cFIlwKG" d="M62.852 362.4h125.296"/>
+  </defs>
+  <defs>
+    <style>
+      .h1,.h2,.h3,.h4,.h5,.h6{margin-bottom:.5rem;font-weight:500;line-height:1.2}.h1{font-size:2.5rem}.h4{font-size:1.5rem}.h5{font-size:1.25rem}.h6{font-size:1rem}
+    </style>
+  </defs>
+  <g fill="#08427b" pointer-events="all">
+    <circle cx="123.5" cy="23.33" r="23.333"/>
+    <path d="M68.5 60.67c0-12.89 10.45-23.34 23.33-23.34h63.34c6.19 0 12.12 2.46 16.5 6.84a23.343 23.343 0 0 1 6.83 16.5v56c0 12.88-10.45 23.33-23.33 23.33H91.83c-12.88 0-23.33-10.45-23.33-23.33Z"/>
+    <circle cx="123.5" cy="23.33" r="23.333"/>
+  </g>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="cK_bAICMZU9eg50L70cG-1" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:89px;margin-left:124px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:12px;font-family:Helvetica,&quot;VP Default&quot;;color:#fff;line-height:1.2;pointer-events:all;white-space:nowrap">
+            <div>
+              <b>
+                User
+              </b>
+              <div>
+                [Person]
+              </div>
+              <br/>
+              <div/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <path id="xOyEGEGD4cFIlwJ7" d="M111.156 80.506h26.688"/>
+        <path id="JOyEGEGD4cFIlwJ8" d="M102.156 94.905h44.696"/>
+      </defs>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#xOyEGEGD4cFIlwJ7" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">User</tspan></textPath></text>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#JOyEGEGD4cFIlwJ8" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[Person]</tspan></textPath></text>
+    </svg>
+  </switch>
+  <rect y="164" width="249" height="403" rx="12.45" ry="12.45" fill="#fff" stroke="#000" pointer-events="all"/>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="cK_bAICMZU9eg50L70cG-7" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe flex-end;justify-content:unsafe flex-start;width:247px;height:1px;padding-top:564px;margin-left:2px">
+        <div style="box-sizing:border-box;font-size:0;text-align:left">
+          <div style="display:inline-block;font-size:12px;font-family:Helvetica,&quot;VP Default&quot;;color:#000;line-height:1.2;pointer-events:all;word-break:break-word;white-space:normal;word-wrap:normal">
+            <div>
+              <div style="text-align:left">
+                App
+              </div>
+              <div style="text-align:left">
+                [Salary App]
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <path id="ZOyEGEGD4cFIlwJ9" d="M2 548.803h64.71"/>
+        <path id="5OyEGEGD4cFIlwJ." d="M2 563.202h64.71"/>
+      </defs>
+      <text font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#ZOyEGEGD4cFIlwJ9"><tspan xml:space="preserve">App</tspan></textPath></text>
+      <text font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#5OyEGEGD4cFIlwJ."><tspan xml:space="preserve">[Salary App]</tspan></textPath></text>
+    </svg>
+  </switch>
+  <g stroke="#3c7fc0" stroke-miterlimit="10" pointer-events="all">
+    <path d="M43.5 414c0-37.33 160-37.33 160 0v84c0 37.33-160 37.33-160 0Z" fill="#438dd5"/>
+    <path d="M43.5 414c0 28 160 28 160 0" fill="none"/>
+  </g>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="cK_bAICMZU9eg50L70cG-2" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:158px;height:1px;padding-top:476px;margin-left:45px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:12px;font-family:Helvetica,&quot;VP Default&quot;;color:#fff;line-height:1.2;pointer-events:all;word-break:break-word;white-space:normal;word-wrap:normal">
+            <div>
+              Database
+              <div>
+                [Container: MySQL]
+              </div>
+              <br/>
+              <div>
+                Store all employments data and read models
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <path id="FOyEGEGD4cFIlwJ_" d="M45 453.108h158m-158 14.4h158m-158 14.4h158m-158 14.4h158m-158 14.4h158"/>
+        <path id="lOyEGEGD4cFIlwKA" d="M45 467.506h158"/>
+        <path id="lOyEGEGD4cFIlwKB" d="M45 496.303h158m-158 14.4h158"/>
+      </defs>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#FOyEGEGD4cFIlwJ_"><tspan xml:space="preserve">Database</tspan><tspan xml:space="preserve"><tspan xml:space="preserve">[Container: MySQL]</tspan></tspan><tspan xml:space="preserve"><tspan xml:space="preserve">Store all employments data and read models</tspan></tspan></textPath></text>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#lOyEGEGD4cFIlwKA" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[Container: MySQL]</tspan></textPath></text>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#lOyEGEGD4cFIlwKB"><tspan xml:space="preserve">Store all employments data and read models</tspan></textPath></text>
+    </svg>
+  </switch>
+  <rect x="44.5" y="198.5" width="160" height="110" rx="11" ry="11" fill="#438dd5" stroke="#3c7fc0" pointer-events="all"/>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="cK_bAICMZU9eg50L70cG-8" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:158px;height:1px;padding-top:254px;margin-left:46px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:12px;font-family:Helvetica,&quot;VP Default&quot;;color:#fff;line-height:1.2;pointer-events:all;word-break:break-word;white-space:normal;word-wrap:normal">
+            <div>
+              <b>
+                Salary App
+              </b>
+              <div>
+                [Container: Symfony PHP]
+              </div>
+              <br/>
+              <div>
+                Allows to manage employment and generate reports
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <path id="1OyEGEGD4cFIlwKC" d="M93.875 223.905h62.25"/>
+        <path id="1OyEGEGD4cFIlwKD" d="M46 238.303h158"/>
+        <path id="NOyEGEGD4cFIlwKE" d="M46 267.1h158M46 281.5h158M46 295.9h158"/>
+      </defs>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#1OyEGEGD4cFIlwKC" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">Salary App</tspan></textPath></text>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#1OyEGEGD4cFIlwKD" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[Container: Symfony PHP]</tspan></textPath></text>
+      <text fill="#FFF" font-size="12" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#NOyEGEGD4cFIlwKE"><tspan xml:space="preserve">Allows to manage employment and generate reports</tspan></textPath></text>
+    </svg>
+  </switch>
+  <g stroke="#707070" stroke-width="2" stroke-miterlimit="10">
+    <use stroke-dasharray="6 6" pointer-events="stroke" xlink:href="#reuse-0"/>
+    <use pointer-events="all" xlink:href="#reuse-1"/>
+  </g>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="cK_bAICMZU9eg50L70cG-9" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:350px;margin-left:125px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:11px;font-family:Helvetica,&quot;VP Default&quot;;color:#707070;line-height:1.2;pointer-events:all;white-space:nowrap">
+            <div>
+              <div style="text-align:left">
+                <div style="text-align:center">
+                  <b>
+                    Read from and writes to
+                  </b>
+                </div>
+                <div style="text-align:center">
+                  [TCP]
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#dOyEGEGD4cFIlwKF" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">Read from and writes to</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#dOyEGEGD4cFIlwKG" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[TCP]</tspan></textPath></text>
+    </svg>
+  </switch>
+  <g stroke="#707070" stroke-width="2" stroke-miterlimit="10">
+    <use stroke-dasharray="6 6" pointer-events="stroke" xlink:href="#reuse-0"/>
+    <use pointer-events="all" xlink:href="#reuse-1"/>
+  </g>
+  <switch transform="translate(-.5 -.5)">
+    <foreignObject cell-id="cK_bAICMZU9eg50L70cG-9" style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:350px;margin-left:125px">
+        <div style="box-sizing:border-box;font-size:0;text-align:center">
+          <div style="display:inline-block;font-size:11px;font-family:Helvetica,&quot;VP Default&quot;;color:#707070;line-height:1.2;pointer-events:all;white-space:nowrap">
+            <div>
+              <div style="text-align:left">
+                <div style="text-align:center">
+                  <b>
+                    Read from and writes to
+                  </b>
+                </div>
+                <div style="text-align:center">
+                  [TCP]
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </foreignObject>
+    <svg>
+      <defs>
+        <use id="DOyEGEGD4cFIlwKH" xlink:href="#dOyEGEGD4cFIlwKF"/>
+        <use id="DOyEGEGD4cFIlwKI" xlink:href="#dOyEGEGD4cFIlwKG"/>
+      </defs>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="700"><textPath xlink:href="#DOyEGEGD4cFIlwKH" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">Read from and writes to</tspan></textPath></text>
+      <text fill="#707070" font-size="11" font-family="Helvetica, &quot;VP Default&quot;" font-weight="400"><textPath xlink:href="#DOyEGEGD4cFIlwKI" startOffset="50%" text-anchor="middle"><tspan xml:space="preserve">[TCP]</tspan></textPath></text>
+    </svg>
+  </switch>
+</svg>
