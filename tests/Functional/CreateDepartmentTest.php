@@ -41,6 +41,7 @@ class CreateDepartmentTest extends KernelTestCase
             'id' => $departmentId->toString(),
             'name' => 'IT',
             'bonus_type' => 'PERMANENT',
+            'bonus_factor' => '1000',
         ];
 
         self::assertContains($expected, $departments);

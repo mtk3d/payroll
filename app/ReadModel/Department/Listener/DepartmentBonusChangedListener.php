@@ -18,12 +18,13 @@ class DepartmentBonusChangedListener
     public function __invoke(DepartmentBonusChanged $event): void
     {
         $stmt = $this->conn->prepare(<<<SQL
-            INSERT INTO department_read_model (id, name, bonus_type) VALUES(:id, NULL, :bonusType)
-            ON DUPLICATE KEY UPDATE bonus_type=:bonusType
+            INSERT INTO department_read_model (id, name, bonus_type, bonus_factor) VALUES(:id, NULL, :bonusType, :bonusFactor)
+            ON DUPLICATE KEY UPDATE bonus_type=:bonusType, bonus_factor=:bonusFactor
         SQL);
 
         $stmt->bindValue(':id', $event->departmentId->toString());
         $stmt->bindValue(':bonusType', $event->bonusType);
+        $stmt->bindValue(':bonusFactor', $event->bonusFactor);
 
         $stmt->executeQuery();
     }
