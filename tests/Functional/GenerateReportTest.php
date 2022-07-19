@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace Tests\Functional;
 
-use App\DataFixtures\AppFixture;
 use App\ReadModel\Report\Query\GetReport;
 use App\ReadModel\Report\Query\ListReportLines;
 use App\ReadModel\Shared\FilterBy;
-use Doctrine\Persistence\ObjectManager;
 use Payroll\Report\Application\Command\GenerateSalaryReport;
 use Payroll\Shared\CQRS\MessengerCommandBus;
 use Payroll\Shared\CQRS\MessengerQueryBus;
@@ -20,8 +18,6 @@ class GenerateReportTest extends KernelTestCase
 {
     private ?MessengerCommandBus $commandBus;
     private ?QueryBus $queryBus;
-    private ?ObjectManager $manager;
-    private ?AppFixture $appFixture;
 
     public function setUp(): void
     {
@@ -29,14 +25,10 @@ class GenerateReportTest extends KernelTestCase
         $container = self::getContainer();
         $this->commandBus = $container->get(MessengerCommandBus::class);
         $this->queryBus = $container->get(MessengerQueryBus::class);
-        $this->manager = self::createMock(ObjectManager::class);
-        $this->appFixture = $container->get(AppFixture::class);
     }
 
     public function testGenerateReport(): void
     {
-        $this->appFixture->load($this->manager);
-
         $reportId = ReportId::newOne();
         $this->commandBus->dispatch(new GenerateSalaryReport($reportId));
 

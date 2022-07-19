@@ -6,6 +6,7 @@ namespace App\DataFixtures;
 
 use DateTimeImmutable;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\DBAL\Connection;
 use Doctrine\Persistence\ObjectManager;
 use Money\Money;
 use Payroll\Employment\Application\Command\CreateDepartment;
@@ -20,10 +21,11 @@ use Payroll\Shared\UUID\ReportId;
 
 class AppFixture extends Fixture
 {
-    public function __construct(private CommandBus $commandBus) {}
+    public function __construct(private CommandBus $commandBus, private Connection $conn) {}
 
     public function load(ObjectManager $manager)
     {
+        $this->purgeReadModels();
         $HRDepartmentId = DepartmentId::newOne();
         $this->createDepartment($HRDepartmentId, 'HR', 'PERMANENT', 10000);
         $CSDepartment = DepartmentId::newOne();
@@ -64,5 +66,13 @@ class AppFixture extends Fixture
     private function generateReport(ReportId $reportId): void
     {
         $this->commandBus->dispatch(new GenerateSalaryReport($reportId));
+    }
+
+    private function purgeReadModels()
+    {
+        $this->conn->executeQuery('DELETE FROM employee_read_model');
+        $this->conn->executeQuery('DELETE FROM department_read_model');
+        $this->conn->executeQuery('DELETE FROM report_line_read_model');
+        $this->conn->executeQuery('DELETE FROM report_read_model');
     }
 }
