@@ -1,3 +1,9 @@
+up: ## Up and run docker environment
+	echo ''
+
+shell: ## Go inside docker container
+	echo ''
+
 lint: ## Execute all available linters
 	$(SYMFONY_CONSOLE) lint:container
 	$(SYMFONY_CONSOLE) lint:twig
@@ -12,7 +18,7 @@ test: ## Run tests
 test-%: ## Run specific tests `test-[all|unit|integration|functional]`
 	$(PHPUNIT) --testsuite=$*
 
-.PHONY: lint test test-% fix
+.PHONY: up shell lint test test-% fix
 .DEFAULT_GOAL=help
 
 help:

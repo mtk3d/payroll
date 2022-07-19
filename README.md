@@ -51,6 +51,22 @@ If you're not using docker environment, you have to load fixtures before running
 php bin/console doctrine:fixtures:load
 ```
 
+## Other usefully commands
+
+```shell
+Usage:
+  make TARGET
+
+Targets:
+  up          Up and run docker environment
+  shell       Go inside docker container
+  lint        Execute all available linters
+  fix         Fix all code formatting problems
+  test        Run tests
+  test-%      Run specific tests `test-[all|unit|integration|functional]`
+
+```
+
 ## Architecture
 
 - [Event Storming](./docs/EventStorming.md)
