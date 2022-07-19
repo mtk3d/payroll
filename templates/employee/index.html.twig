@@ -7,26 +7,26 @@
 {% endblock %}
 
 {% block body %}
-<table>
-    <thead>
-        <tr>
-            <td>ID</td>
-            <td>First Name</td>
-            <td>Last Name</td>
-            <td>Employment Date</td>
-            <td>Base Salary</td>
-        </tr>
-    </thead>
-    <tbody>
-        {% for employee in employees %}
+    <table>
+        <thead>
             <tr>
-                <td>{{ employee.id }}</td>
-                <td>{{ employee.first_name }}</td>
-                <td>{{ employee.last_name }}</td>
-                <td>{{ employee.employment_date }}</td>
-                <td>{{ employee.base_salary }}</td>
+                <td>ID</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Employment Date</td>
+                <td>Base Salary</td>
             </tr>
-        {% endfor %}
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+                <tr>
+                    <td>{{ employee.id }}</td>
+                    <td>{{ employee.first_name }}</td>
+                    <td>{{ employee.last_name }}</td>
+                    <td>{{ employee.employment_date }}</td>
+                    <td>{{ employee.base_salary }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

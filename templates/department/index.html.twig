@@ -7,28 +7,28 @@
 {% endblock %}
 
 {% block body %}
-<table>
-    <thead>
-    <tr>
-        <td>ID</td>
-        <td>Name</td>
-        <td>Bonus Type</td>
-        <td>Bonus Factor</td>
-    </tr>
-    </thead>
-    <tbody>
-    {% for department in departments %}
-        <tr>
-            <td>{{ department.id }}</td>
-            <td>{{ department.name }}</td>
-            <td>{{ department.bonus_type }}</td>
-            {% if department.bonus_type == 'PERCENTAGE' %}
-                <td>{{ (department.bonus_factor / 100) | format_currency('USD', {rounding_mode: 'floor'}) }}</td>
-            {% else %}
-                <td>{{ (department.bonus_factor / 100) | number_format(2, '.', ',') }}%</td>
-            {% endif %}
-        </tr>
-    {% endfor %}
-    </tbody>
-</table>
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Bonus Type</td>
+                <td>Bonus Factor</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for department in departments %}
+                <tr>
+                    <td>{{ department.id }}</td>
+                    <td>{{ department.name }}</td>
+                    <td>{{ department.bonus_type }}</td>
+                    {% if department.bonus_type == 'PERCENTAGE' %}
+                        <td>{{ (department.bonus_factor / 100) | format_currency('USD', {rounding_mode: 'floor'}) }}</td>
+                    {% else %}
+                        <td>{{ (department.bonus_factor / 100) | number_format(2, '.', ',') }}%</td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

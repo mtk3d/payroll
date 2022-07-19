@@ -9,22 +9,22 @@
 {% endblock %}
 
 {% block body %}
-<table>
-    <thead>
-        <tr>
-            <td>ID</td>
-            <td>Date</td>
-            <td>Status</td>
-        </tr>
-    </thead>
-    <tbody>
-        {% for report in reports %}
+    <table>
+        <thead>
             <tr>
-                <td><a href="/report/{{ report.id }}">{{ report.id }}</a></td>
-                <td>{{ report.date }}</td>
-                <td>{{ report.status }}</td>
+                <td>ID</td>
+                <td>Date</td>
+                <td>Status</td>
             </tr>
-        {% endfor %}
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            {% for report in reports %}
+                <tr>
+                    <td><a href="/report/{{ report.id }}">{{ report.id }}</a></td>
+                    <td>{{ report.date }}</td>
+                    <td>{{ report.status }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
