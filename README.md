@@ -20,13 +20,7 @@ make up
 
 ## Run tests
 
-To run functional tests, You have to run app fixtures first
-
-```shell
-php bin/console doctrine:fixtures:load
-```
-
-and then go inside docker shell
+To run functional tests, you have to go inside docker shell
 
 ```shell
 make shell
@@ -45,6 +39,12 @@ make test-all
 make test-unit
 make test-integration
 make test-functional
+```
+
+If you're not using docker environment, you have to load fixtures before running functional tests
+
+```shell
+php bin/console doctrine:fixtures:load
 ```
 
 ## Architecture
