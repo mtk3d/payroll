@@ -28,6 +28,7 @@ class DepartmentType extends AbstractType
             ])
             ->add('bonusFactor', NumberType::class, [
                 'required' => true,
+                'scale' => 2,
             ])
             ->add('save', SubmitType::class)
         ;

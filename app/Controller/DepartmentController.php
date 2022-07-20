@@ -54,7 +54,7 @@ class DepartmentController extends AbstractController
 
             $departmentId = DepartmentId::newOne();
             $this->commandBus->dispatch(new CreateDepartment($departmentId, $data['name']));
-            $this->commandBus->dispatch(new SetDepartmentBonus($departmentId, $data['bonusType'], $data['bonusFactor']));
+            $this->commandBus->dispatch(new SetDepartmentBonus($departmentId, $data['bonusType'], $data['bonusFactor'] * 100));
 
             return $this->redirectToRoute('app_department');
         }
