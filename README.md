@@ -42,7 +42,7 @@ and then
 make test
 ```
 
-or you can run only specific type tests
+or you can run only specific type of tests
 
 ```shell
 make test-all
@@ -57,7 +57,7 @@ If you're not using docker environment, you have to load fixtures before running
 make fixtures
 ```
 
-## 🧑‍🚀 Other usefully commands
+## 🧑‍🚀 Other usefull commands
 
 All commands prefixed with [docker] are executed using docker-compose command inside container.  
 The rest of them are executed locally, so if you want to run them in docker, you have to go into it first, using `make shell` command.
