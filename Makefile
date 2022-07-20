@@ -23,7 +23,7 @@ test: ## Run tests
 test-%: ## Run specific tests `test-[all|unit|integration|functional]`
 	$(PHPUNIT) --testsuite=$*
 
-fixtures: ## Prune database and load fixtures
+fixtures: ## Purge database and load fixtures
 	$(SYMFONY_CONSOLE) doctrine:fixtures:load
 
 .PHONY: up shell lint test test-% fix docker-compose-up composer-install migrate load-fixtures

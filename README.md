@@ -74,7 +74,7 @@ Targets:
   fix         Fix all code formatting problems
   test        Run tests
   test-%      Run specific tests `test-[all|unit|integration|functional]`
-  fixtures    Prune database and load fixtures
+  fixtures    Purge database and load fixtures
 ```
 
 ## 🏗️ Architecture
