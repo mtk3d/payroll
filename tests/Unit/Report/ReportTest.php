@@ -8,6 +8,8 @@ use Payroll\Report\Application\Command\FinishReportProcessing;
 use Payroll\Report\Application\Command\GenerateSalaryReport;
 use Payroll\Report\Application\FinishReportProcessingHandler;
 use Payroll\Report\Application\GenerateSalaryReportHandler;
+use Payroll\Report\Domain\Exception\ReportFinishingException;
+use Payroll\Report\Domain\Exception\ReportNotFoundException;
 use Payroll\Report\Domain\Report;
 use Payroll\Report\Domain\ReportCreated;
 use Payroll\Report\Domain\ReportProcessingFinished;
@@ -69,5 +71,42 @@ class ReportTest extends TestCase
         $event = $this->bus->latestEvent();
         $expected = new ReportProcessingFinished($event->eventId(), $reportId);
         self::assertEquals($expected, $event);
+    }
+
+    public function testFailFinishGenerating(): void
+    {
+        // Expect
+        self::expectException(ReportFinishingException::class);
+
+        // Setup
+        $handler = new FinishReportProcessingHandler($this->bus, $this->repository);
+
+        // Given
+        $reportId = ReportId::newOne();
+        $date = $this->clock->now();
+        $report = new Report($reportId, $date);
+        $this->repository->save($report);
+
+        // When
+        $command = new FinishReportProcessing($reportId);
+        $handler->__invoke($command);
+
+        // And
+        $handler->__invoke($command);
+    }
+
+    public function testReportNotFound(): void
+    {
+        // Expect
+        self::expectException(ReportNotFoundException::class);
+
+        // Setup
+        $handler = new FinishReportProcessingHandler($this->bus, $this->repository);
+
+        // Given nothing
+
+        // When
+        $command = new FinishReportProcessing(ReportId::newOne());
+        $handler->__invoke($command);
     }
 }

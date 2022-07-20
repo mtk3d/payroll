@@ -10,7 +10,6 @@ use Payroll\Salary\Domain\BonusRule;
 use Payroll\Salary\Domain\Department;
 use Payroll\Salary\Domain\DepartmentBonusChanged;
 use Payroll\Salary\Domain\DepartmentRepository;
-use Payroll\Salary\Domain\Exception\DepartmentAlreadyExistException;
 use Payroll\Shared\CQRS\CommandHandler;
 use Payroll\Shared\Event\DomainEventBus;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
@@ -22,9 +21,6 @@ class SetDepartmentBonusHandler implements CommandHandler
     {
     }
 
-    /**
-     * @throws DepartmentAlreadyExistException
-     */
     public function __invoke(SetDepartmentBonus $command): void
     {
         $bonusType = BonusType::fromString($command->bonusType);

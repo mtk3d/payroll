@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Payroll\Report\Application;
 
 use Payroll\Report\Application\Command\FinishReportProcessing;
+use Payroll\Report\Domain\Exception\ReportFinishingException;
 use Payroll\Report\Domain\ReportRepository;
 use Payroll\Shared\CQRS\CommandHandler;
 use Payroll\Shared\Event\DomainEventBus;
@@ -23,8 +24,7 @@ class FinishReportProcessingHandler implements CommandHandler
         $result = $report->finishProcessing();
 
         if ($result->isFailure()) {
-            // TODO decide what to do on failure
-            return;
+            throw new ReportFinishingException($result->reason());
         }
 
         $this->repository->save($report);
