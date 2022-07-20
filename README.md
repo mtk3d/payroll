@@ -25,7 +25,8 @@ Just run
 make up
 ```
 
-this command will build and create entire docker environment, and will load database fixtures
+This command will build and create entire docker environment, and will load database fixtures.  
+Application should be available on http://127.0.0.1:9090
 
 ## 🧪 Run tests
 
@@ -53,7 +54,7 @@ make test-functional
 If you're not using docker environment, you have to load fixtures before running functional tests
 
 ```shell
-php bin/console doctrine:fixtures:load
+make fixtures
 ```
 
 ## 🧑‍🚀 Other usefully commands
