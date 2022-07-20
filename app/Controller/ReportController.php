@@ -39,7 +39,7 @@ class ReportController extends AbstractController
         $report = $this->queryBus->query(new GetReport($reportId));
 
         if (!$report) {
-            throw $this->createNotFoundException('The report does not exist');
+            return $this->render('404.html.twig');
         }
 
         return $this->render('report/show.html.twig', [
