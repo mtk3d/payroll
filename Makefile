@@ -1,12 +1,12 @@
-up: ## Up and run docker environment
+up: ## [docker] Up and run docker environment
 up: .env docker-compose-up composer-install migrate load-fixtures
 	@echo ""
 	@echo "Application is now available on: http://127.0.0.1:9090"
 
-down: ## Stop environment
+down: ## [docker] Stop environment
 	$(DOCKER_COMPOSE) down
 
-shell: ## Go inside docker container
+shell: ## [docker] Go inside docker container
 	$(DOCKER_COMPOSE) exec -it -- app sh
 
 lint: ## Execute all available linters
@@ -22,6 +22,9 @@ test: ## Run tests
 
 test-%: ## Run specific tests `test-[all|unit|integration|functional]`
 	$(PHPUNIT) --testsuite=$*
+
+fixtures: ## Prune database and load fixtures
+	$(SYMFONY_CONSOLE) doctrine:fixtures:load
 
 .PHONY: up shell lint test test-% fix docker-compose-up composer-install migrate load-fixtures
 .DEFAULT_GOAL=help
@@ -50,4 +53,4 @@ SYMFONY_CONSOLE=./bin/console
 PSALM=./bin/psalm
 PHP_CS_FIXER=./bin/php-cs-fixer
 PHPUNIT=./bin/phpunit
-DOCKER_COMPOSE=docker-compose -f deployments/docker-compose.yml
+DOCKER_COMPOSE=docker-compose -f deployments/docker-compose.yml -p "payroll"
