@@ -3,6 +3,8 @@
 /report/
 /.php-cs-fixer.cache
 /.env
+/bin/*
+!/bin/console
 
 ###> friendsofphp/php-cs-fixer ###
 /.php-cs-fixer.php
