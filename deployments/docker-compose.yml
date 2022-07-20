@@ -11,7 +11,7 @@ services:
     depends_on:
       - app
     volumes:
-      - ./public:/app/public
+      - ../public:/app/public
 
   app:
     container_name: payroll.app
