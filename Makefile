@@ -1,5 +1,5 @@
 up: ## Up and run docker environment
-up: .env docker-compose-up migrate load-fixtures
+up: .env docker-compose-up composer-install migrate load-fixtures
 	@echo ""
 	@echo "Application is now available on: http://127.0.0.1:9090"
 
@@ -23,7 +23,7 @@ test: ## Run tests
 test-%: ## Run specific tests `test-[all|unit|integration|functional]`
 	$(PHPUNIT) --testsuite=$*
 
-.PHONY: up shell lint test test-% fix docker-compose-up migrate load-fixtures
+.PHONY: up shell lint test test-% fix docker-compose-up composer-install migrate load-fixtures
 .DEFAULT_GOAL=help
 
 help:
@@ -36,6 +36,9 @@ help:
 
 docker-compose-up:
 	@$(DOCKER_COMPOSE) up -d
+
+composer-install:
+	@$(DOCKER_COMPOSE) exec -it -- app composer install
 
 migrate:
 	@$(DOCKER_COMPOSE) exec -it -- app $(SYMFONY_CONSOLE) doctrine:migrations:migrate --no-interaction
