@@ -62,13 +62,14 @@ Usage:
   make TARGET
 
 Targets:
-  up          Up and run docker environment
-  down        Stop environment
-  shell       Go inside docker container
+  up          [docker] Up and run docker environment
+  down        [docker] Stop environment
+  shell       [docker] Go inside docker container
   lint        Execute all available linters
   fix         Fix all code formatting problems
   test        Run tests
   test-%      Run specific tests `test-[all|unit|integration|functional]`
+  fixtures    Prune database and load fixtures
 ```
 
 ## 🏗️ Architecture
