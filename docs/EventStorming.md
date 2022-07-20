@@ -4,7 +4,7 @@ I made short event storming session, where I built a big-picture context of an a
 I managed to find three contexts:
 
 - `Employment` - this context is basically a catalog with departments, employees, and relation between them.
-- `Salary` - in this context aggregates all data required to properly calculate salaries.
+- `Salary` - this context store all data required to properly calculate salaries, and salaries calculators.
 - `Report` - simple context, to keep report information, status and date of generating.
 
 I discovered also two small processes, about creating department and employee, and one bigger, about generating salary report.
