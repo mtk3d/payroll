@@ -11,7 +11,7 @@ services:
     depends_on:
       - app
     volumes:
-      - ../public:/app/public
+      - ../:/app
 
   app:
     container_name: payroll.app
@@ -19,6 +19,8 @@ services:
       context: ../
       dockerfile: build/package/php/Dockerfile
       target: development
+    depends_on:
+      - database
     volumes:
       - ../:/app
 
@@ -36,7 +38,9 @@ services:
       - payroll.database:/var/lib/mysql
 
 volumes:
-  payroll.database: {}
+  payroll.database:
+    name: payroll.database
 
 networks:
-  payroll_net: {}
+  payroll_net:
+    name: payroll.network
